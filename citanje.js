@@ -138,7 +138,7 @@ onValue(utrke, (snapshot) => {
                             poljeukojeide.innerHTML=zapisani[i][0];
                             poljeukojeidebr.innerHTML=zapisani[i][1];
                             poljezastisnut.addEventListener('click',function(){
-                                let nemoze=document.getElementById('nemoze1');
+                                let nemoze=document.getElementById('nemoze');
                                 nemoze.style.display='block'
                                 setTimeout(function() {
                                     nemoze.style.display = 'none';
