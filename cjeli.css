@@ -1,0 +1,525 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;}
+div{
+    z-index: 1;}
+ul{
+    z-index: 10;}
+body{
+    /*background-color: rgb(21, 1, 41);*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(0, 13, 39);
+    height: 100%;}
+html{
+    height: 100%;}
+#dd{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;}
+#bb{
+    color: white;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 26px;}
+#dobrodoso{
+    margin: 20px ;
+    background-color:rgb(44, 54, 75) ;
+    padding: 10px;
+    border: 0.5px solid white;
+    border-radius: 20px;}
+#izbornik{
+    background: #ffffff;
+    height: 80px;
+    width: 100%;}
+#izbornik .logo{
+    color: #006aba;
+    text-shadow: 8px 8px 8px rgb(139, 139, 139);
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 80px;
+    cursor: pointer;
+    padding: 0 50px;}
+.logoV{
+    color: #006aba;
+    text-shadow: 8px 8px 14px rgb(139, 139, 139);
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;}
+#izbornik ul{
+    float: right;
+    margin-right: 20px;}
+#izbornik ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;}
+#izbornik ul li a{
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;}
+#izbornik ul li a:hover{
+    background: #1b9bff;
+    transition: .5s;}
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    text-decoration: underline;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;}
+#check{
+    display: none;}
+@media (max-width:1100px){
+    #izbornik .logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    #izbornik ul li a{
+        font-size: 15px;
+    }}
+@media (max-width:940px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #383838;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    #izbornik ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    #izbornik ul li a{
+        font-size: 21px;
+        color: white;
+    }
+    #izbornik ul li a:hover{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }}
+.naslov{
+    text-align: center;
+    background-color: rgb(16, 34, 71);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2px;
+    border-bottom: 1px solid rgb(108, 125, 154);
+    padding: 3px 0;}
+.naslov2{
+    display: none;
+    text-align: center;
+    background-color: #930000;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 3px 0;}
+.naslov3{
+    text-align: center;
+    background-color: #206c54;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 3px;
+    padding: 3px 0;
+    border-radius: 9px;
+    border: 2px solid black;}
+.naslov4{
+    display: none;
+    text-align: center;
+    background-color: gold;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 3px 0;}
+.banana{
+    text-align: center;
+    background-color:rgb(16, 34, 71);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 15px;
+    max-width: fit-content;
+    margin-inline: auto;
+    border-radius: 15px;
+    border: 2px solid rgb(87, 87, 144);}
+.natjecanje{
+    text-align: center;
+    color: white;
+    background-color: rgb(75, 235, 75);
+    margin: 12px 15px;
+    cursor: pointer;
+    border: 2px solid green;
+    border-radius: 9px;
+    padding: 7px 0;
+    font-size: 27px;
+    max-width: 1200px;
+    margin-inline: auto;
+    box-shadow: 6px 6px 20px rgb(85, 154, 85);}
+.natjecanjeZuto{
+    text-align: center;
+    color: white;
+    background-color: rgb(223, 223, 87);
+    margin: 12px 15px;
+    cursor: pointer;
+    border: 2px solid  rgb(171, 171, 4);
+    border-radius: 9px;
+    padding: 7px 0;
+    font-size: 27px;
+    max-width: 1200px;
+    margin-inline: auto;
+    box-shadow: 6px 6px 20px rgb(241, 244, 74);}
+.natjecanjeCrveno{
+    text-align: center;
+    color: white;
+    background-color:  rgb(234, 94, 94);
+    margin: 12px 15px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 9px;
+    padding: 7px 0;
+    font-size: 27px;
+    max-width: 1200px;
+    margin-inline: auto;
+    box-shadow: 6px 6px 20px rgb(197, 107, 107);}
+#utrke{
+    padding: 0 17px;}
+#mojtim{
+    display: none;
+    text-align: center;}
+#pravila{
+    text-align: center;
+    background-color: rgb(0, 13, 39);
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-inline: auto;
+    padding: 3px 0;
+    max-width: 320px;}
+#zeleno{
+    color: rgb(75, 235, 75);
+    margin: 0 5px;
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 3px solid rgb(75, 235, 75);}
+#žuto{
+    color: rgb(171, 171, 4);
+    margin: 0 5px;
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 3px solid rgb(171, 171, 4);}
+#crveno{
+    color: rgb(243, 62, 62);
+    margin: 0px 5px;
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 3px solid rgb(243, 62, 62);}
+.poljeZaNatjecatelje{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(170px, 1fr));}
+.poljeZaNatjecatelja{
+    background-color:white;
+     width: 165px;
+     height: 190px;
+     border-radius: 40px;
+     text-align: center;
+     margin: 30px 5px;
+     margin-inline: auto;
+     box-shadow: 14px 14px 12px rgb(109, 63, 63);
+     position: relative;
+     padding-bottom: 43px;
+     overflow: hidden;
+     border: 5px solid gold;
+     cursor: pointer;}
+.slika{
+    background-color: gray;
+    height: 30px;
+    width: 165px;
+    overflow: hidden;
+    
+    padding: 2px;
+    text-wrap: wrap;
+    font-size: 18px;
+    font-weight: bold;}
+.imeNatjecatelja{
+    font-size: 18px;
+    text-align: center;
+    text-wrap: nowrap;
+    font-weight: bold;
+    
+    padding: 7px 0;}
+#popisNatjecatelja{
+    display: none;}
+#nazad{
+    float: left;
+    background-color: #1b9bff;
+    padding: 5px;
+    font-size: 23px;}
+#spremi{
+    display: none;
+    margin-inline: auto;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-decoration: underline;
+    box-shadow: 10px 7px 18px rgb(120, 111, 135);
+    cursor: pointer;
+    border: 2px solid rgb(54, 54, 129);}
+#spremi:hover{
+    padding: 14px;
+    margin-top: 7px; ;}
+#zavrijemeutrke{
+    display: none;}
+#poslijeutrke{
+    display: none;}
+#poredak{
+    margin: 50px 20px;}
+.redak{
+    
+    background-color: #1b3e60;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 6px 2px;}
+.vrijednost{
+    background-color: rgb(140, 34, 34);
+    float: right;
+    padding: 2px 4px;}
+.kojije{
+    
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    margin-right: 3px;
+    text-align: center;
+    border-radius: 10px;}
+#ulogiraj{
+    background-color: #2b77c2;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 15px;
+    border-radius: 23px;
+    cursor: pointer;
+    margin: 30px;}
+#izlogiraj{
+    background-color: #2b77c2;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 12px;
+    border-radius: 23px;
+    cursor: pointer;
+    margin: 15px 30px;}
+.ulogiravanjenapocetnoj{
+    margin: 20px;
+    margin-top: 40px;
+    border-radius: 30px;
+    border: 1px solid rgb(133, 133, 133);
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(47, 53, 66) ;}
+#poruka2 {
+    background-color: #2b77c2;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 6px;
+    margin-inline: auto;
+    margin: 15px 20px;
+    border-radius: 23px;}
+.expandable {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin: 20px 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 3px solid #2e96e5;}
+.expandable .title {
+    background-color: #e0e0e0;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.expandable .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+    font-size: 27px;}
+.expandable.open .content {
+    max-height: 10000px; /* Adjust this value based on your content */
+    transition: max-height 0.3s ease-in;
+    padding: 6px;}
+.arrow {
+    transition: transform 0.3s ease;}
+.expandable.open .arrow {
+    transform: rotate(180deg);}
+.ostranici{
+    background-color: rgb(55, 67, 92);
+    text-align: center;
+    margin-top: 160px;}
+#napravio{
+    color: white;
+    text-align: center;
+    margin: 5px 0 10px 0;
+    font-size: 14px;}
+.ostranici li a{
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase;}
+.ostranici li{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;}
+#container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;}
+#zauzima{
+    flex: 1;}
+#slijedecatrka{
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    margin: 15px 0;
+    padding: 8px 3px;
+    background-color: rgb(3, 126, 167);}
+#slijedecatrka hr{
+    margin: 4px;}
+.slikakluba{
+
+    height: 115px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+#mjestoporetka, #brojbodova{
+    color: white;
+    text-align: center;
+    margin: 15px 35px;
+    font-size: 28px;
+    padding: 10px;
+    background-color: rgb(0, 13, 39);
+    border-radius: 10px;
+    font-weight: 500;
+    border: 1px solid rgb(133, 133, 133) ;}
+#podatci{
+    margin: 20px;
+    border-radius: 30px;
+    border: 1px solid rgb(133, 133, 133);
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: rgb(47, 53, 66) ;}
+#podatci hr{
+    margin: 5px 15px;}
+#profilna{
+    display: flex;
+    background-image: url(noprofile.jpg);
+    background-size: cover;
+    height: 66px;
+    width: 66px;
+    border-radius: 33px;
+    margin: 5px 10px 15px 15px;}
+#mailiime{
+    color: white;}
+#profilna-container {
+    display: flex;
+    align-items: center;}
+#imeuprofilu{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 5px;}
+#mailuprofilu{
+
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 150;}
+#osez{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-decoration: underline;}
+#m-ž{
+    
+    display: flex;
+    height: 40px;
+    font-size: 27px;
+    font-weight: bold;
+    margin: 2px 0;}
+#m{
+    color: white;
+    flex: 1;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 42px;
+    background-color: #006aba;
+    text-decoration: underline;}
+#ž{
+    color: white;
+    line-height: 40px;
+    flex: 1;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #bd00a1;
+    text-decoration: underline;}
+#ulogiraj2{
+    margin-inline: auto;
+    margin: 30px ;
+
+    padding: 8px;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(16, 34, 71);
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 15px;
+    box-shadow: 2px 4px 20px rgb(175, 91, 91);
+}
+
+
+
+
+

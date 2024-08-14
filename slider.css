@@ -1,0 +1,91 @@
+/* styles.css */
+.slider {
+  width: 650px;
+  height: 470px;
+  overflow: hidden;
+  border: 1px solid white;
+  margin: 20px auto; 
+  border-radius: 20px;
+}
+
+
+
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.slikaslide {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.tekstslike {
+  height: 190px;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(0, 13, 39);
+  color: white;
+  border-top: 1px solid white;
+  padding: 5px;
+
+}
+.gumbzalink a{
+  color: white;
+  text-decoration: underline;
+  background-color:  #2b77c2;
+  padding: 5px 15px;
+  border-radius: 9px;
+  font-size: 27px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  
+}
+.gumbzalink{
+  margin: 15px;
+}
+
+
+.slikaslide1 {
+  background-image: url('start.jpg');
+}
+
+.slikaslide2 {
+  background-image: url('tim.jpg');
+}
+
+.slikaslide3 {
+  background-image: url('gabi.jpg');
+}
+
+
+@media (max-width:740px){
+  .slider{
+    width: 450px;}
+}
+
+@media (max-width:566px){
+  .slider{
+    width: 350px;
+}
+  .tekstslike{
+    font-size: 22px;
+  }
+  .gumbzalink{
+    margin: 5px;
+  }
+}
+
+@media (max-width:450px){
+  .slider{
+    width: 250px;}
+}

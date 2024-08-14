@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My tri team</title>
+    <link rel="stylesheet" href="cjeli.css">
+</head>
+<body>
+<div id="container">
+    <nav id="izbornik">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i id="menu" class="fas fa-bars">Izbornik</i>
+        </label>
+        <label class="logo">TriTeam</label>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="utrke.html">utrke</a></li>
+            <li><a href="poredak.html">poredak</a></li>
+            <li><a href="vrijednosti.html">vrijednost natjecatelja</a></li>
+            <li><a href="mojprofil.html"> moj profil</a></li>
+        </ul>
+           
+    </nav>
+    
+
+    <div id="podatci">
+        <div id="profilna-container">
+            <div id="profilna"></div>
+            <div id="mailiime">
+                <p id="imeuprofilu"></p>
+                <p id="mailuprofilu"></p>
+            </div>
+
+        </div>
+        <hr>
+        <div id="osez">OVA SEZONA</div>
+        <div id="brojbodova"></div>
+        <div id="mjestoporetka"></div>
+    </div>
+
+    <div class="ulogiravanjenapocetnoj">
+        <button id="ulogiraj">ulogiraj se</button>
+        <button id="izlogiraj">izlogiraj se</button>
+        <p style="display: none;" id="poruka">bla bla</p>
+        <p id="poruka2"></p>
+    </div>
+
+
+    <div id="zauzima"></div>
+    <div class="ostranici">
+        <hr>
+        <a href="index.html" class="logoV">TriTeam</a>
+        <li><a href="https://triatlon.hr/natjecanja/utrke/">nadolazeće utrke</a></li>
+        <li><a href="https://triatlon.hr/">HTS novosti</a></li>
+        <li><a href="mailto:vito.obrovac@gmail.com">kontakt (gmail)</a></li>
+        <hr>
+        <p id="napravio">
+            Ova stranica je još u izradi, pa ukoliko primjetite neke greške ili imate ideju za poboljšsanje slobodno me kontaktirajte na mail - vito.obrovac@gmail.com
+        </p>
+    </div>
+
+    <div style="display: none;">
+        <button id="spremi">spremi</button>
+        <button id="ulogiraj2">moraš se ulogiraji kako bi spremio</button>
+        <p id="akoimatim"></p>
+        <p id="akoimatim1"></p>
+    </div>
+</div>
+    <script type="module" src="ulogiravanje.js"></script>
+    <script src="mojprofil.js" type="module"></script>
+  
+</body>
+</html>
