@@ -25,7 +25,6 @@ const akoimatim1=document.getElementById('akoimatim1');
 
 function isInAppBrowser() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    // Provera za Instagram, Facebook in-app browser
     return (
         userAgent.includes("Instagram") || 
         userAgent.includes("FBAV") || 
@@ -33,10 +32,10 @@ function isInAppBrowser() {
     );
 }
 
-// Provera da li je URL već modifikovan (da izbegnemo beskonačnu petlju)
-if (isInAppBrowser() && !window.location.search.includes('redirected=true')) {
-    window.location.href = window.location.href + "?redirected=true";
+if (isInAppBrowser()) {
+    window.open("https://your-app-link.com", "_blank");
 }
+
 
 
 // Ostatak vašeg JavaScript koda
