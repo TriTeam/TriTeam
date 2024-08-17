@@ -23,6 +23,26 @@ const poruka2= document.getElementById('poruka2');
 const akoimatim=document.getElementById('akoimatim');
 const akoimatim1=document.getElementById('akoimatim1');
 
+function isInAppBrowser() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    // Provera za Instagram i Facebook in-app browser
+    return (
+        userAgent.includes("Instagram") || 
+        userAgent.includes("FBAV") || 
+        userAgent.includes("FBAN") //||
+        //window.location.hostname === 'localhost' || 
+        //window.location.hostname === '127.0.0.1'
+    );
+}
+
+if (isInAppBrowser()) {
+    window.location.href = "https://triteam.github.io/TriTeam/index.html"; // Zameni sa vašim URL-om
+}
+
+// Ostatak vašeg JavaScript koda
+
+
+
 izlogiraj.style.display='none'
 poruka.style.display='none'
 ulogiraj2.style.display='none'
