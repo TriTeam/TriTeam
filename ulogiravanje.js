@@ -25,19 +25,19 @@ const akoimatim1=document.getElementById('akoimatim1');
 
 function isInAppBrowser() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    // Provera za Instagram i Facebook in-app browser
+    // Provera za Instagram, Facebook in-app browser
     return (
         userAgent.includes("Instagram") || 
         userAgent.includes("FBAV") || 
-        userAgent.includes("FBAN") //||
-        //window.location.hostname === 'localhost' || 
-        //window.location.hostname === '127.0.0.1'
+        userAgent.includes("FBAN")
     );
 }
 
-if (isInAppBrowser()) {
-    window.location.href = "https://triteam.github.io/TriTeam/index.html"; // Zameni sa vašim URL-om
+// Provera da li je URL već modifikovan (da izbegnemo beskonačnu petlju)
+if (isInAppBrowser() && !window.location.search.includes('redirected=true')) {
+    window.location.href = window.location.href + "?redirected=true";
 }
+
 
 // Ostatak vašeg JavaScript koda
 
