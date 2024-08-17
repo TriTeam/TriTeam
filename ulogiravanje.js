@@ -33,7 +33,7 @@ function isInAppBrowser() {
 }
 
 if (isInAppBrowser()) {
-    window.open("https://your-app-link.com", "_blank");
+    window.open("https://triteam.github.io/TriTeam/index.htmlm", "_blank");
 }
 
 
