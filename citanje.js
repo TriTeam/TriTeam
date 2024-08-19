@@ -724,4 +724,36 @@ function nemampojma(rezultat,i){
     odabranaUtrka.innerHTML=rezultat[i][0];
                     
 
+    for(let i =0;i<4;i++){
+        let def='natjecatelj'+String(i+1);
+        let def2='slika'+String(i+1);
+        let def3='poljeZaNatjecatelja'+String(i+1);
+        let def4='slikakluba'+String(i+1);
+        let poljeukojeide=document.getElementById(def);
+        let poljeukojeidebr=document.getElementById(def2);
+        let poljezastisnut=document.getElementById(def3);
+        let poljezaklub=document.getElementById(def4);
+        poljeukojeide.innerHTML=zapisani[i][0];
+        poljeukojeidebr.innerHTML=zapisani[i][1];
+
+        //--------
+        let bolek=0;
+        for(let b=0;b<listaklubva.length;b++){
+            
+            if(zapisani[i][0]==listaklubva[b].Competitor.name+' '+listaklubva[b].Competitor.surname){
+                bolek=listaklubva[b].Competitor.Club.id
+                
+            }
+        }
+        
+        if (kluboviSlike[bolek]) {
+            poljezaklub.style.backgroundImage = kluboviSlike[bolek];
+            
+        }
+
+        //-------------
+        
+
+    }
+    
 }
