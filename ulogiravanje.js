@@ -69,7 +69,7 @@ onAuthStateChanged(auth,(user)=>{
         izlogiraj.style.display='inline-block';
     
         poruka.innerHTML=user.uid;
-        poruka2.innerHTML='Bok: '+user.displayName+' !';
+        poruka2.innerHTML=user.displayName;
         kadstisne=true
         ulogiraj.style.display='none'
         spremi.style.backgroundColor='green'
