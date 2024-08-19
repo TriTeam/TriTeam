@@ -71,6 +71,7 @@ onValue(utrke, (snapshot) => {
                             .then(data=> {
                                 
                                 listaklubva=data;
+                                console.log(listaklubva)
                                 kreiranjeliste(rezultat[i][0])
                                 nemampojma(rezultat,i);
                     })
@@ -664,96 +665,100 @@ function nemampojma(rezultat,i){
         let poruka= document.getElementById('poruka').innerHTML;
         
         //tu dole makni komentar da radi
-        let zapisi=Object.entries(Object.values(Object.values(Object.values(Object.values(rezultat[i][1]))))[3]);
-        
-        for(let i=0; i<zapisi.length;i++){
-            if(zapisi[i][0]==poruka){
-                
-
-                zapisani=(Object.entries(zapisi[i][1])[0])[1];
-
-                tokajideubazu=zapisani;
-
-
-                
-
-        
-                function arraysEqual(arr1, arr2) {
-                if (arr1.length !== arr2.length) return false;
-                for (let i = 0; i < arr1.length; i++) {
-                    if (arr1[i] !== arr2[i]) return false;
-                }
-                return true;
-                }
-
-                
-                zapisani.forEach(sublist1 => {
-                let index = listica.findIndex(sublist2 => arraysEqual(sublist1, sublist2));
-                
-                
-                if (index !== -1) {
-                    listica.splice(index, 1);
-                }
-                });
-
-                
-                console.log(listica);
-
-                
-                
-                imenjega.innerHTML=zapisani[0][0]
-                imenjega2.innerHTML=zapisani[1][0]
-                imenjega3.innerHTML=zapisani[2][0]
-                imenjega4.innerHTML=zapisani[3][0]
-                slikauno.innerHTML=zapisani[0][1]
-                slikaduo.innerHTML=zapisani[1][1]
-                slikatre.innerHTML=zapisani[2][1]
-                slikakvatro.innerHTML=zapisani[3][1]
-                
-                for(let i =0;i<4;i++){
-                    let njegamaknut=document.getElementById(zapisani[i][0])
-                    njegamaknut.style.display='none'
-                }
-                obracun();
-                
-            }
-        };
-    }
-    mojtim.style.display='block'
-    let odabranaUtrka=document.getElementById('odabranautrka');
-    odabranaUtrka.innerHTML=rezultat[i][0];
+        let zapisii=Object.entries(Object.values(Object.values(Object.values(Object.values(rezultat[i][1])))));
+        if(zapisii[3]!=undefined){
+            let zapisi =Object.entries(zapisii[3][1])
+            console.log(zapisi)
+            for(let i=0; i<zapisi.length;i++){
+                if(zapisi[i][0]==poruka){
                     
 
-    for(let i =0;i<4;i++){
-        let def='natjecatelj'+String(i+1);
-        let def2='slika'+String(i+1);
-        let def3='poljeZaNatjecatelja'+String(i+1);
-        let def4='slikakluba'+String(i+1);
-        let poljeukojeide=document.getElementById(def);
-        let poljeukojeidebr=document.getElementById(def2);
-        let poljezastisnut=document.getElementById(def3);
-        let poljezaklub=document.getElementById(def4);
-        poljeukojeide.innerHTML=zapisani[i][0];
-        poljeukojeidebr.innerHTML=zapisani[i][1];
+                    zapisani=(Object.entries(zapisi[i][1])[0])[1];
 
-        //--------
-        let bolek=0;
-        for(let b=0;b<listaklubva.length;b++){
+                    tokajideubazu=zapisani;
+
+
+                    
+
             
-            if(zapisani[i][0]==listaklubva[b].Competitor.name+' '+listaklubva[b].Competitor.surname){
-                bolek=listaklubva[b].Competitor.Club.id
-                
-            }
-        }
-        
-        if (kluboviSlike[bolek]) {
-            poljezaklub.style.backgroundImage = kluboviSlike[bolek];
-            
-        }
+                    function arraysEqual(arr1, arr2) {
+                    if (arr1.length !== arr2.length) return false;
+                    for (let i = 0; i < arr1.length; i++) {
+                        if (arr1[i] !== arr2[i]) return false;
+                    }
+                    return true;
+                    }
 
-        //-------------
-        
+                    
+                    zapisani.forEach(sublist1 => {
+                    let index = listica.findIndex(sublist2 => arraysEqual(sublist1, sublist2));
+                    
+                    
+                    if (index !== -1) {
+                        listica.splice(index, 1);
+                    }
+                    });
 
-    }
+                    
+                    console.log(listica);
+
+                    
+                    
+                    imenjega.innerHTML=zapisani[0][0]
+                    imenjega2.innerHTML=zapisani[1][0]
+                    imenjega3.innerHTML=zapisani[2][0]
+                    imenjega4.innerHTML=zapisani[3][0]
+                    slikauno.innerHTML=zapisani[0][1]
+                    slikaduo.innerHTML=zapisani[1][1]
+                    slikatre.innerHTML=zapisani[2][1]
+                    slikakvatro.innerHTML=zapisani[3][1]
+                    
+                    for(let i =0;i<4;i++){
+                        let njegamaknut=document.getElementById(zapisani[i][0])
+                        njegamaknut.style.display='none'
+                    }
+                    obracun();
+                    
+                }
+            };
+            console.log(zapisani)
+            for(let i =0;i<4;i++){
+                let def='natjecatelj'+String(i+1);
+                let def2='slika'+String(i+1);
+                let def3='poljeZaNatjecatelja'+String(i+1);
+                let def4='slikakluba'+String(i+1);
+                let poljeukojeide=document.getElementById(def);
+                let poljeukojeidebr=document.getElementById(def2);
+                let poljezastisnut=document.getElementById(def3);
+                let poljezaklub=document.getElementById(def4);
+                poljeukojeide.innerHTML=zapisani[i][0];
+                poljeukojeidebr.innerHTML=zapisani[i][1];
     
+                //--------
+                let bolek=0;
+                for(let b=0;b<listaklubva.length;b++){
+                    
+                    if(zapisani[i][0]==listaklubva[b].Competitor.name+' '+listaklubva[b].Competitor.surname){
+                        bolek=listaklubva[b].Competitor.Club.id
+                        
+                    }
+                }
+                
+                if (kluboviSlike[bolek]) {
+                    poljezaklub.style.backgroundImage = kluboviSlike[bolek];
+                    
+                }
+    
+                //-------------
+                
+    
+            }    
+        }
+        mojtim.style.display='block'
+        let odabranaUtrka=document.getElementById('odabranautrka');
+        odabranaUtrka.innerHTML=rezultat[i][0];
+            
+
+        
+}
 }
