@@ -1,12 +1,5 @@
-function isOpenedInInstagram() {
-    return navigator.userAgent.includes('Instagram');
-}
 
-if (isOpenedInInstagram()) {
-    window.onload = function() {
-    window.open('https://triteam.github.io/TriTeam/index.html', '_blank');
-};
-}
+
 
 
 
@@ -46,6 +39,10 @@ function isInAppBrowser() {
 }
 
 if(isInAppBrowser()){
+   
+    window.onload = function() {
+    window.open('https://triteam.github.io/TriTeam/index.html', '_blank');
+    };
     alert('Nažalost ulogiravanje ne radi na instagramu, molim vas da kopirate link i otvorite ga u nekom drugom pregledniku (google)! link: https://triteam.github.io/TriTeam/')
 }
 
