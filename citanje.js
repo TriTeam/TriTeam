@@ -72,76 +72,10 @@ onValue(utrke, (snapshot) => {
                                 
                                 listaklubva=data;
                                 kreiranjeliste(rezultat[i][0])
-                                
+                                nemampojma(rezultat,i);
                     })
                     
-                    const spremi=document.getElementById('spremi');
-                    if(spremi.style.backgroundColor=='green'){
-                        
-                        
-                        let poruka= document.getElementById('poruka').innerHTML;
-                        
-                        //tu dole makni komentar da radi
-                        let zapisi=Object.entries(Object.values(Object.values(rezultat[i][1]))[1]);
-                        
-                        for(let i=0; i<zapisi.length;i++){
-                            if(zapisi[i][0]==poruka){
-                                
-
-                                zapisani=(Object.entries(zapisi[i][1])[0])[1];
-
-                                tokajideubazu=zapisani;
-
-
-                        
-
-                        
-                                function arraysEqual(arr1, arr2) {
-                                if (arr1.length !== arr2.length) return false;
-                                for (let i = 0; i < arr1.length; i++) {
-                                    if (arr1[i] !== arr2[i]) return false;
-                                }
-                                return true;
-                                }
-
-                                
-                                zapisani.forEach(sublist1 => {
-                                let index = listica.findIndex(sublist2 => arraysEqual(sublist1, sublist2));
-                                
-                               
-                                if (index !== -1) {
-                                    listica.splice(index, 1);
-                                }
-                                });
-
-                                
-                                console.log(listica);
-
-                                
-                                
-                                imenjega.innerHTML=zapisani[0][0]
-                                imenjega2.innerHTML=zapisani[1][0]
-                                imenjega3.innerHTML=zapisani[2][0]
-                                imenjega4.innerHTML=zapisani[3][0]
-                                slikauno.innerHTML=zapisani[0][1]
-                                slikaduo.innerHTML=zapisani[1][1]
-                                slikatre.innerHTML=zapisani[2][1]
-                                slikakvatro.innerHTML=zapisani[3][1]
-                                
-                                for(let i =0;i<4;i++){
-                                    let njegamaknut=document.getElementById(zapisani[i][0])
-                                    njegamaknut.style.display='none'
-                                }
-                                obracun();
-                                
-                            }
-                        };
-                    }
-                    mojtim.style.display='block'
-                    let odabranaUtrka=document.getElementById('odabranautrka');
-                    odabranaUtrka.innerHTML=rezultat[i][0];
                     
-
                 }else if(novidiv.className=='natjecanjeZuto'){
                     let link=Object.values(rezultat[i][1])[1][1]
                     console.log(link)
@@ -451,10 +385,10 @@ function kreiranjeliste(imeutrke){
                 
                 if(listica.length==0){
                     
-                    for(let i =0; i<popisumomtimu.length;i++){
+                    for(let i =1; i<popisumomtimu.length;i++){
                     listica.push(popisumomtimu[i])   
                 }
-                
+                console.log(listica)
 
                 
             }
@@ -719,4 +653,75 @@ function omogciSpremanje(){
         let spremi=document.getElementById('spremi');
         spremi.style.display='block'
     }
+}
+
+
+function nemampojma(rezultat,i){
+    const spremi=document.getElementById('spremi');
+    if(spremi.style.backgroundColor=='green'){
+        
+        
+        let poruka= document.getElementById('poruka').innerHTML;
+        
+        //tu dole makni komentar da radi
+        let zapisi=Object.entries(Object.values(Object.values(Object.values(Object.values(rezultat[i][1]))))[3]);
+        
+        for(let i=0; i<zapisi.length;i++){
+            if(zapisi[i][0]==poruka){
+                
+
+                zapisani=(Object.entries(zapisi[i][1])[0])[1];
+
+                tokajideubazu=zapisani;
+
+
+                
+
+        
+                function arraysEqual(arr1, arr2) {
+                if (arr1.length !== arr2.length) return false;
+                for (let i = 0; i < arr1.length; i++) {
+                    if (arr1[i] !== arr2[i]) return false;
+                }
+                return true;
+                }
+
+                
+                zapisani.forEach(sublist1 => {
+                let index = listica.findIndex(sublist2 => arraysEqual(sublist1, sublist2));
+                
+                
+                if (index !== -1) {
+                    listica.splice(index, 1);
+                }
+                });
+
+                
+                console.log(listica);
+
+                
+                
+                imenjega.innerHTML=zapisani[0][0]
+                imenjega2.innerHTML=zapisani[1][0]
+                imenjega3.innerHTML=zapisani[2][0]
+                imenjega4.innerHTML=zapisani[3][0]
+                slikauno.innerHTML=zapisani[0][1]
+                slikaduo.innerHTML=zapisani[1][1]
+                slikatre.innerHTML=zapisani[2][1]
+                slikakvatro.innerHTML=zapisani[3][1]
+                
+                for(let i =0;i<4;i++){
+                    let njegamaknut=document.getElementById(zapisani[i][0])
+                    njegamaknut.style.display='none'
+                }
+                obracun();
+                
+            }
+        };
+    }
+    mojtim.style.display='block'
+    let odabranaUtrka=document.getElementById('odabranautrka');
+    odabranaUtrka.innerHTML=rezultat[i][0];
+                    
+
 }
