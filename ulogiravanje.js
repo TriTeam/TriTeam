@@ -1,3 +1,16 @@
+function isOpenedInInstagram() {
+    return navigator.userAgent.includes('Instagram');
+}
+
+if (isOpenedInInstagram()) {
+    window.onload = function() {
+    window.open('https://triteam.github.io/TriTeam/index.html', '_blank');
+};
+}
+
+
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
