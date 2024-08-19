@@ -658,6 +658,9 @@ function omogciSpremanje(){
 
 
 function nemampojma(rezultat,i){
+    mojtim.style.display='block'
+    let odabranaUtrka=document.getElementById('odabranautrka');
+    odabranaUtrka.innerHTML=rezultat[i][0];
     const spremi=document.getElementById('spremi');
     if(spremi.style.backgroundColor=='green'){
         
@@ -754,9 +757,7 @@ function nemampojma(rezultat,i){
     
             }    
         }
-        mojtim.style.display='block'
-        let odabranaUtrka=document.getElementById('odabranautrka');
-        odabranaUtrka.innerHTML=rezultat[i][0];
+        
             
 
         
