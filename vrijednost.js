@@ -34,6 +34,6 @@ onValue(vrijednosti, (snapshot) => {
         redak.append(vrijednost)
     
     }
-    
+    document.querySelector('.wrapper').style.display = 'none';
 
 })
