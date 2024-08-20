@@ -57,12 +57,14 @@ onValue(utrke, (snapshot) => {
            novidiv.id=rezultat[i][0];
            novidiv.innerHTML = rezultat[i][0];
            novidiv.addEventListener('click' , function(){
+                console.log('desi se')
                 let odabirUtrke=document.getElementById('raspisutrka')
                 let mojtim=document.getElementById('mojtim')
                 odabirUtrke.style.display='none';
+                document.querySelector('.wrapper').style.display = 'flex';
                 if(novidiv.className=='natjecanje'){
                     //----
-                    
+                   
                     
                     let link=Object.values(rezultat[i][1])[1][1]
                     //console.log(link)
@@ -74,6 +76,7 @@ onValue(utrke, (snapshot) => {
                                 console.log(listaklubva)
                                 kreiranjeliste(rezultat[i][0])
                                 nemampojma(rezultat,i);
+                                document.querySelector('.wrapper').style.display = 'none';
                     })
                     
                     
@@ -87,10 +90,11 @@ onValue(utrke, (snapshot) => {
                                 
                                 listaklubva=data;
                                 sveostalo2(rezultat,i);
-                                
+                                document.querySelector('.wrapper').style.display = 'none';
                     })
                     }else{
                         sveostalo2(rezultat,i)
+                        document.querySelector('.wrapper').style.display = 'none';
                     }
                     
                 }else if(novidiv.className=='natjecanjeCrveno'){
@@ -103,10 +107,11 @@ onValue(utrke, (snapshot) => {
                                 
                                 listaklubva=data;
                                 sveostalo(rezultat,i);
-                                
+                                document.querySelector('.wrapper').style.display = 'none';
                     })
                     }else{
                         sveostalo(rezultat,i)
+                        document.querySelector('.wrapper').style.display = 'none';
                     }
                     
                     
@@ -153,6 +158,7 @@ onValue(utrke, (snapshot) => {
 
            })
           poljzautrke.append(novidiv);
+          document.querySelector('.wrapper').style.display = 'none';
            
      }
 });
