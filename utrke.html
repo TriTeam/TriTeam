@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My tri team</title>
     <link rel="stylesheet" href="cjeli.css">
+    <link rel="stylesheet" href="slider.css">
 </head>
 <body>
 <div id="container">
@@ -23,7 +24,12 @@
         </ul>
            
     </nav>
-    
+    <div style="display: flex;" class="wrapper">
+        <div class="loading-div">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
     <div id="raspisutrka">
             
         <div class="naslov">UTRKE</div>
@@ -32,6 +38,8 @@
             <span id="žuto">u tijeku</span>
             <span id="crveno">završeno</span>
         </div>
+
+        
         
         <div id="slijedecatrka">
 
@@ -40,8 +48,9 @@
 
         </div>
     </div>
-
+   
     <div id="mojtim">
+
         <p class="naslov" id="odabranautrka"></p>
         <p class="naslov">odaberi svoj tim</p>
         <div class="banana">
