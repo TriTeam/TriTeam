@@ -35,5 +35,5 @@ onValue(vrijednosti, (snapshot) => {
     
     }
     
-
+    document.querySelector('.wrapper').style.display = 'none';
 })
