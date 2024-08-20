@@ -415,7 +415,7 @@ function popisNatjecatelja(){
     let sortedData = listica.slice().sort((a, b) => b[1] - a[1]);
     
     
-    for (let i = 1; i < sortedData.length-1; i++) {
+    for (let i = 0; i < sortedData.length; i++) {
         //console.log(i,listaklubva[i].Competitor.Club.id,listaklubva[i].Competitor.Club.name)
         let slikakluba=document.createElement('div')
         slikakluba.className='slikakluba';
