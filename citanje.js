@@ -407,7 +407,9 @@ function kreiranjeliste(imeutrke){
                 
                 
             }
-        }popisNatjecatelja();
+        }document.querySelector('.wrapper').style.display = 'none';
+        popisNatjecatelja();
+        document.querySelector('.wrapper').style.display = 'none';
     })}
         
 //---------------kreiranje popisa-----------------
