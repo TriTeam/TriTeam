@@ -16,11 +16,20 @@ onValue(vrijednosti, (snapshot) => {
     let sortedData = rezultat.slice().sort((a, b) => b[1] - a[1]);
 
     console.log(sortedData);
-
+    let poretku=0;
+    let bodovsi;
     for(let i=0;i<sortedData.length;i++){
+        if(bodovsi==sortedData[i][1]){
+            poretku++;
+          }else{poretku=0;
+            bodovsi=sortedData[i][1];
+          }
         let redak=document.createElement('div');
         let osoba=document.createElement('span');
         let vrijednost=document.createElement('span');
+        let kojije=document.createElement('span')
+        kojije.className='kojije'
+        kojije.innerHTML=((Number(i)+1)-poretku)+'.';
         redak.className='redak'
         osoba.className='osoba'
         vrijednost.className='vrijednost'
@@ -28,7 +37,9 @@ onValue(vrijednosti, (snapshot) => {
         vrijednost.innerHTML=sortedData[i][1]
         
         
+        
         poredak.append(redak)
+        redak.append(kojije)
         redak.append(osoba)
         
         redak.append(vrijednost)
