@@ -172,27 +172,35 @@ function obradavrijednosti(lista1, lista2) {
         )
         .map(sublist => sublist[0]); // bla bla: Uzimamo samo prvi element svake podliste iz `lista2`
 
-    console.log(filtriranaLista1, filteredLista2);
-
-    for (let i = 0; i < filteredLista2.length; i++) {
-        for (let o = 0; o < filteredLista2.length; o++) {
-            if (filtriranaLista1[i][0] === filteredLista2[o]) {
-                if (i !== o) {
-                    if (o < i) {
-                        let razlika = Math.round((i - o) / 2);
-                        filtriranaLista1[i][1] += razlika;
-                        console.log('mijenja+')
-                    } else {
-                        let razlika = Math.round((o - i) / 2);
-                        filtriranaLista1[i][1] -= razlika;
-                        console.log('mijenja+')
+        console.log(filtriranaLista1, filteredLista2);
+        let poretku=0;
+        let bodovsi;
+        for (let i = 0; i < filteredLista2.length; i++) {
+          if(bodovsi==filtriranaLista1[i][1]){
+            poretku++;
+          }else{poretku=0;
+            bodovsi=filtriranaLista1[i][1];
+          }
+          
+            for (let o = 0; o < filteredLista2.length; o++) {
+                if (filtriranaLista1[i][0] === filteredLista2[o]) {
+                    if ((i-poretku) !== o) {
+                        if (o < (i-poretku)) {
+                            let razlika = Math.round(((i-poretku) - o) / 2);
+                            filtriranaLista1[i][1] += razlika;
+                            console.log('mijenja+')
+                        } else {
+                            let razlika = Math.round((o - (i-poretku)) / 2);
+                            filtriranaLista1[i][1] -= razlika;
+                            console.log('mijenja+')
+                        }
                     }
                 }
             }
         }
-    }
-
-    console.log(filtriranaLista1);
+    
+        console.log(filtriranaLista1);
+    
 
     
 
