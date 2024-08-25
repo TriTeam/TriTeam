@@ -47,9 +47,25 @@ let listaklubva=[];
 //--------postavljanje liste utrka---------------------------
 
 onValue(utrke, (snapshot) => {
+        const objekti = snapshot.val();
+        console.log(objekti);
+
+
+        const entries = Object.entries(objekti);
+
+        // 2. Sortiraj niz prema 'datum' vrijednostima
+        entries.sort(([, a], [, b]) => a.datum - b.datum);
+
+        // 3. Pretvori sortirani niz natrag u objekt
+        const sortedObject = Object.fromEntries(entries);
+
+        console.log(sortedObject);
+
     
-    
-        let rezultat = Object.entries(snapshot.val());
+        
+
+        let rezultat = Object.entries(sortedObject);
+
         for (let i = 0; i < rezultat.length; i++) {
             
            let novidiv = document.createElement('div');
