@@ -13,6 +13,8 @@ const utrkei=document.getElementById('utrke')
 let rezultatiNatjecanja;
 let poredak;
 let bodeki;
+let promjena=true;
+let praznalista = [];
 
 ucitaj.addEventListener('click', function(){
     onValue(utrke, (snapshot) => {
@@ -32,6 +34,7 @@ ucitaj.addEventListener('click', function(){
 
 
                 novidiv.addEventListener('click', function(){
+                    
                     let zapisi=Object.entries(Object.entries(rezultat[i][1])[3][1]);
 
                     
@@ -82,7 +85,54 @@ ucitaj.addEventListener('click', function(){
 
                         
                     } 
-                
+                    setTimeout(() => {
+                        promjena=false;
+                        for(let i = 0; i<praznalista.length;i++){
+                            let vrijednostput = ref(database, 'vrijednosti');
+                            let vrijednostpojedinca= ref(database, 'vrijednosti/'+praznalista[i][0]);
+                            get(vrijednostpojedinca).then((snapshot) => {
+                                if (snapshot.exists()) {
+                                    let bla=praznalista[i][0];
+                                    const novo = {
+                                        [bla]:praznalista[i][1]
+                                    };
+                        
+                                    update(vrijednostput, novo)
+                                    
+                        
+                                }else{console.log(praznalista[i])}})
+                        }
+                    
+                        for(let i = 0; i<praznalista.length;i++){
+                            let vrijednostput = ref(database, 'vrijednosti-muski');
+                            let vrijednostpojedinca= ref(database, 'vrijednosti-muski/'+praznalista[i][0]);
+                            get(vrijednostpojedinca).then((snapshot) => {
+                                if (snapshot.exists()) {
+                                    let bla=praznalista[i][0];
+                                    const novo = {
+                                        [bla]:praznalista[i][1]
+                                    };
+                    
+                                    update(vrijednostput, novo)
+                        
+                                }else{console.log(praznalista[i])}})
+                        }
+                    
+                        for(let i = 0; i<praznalista.length;i++){
+                            let vrijednostput = ref(database, 'vrijednosti-zene');
+                            let vrijednostpojedinca= ref(database, 'vrijednosti-zene/'+praznalista[i][0]);
+                            get(vrijednostpojedinca).then((snapshot) => {
+                                if (snapshot.exists()) {
+                                    let bla=praznalista[i][0];
+                                    const novo = {
+                                        [bla]:praznalista[i][1]
+                                    };
+                      
+                                    update(vrijednostput, novo)
+                        
+                                }else{console.log(praznalista[i])}})
+                        }
+                    }, 6000);
                     const rang = ref(database, 'vrijednosti');
 
                     onValue(rang, (snapshot) => {                        
@@ -199,62 +249,31 @@ function obradavrijednosti(lista1, lista2) {
             }
         }
     
-        console.log(filtriranaLista1);
-    
-
-    
-
-
-
-    for(let i = 0; i<filtriranaLista1.length;i++){
-        let vrijednostput = ref(database, 'vrijednosti');
-        let vrijednostpojedinca= ref(database, 'vrijednosti'+filtriranaLista1[i][0]);
-        get(vrijednostpojedinca).then((snapshot) => {
-            if (snapshot.exists()) {
-                let bla=filtriranaLista1[i][0];
-                const novo = {
-                    [bla]:filtriranaLista1[i][1]
-                };
-    
-                update(vrijednostput, novo)
+        
+            if(promjena){
                 
+                for(let i = 0; i<filtriranaLista1.length;i++){
+                    praznalista.push(filtriranaLista1[i])
+                }
+            
+                // Uporedi sadržaj nizova
+                let areEqual = filtriranaLista1.length === praznalista.length &&
+                            filtriranaLista1.every((element, index) => element === praznalista[index]);
+            
+                console.log(areEqual); // ovo bi trebalo da vrati true jer sadrže isti objekat na istoj poziciji
+            }
+   
+        
+        
     
-            }})
-    }
-
-    for(let i = 0; i<filtriranaLista1.length;i++){
-        let vrijednostput = ref(database, 'vrijednosti-muski');
-        let vrijednostpojedinca= ref(database, 'vrijednosti-muski'+filtriranaLista1[i][0]);
-        get(vrijednostpojedinca).then((snapshot) => {
-            if (snapshot.exists()) {
-                let bla=filtriranaLista1[i][0];
-                const novo = {
-                    [bla]:filtriranaLista1[i][1]
-                };
-
-                update(vrijednostput, novo)
-    
-            }})
-    }
-
-    for(let i = 0; i<filtriranaLista1.length;i++){
-        let vrijednostput = ref(database, 'vrijednosti-zene');
-        let vrijednostpojedinca= ref(database, 'vrijednosti-zene'+filtriranaLista1[i][0]);
-        get(vrijednostpojedinca).then((snapshot) => {
-            if (snapshot.exists()) {
-                let bla=filtriranaLista1[i][0];
-                const novo = {
-                    [bla]:filtriranaLista1[i][1]
-                };
-  
-                update(vrijednostput, novo)
-    
-            }})
-    }
-
 
 
     
 }
+
+
+        
+        
+
 
 
