@@ -76,7 +76,7 @@ onValue(utrke, (snapshot) => {
                                 console.log(listaklubva)
                                 kreiranjeliste(rezultat[i][0])
                                 nemampojma(rezultat,i);
-                                document.querySelector('.wrapper').style.display = 'none';
+                                
                     })
                     
                     
@@ -108,53 +108,23 @@ onValue(utrke, (snapshot) => {
                                 listaklubva=data;
                                 sveostalo(rezultat,i);
                                 document.querySelector('.wrapper').style.display = 'none';
+                                zbrojboduutrci(rezultat,i);
                     })
                     }else{
                         sveostalo(rezultat,i)
                         document.querySelector('.wrapper').style.display = 'none';
+                        zbrojboduutrci(rezultat,i);
                     }
                     
                     
 
                     
                 }
-                let rezultatiNatjecanja=Object.entries(Object.entries(rezultat[i][1])[2][1]);
-                let rezultatidiv=document.getElementById('rezultatinatjecanja')
-                let sortiranaLista = rezultatiNatjecanja.sort((a, b) => b[1] - a[1]);
-                for(let i =0; i<rezultatiNatjecanja.length;i++){
-                    let utrkac=document.createElement('p');
-                    utrkac.innerHTML=String(i+1)+'. '+sortiranaLista[i][0]+' - '+sortiranaLista[i][1];
-                    utrkac.className='naslov3'
-                    rezultatidiv.append(utrkac)
-                }
                 
-                let mapaZbrojeva = {};
-                sortiranaLista.forEach(podlista => {
-                let prvaVarijabla = podlista[0];
-                let drugaVarijabla = podlista[1];
 
-                if (!mapaZbrojeva[prvaVarijabla]) {
-                    mapaZbrojeva[prvaVarijabla] = 0;
-                }
+            
 
-                mapaZbrojeva[prvaVarijabla] += drugaVarijabla;
-                });
-
-                
-                let zbroj = 0;
-                zapisani.forEach(podlista => {
-                let prvaVarijabla = podlista[0];
-                if (mapaZbrojeva[prvaVarijabla]) {
-                    zbroj += mapaZbrojeva[prvaVarijabla];
-                }
-                });
-
-                let brojbodova=document.getElementById('brojbodova');
-                if(zbroj>0){
-                    brojbodova.style.display='block'
-                    brojbodova.innerHTML='na ovoj utrci osvojio si: '+ zbroj+' bodova'
-                }
-                
+               
 
            })
           poljzautrke.append(novidiv);
@@ -163,7 +133,45 @@ onValue(utrke, (snapshot) => {
      }
 });
 
+function zbrojboduutrci(rezultat,i){
+    let rezultatiNatjecanja=Object.entries(Object.entries(rezultat[i][1])[2][1]);
+    let rezultatidiv=document.getElementById('rezultatinatjecanja')
+    let sortiranaLista = rezultatiNatjecanja.sort((a, b) => b[1] - a[1]);
+    for(let i =0; i<rezultatiNatjecanja.length;i++){
+        let utrkac=document.createElement('p');
+        utrkac.innerHTML=String(i+1)+'. '+sortiranaLista[i][0]+' - '+sortiranaLista[i][1];
+        utrkac.className='naslov3'
+        rezultatidiv.append(utrkac)
+    }
 
+    let mapaZbrojeva = {};
+    sortiranaLista.forEach(podlista => {
+    let prvaVarijabla = podlista[0];
+    let drugaVarijabla = podlista[1];
+
+    if (!mapaZbrojeva[prvaVarijabla]) {
+        mapaZbrojeva[prvaVarijabla] = 0;
+    }
+
+    mapaZbrojeva[prvaVarijabla] += drugaVarijabla;
+    });
+
+    console.log(zapisani)
+    let zbroj = 0;
+    zapisani.forEach(podlista => {
+    let prvaVarijabla = podlista[0];
+    if (mapaZbrojeva[prvaVarijabla]) {
+        zbroj += mapaZbrojeva[prvaVarijabla];
+    }
+    });
+    console.log(zbroj)
+    let brojbodova=document.getElementById('brojbodova');
+    if(zbroj>0){
+        brojbodova.style.display='block'
+        brojbodova.innerHTML='na ovoj utrci osvojio si: '+ zbroj+' bodova'
+    }
+    
+}
 
 
 function sveostalo(rezultat,i){
@@ -409,15 +417,17 @@ function kreiranjeliste(imeutrke){
             }
         }document.querySelector('.wrapper').style.display = 'none';
         popisNatjecatelja();
-        document.querySelector('.wrapper').style.display = 'none';
-    })}
         
+        
+    })}
+let a=0;    
 //---------------kreiranje popisa-----------------
 function popisNatjecatelja(){
     let sortedData = listica.slice().sort((a, b) => b[1] - a[1]);
     
-    
+    console.log(sortedData)
     for (let i = 0; i < sortedData.length; i++) {
+        a++;
         //console.log(i,listaklubva[i].Competitor.Club.id,listaklubva[i].Competitor.Club.name)
         let slikakluba=document.createElement('div')
         slikakluba.className='slikakluba';
