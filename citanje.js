@@ -23,7 +23,8 @@ const kluboviSlike = {
     40: 'url(porec.png)',
     13: 'url(rudolf.jpg)',
     39: 'url(sjever.jpg)',
-    14: 'url(split.png)'
+    14: 'url(split.png)',
+    35: 'url(sisak.jpg)'
 };
 
 let zapisani=[];
