@@ -96,6 +96,8 @@ onValue(utrke, (snapshot) => {
                                 nemampojma(rezultat,i);
                                 
                     })
+                    kreiranjeliste(rezultat[i][0])
+                    nemampojma(rezultat,i);
                     
                     
                 }else if(novidiv.className=='natjecanjeZuto'){
