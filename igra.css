@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: #bad7dd;
   overflow: hidden;
@@ -54,7 +54,7 @@ body {
 
 #gornji{
   display: flex;
-  height: 90vh;
+  height: 90dvh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -69,8 +69,8 @@ body {
 }
 #tvojGas{
   text-align: center;
-  margin:8vh 0 3vh 0;
-  font-size: 3vh;
+  margin:8dvh 0 3dvh 0;
+  font-size: 3dvh;
   font-weight: bold;
 
 }
@@ -85,7 +85,7 @@ body {
   height: 15%;
   border-radius: 20%;
   border: 4px solid black;
-  font-size: 5vh;
+  font-size: 5dvh;
   font-weight: bold;
   justify-content: center;
   align-items: center;
@@ -98,7 +98,7 @@ body {
   height: 50%;
   width: 100%;
   margin: 20% 0;
-  border-radius: 3vh;
+  border-radius: 3dvh;
   border: 6px solid black;
 }
 .jak{
@@ -110,17 +110,17 @@ body {
   background-color: red;
   height: 20%;
   width: 100%;
-  border-radius: 0 0 2vh 2vh;
+  border-radius: 0 0 2dvh 2dvh;
 }
 #jacina5{
-  border-radius:2vh 2vh 0 0 ;
+  border-radius:2dvh 2dvh 0 0 ;
 }
 #minus{
   width: 100%;
   height: 15%;
   border-radius: 20%;
   border: 4px solid black;
-  font-size: 6vh;
+  font-size: 6dvh;
   font-weight: bold;
   justify-content: center;
   align-items: center;
@@ -147,8 +147,8 @@ body {
   background-color: #ffffff;
   display: flex;
   font-weight: bold;
-  font-size: 2vh;
-  padding: 0 1vh;
+  font-size: 2dvh;
+  padding: 0 1dvh;
   user-select: none;
 }
 #finish{
@@ -214,21 +214,21 @@ body {
   width: 7%;
   overflow: hidden;
   position: relative;
-  margin-top: 5.6vh;
+  margin-top: 5.6dvh;
   
 }
 #pomicanjeS{
   background-color: wheat;
   position: absolute;
   width: 100%;
-  height: 2000vh; /* Duža pozadina za scrolling efekt */
+  height: 2000dvh; /* Duža pozadina za scrolling efekt */
   z-index: 1;
-  top: -1924.5vh;
+  top: -1924.5dvh;
 }
 #pomicanjeS p{
-  font-size: 2vh;
+  font-size: 2dvh;
   font-weight: bold;
-  margin-top: 15.3vh;
+  margin-top: 15.3dvh;
   writing-mode: vertical-lr; /* Tekst ide vertikalno, s desna na levo */
   text-orientation: upright;
   display: flex;
@@ -244,7 +244,7 @@ body {
 }
 
 #energija{
-  height: 10vh;
+  height: 10dvh;
   width: 98vw;
   margin: auto;
   border: 1vw solid black;
@@ -314,21 +314,21 @@ body {
   width: 80%;
   border: 3px solid black;
   margin-top: 5%;
-  border-radius: 2vh;
-  padding: 1vh 0;
+  border-radius: 2dvh;
+  padding: 1dvh 0;
   font-weight: bold;
-  font-size: 2vh;
+  font-size: 2dvh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #podatci div p{
-  font-size: 2.5vh;
+  font-size: 2.5dvh;
   font-weight: bold;
   margin-top: auto;
   color: red;
   border-top:3px solid black ;
-  padding-top: 0.5vh;
+  padding-top: 0.5dvh;
   
 }
 
@@ -356,24 +356,24 @@ body {
   z-index: 2;
   position: absolute;
   width: 100%;
-  height: 2000vh; /* Duža pozadina za scrolling efekt */
+  height: 2000dvh; /* Duža pozadina za scrolling efekt */
   background-size: cover;
   background-position: center; 
-  top: -1924.5vh;
+  top: -1924.5dvh;
 
 }
 .player {
   position: absolute;
-  width: 4vh;
-  height: 4vh;
+  width: 4dvh;
+  height: 4dvh;
   transform: translateX(-50%);
   z-index: 6;
-  border-radius: 1vh;
+  border-radius: 1dvh;
   transition: top 0.5s linear;
 }
 #player{
   left: 12%;
-  top: 50vh;
+  top: 50dvh;
   position: relative;
   z-index: 40;
   
@@ -461,20 +461,20 @@ body {
   width: 25%;
   
   padding: 3% 1% ;
-  font-size: 1.7vh;
+  font-size: 1.7dvh;
   overflow: hidden;
  
   border: 1px solid white;
 }
 #postoljediv{
-    height: 50vh;
+    height: 50dvh;
     width: 90vw;
     background-color: rgb(170, 170, 170);
     z-index: 50;
     position: absolute;
     border-radius: 40px;
     border: 5px solid rgb(91, 91, 91);
-    top: 15vh;
+    top: 15dvh;
     left: 5vw;
   display: none;
   align-items:end;
@@ -490,53 +490,53 @@ body {
   min-width: 100%;
   text-align: center;
   border: 4px solid black;
-  padding-top: 1vh;
+  padding-top: 1dvh;
   font-weight: bold;
-  font-size: 4vh;
+  font-size: 4dvh;
 }
 #prvo{
-  height: 35vh;
+  height: 35dvh;
   background-color: gold;
 }
 #drugo{
-  height: 27vh;
+  height: 27dvh;
   background-color: rgb(126, 123, 123);
 }
 
 
 #trece{
-  height: 19vh;
+  height: 19dvh;
   background-color: rgb(181, 75, 14);
 }
 #cetvrto{
-  height: 11vh;
+  height: 11dvh;
   background-color: rgb(255, 0, 187);
 }
 #prvi,#drugi,#treci,#cetvrti{
-  font-size: 1.8vh;
+  font-size: 1.8dvh;
   min-width: 100%;
   text-align: center;
-  margin-bottom: 1vh;
+  margin-bottom: 1dvh;
   font-weight: bold;
   text-transform: uppercase;
 }
 #leaveT{
   text-align: center;
   background-color: rgb(249, 66, 66);
-  font-size: 1.5vh;
+  font-size: 1.5dvh;
   font-weight: bold;
   margin: 0 5%;
-  padding: 1.5vh 0;
-  height: 7vh;
+  padding: 1.5dvh 0;
+  height: 7dvh;
   border: 4px solid rgb(94, 0, 0);
-  border-radius: 3vh;
+  border-radius: 3dvh;
   display: none;
   user-select: none;
   cursor: pointer;
   
 }
 .draft{
-  height: 20vh;
+  height: 20dvh;
   width: 100%;
   opacity: 0.2;
   position: absolute;
@@ -547,13 +547,13 @@ body {
 #izadi{
   text-align: center;
   background-color: rgb(249, 66, 66);
-  font-size: 1.5vh;
+  font-size: 1.5dvh;
   font-weight: bold;
   margin: 2% 0 0 2%;
-  padding: 1.2vh 0;
-  height: 5vh;
+  padding: 1.2dvh 0;
+  height: 5dvh;
   border: 3px solid rgb(94, 0, 0);
-  border-radius: 2vh;
+  border-radius: 2dvh;
   display: block;
   user-select: none;
   cursor: pointer;
@@ -564,8 +564,8 @@ body {
 }
 #vrijeme{
   text-align: center;
-  font-size: 2vh;
-  margin: 5vh 0 0 0;
+  font-size: 2dvh;
+  margin: 5dvh 0 0 0;
   font-weight: bold;
 }
 .Beginner { border: 4px solid #696969; }
@@ -580,5 +580,5 @@ body {
   100% { box-shadow: 0 0 15px #ff4500; }
 }
 #pozicija{
-  font-size: 3vh;
+  font-size: 3dvh;
 }
