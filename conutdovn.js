@@ -132,12 +132,12 @@ async function sve(id,ime,igra){
 
       divIgraca.classList.add('player', rankProtivnika.val());;
       divIgraca.id=sortedPlayers[i]+'Div';
-      divIgraca.style.top='50vh';
+      divIgraca.style.top='50dvh';
       divIgraca.style.left=(12+(i*25))+'%';
       setTimeout(() => pozicijaProtivnika(sortedPlayers[i],i), 2000);
 
       const draft=document.createElement('div');
-      draft.style.top='54vh'
+      draft.style.top='54dvh'
       draft.className='draft';
       draft.id=sortedPlayers[i]+'Draft';
 
@@ -194,9 +194,9 @@ async function pozicijaProtivnika(idProtivnika,i) {
                 postotak+=0.15
               }
             }
-            divic.style.top=(razlikaPozicija+50)+'vh';
+            divic.style.top=(razlikaPozicija+50)+'dvh';
 
-            divdraft.style.top=(razlikaPozicija+54)+'vh';
+            divdraft.style.top=(razlikaPozicija+54)+'dvh';
 
           }
           
@@ -351,8 +351,8 @@ let disciplina=0;
       let zaKraj=(((-1*(bgY-32.5))/1956.5)*100)+'%';
       trakab.style.width=zaKraj;
       bgY += gas(disciplina); // Brzina pomeranja (povećaj ako je presporo)
-      background.style.top = `${bgY}vh`;
-      pomicanje.style.top = `${bgY}vh`;
+      background.style.top = `${bgY}dvh`;
+      pomicanje.style.top = `${bgY}dvh`;
       if( bgY>=-570){
         if(disciplina==1){disciplina++}
         if(disciplina==2){
