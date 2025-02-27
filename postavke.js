@@ -92,7 +92,7 @@ async function ready(user){
 
                         if(!(snapshot7.exists())){
                             const boja=document.getElementById('odabirB').style.backgroundColor;
-                            if(boja!=='white' && !(listaBoja.includes(boja))){
+                            if(boja!=='' && !(listaBoja.includes(boja))){
                                 const postakve={
                                     swim:swim,
                                     bike:bike,
