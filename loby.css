@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     overflow: hidden; /* Sprječava skrolanje */
     width: 100vw;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ html, body {
 
 #vrhDiv{
     width: 100vw;
-    height: 12vh;
+    height: 12dvh;
     background-color: rgb(0, 28, 104);
     display: flex;
     border-bottom: 3px solid rgb(0, 0, 135);
@@ -63,12 +63,12 @@ html, body {
 #izadi{
     background-color: rgb(255, 34, 34);
     color: white;
-    padding: 2vh 3vw;
-    height: 5vh;
+    padding: 2dvh 3vw;
+    height: 5dvh;
     width: 27vw;
     border-bottom-right-radius: 20px;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 2dvh;
     border: 4px solid black;
     text-align: center;
     user-select: none;
@@ -78,47 +78,47 @@ html, body {
     background-color: rgb(117, 114, 114);
     text-align: center;
     color: white;
-    padding: 2vh 2vw;
-    height: 5vh;
+    padding: 2dvh 2vw;
+    height: 5dvh;
     width: 27vw;
     border-bottom-left-radius: 20px;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 2dvh;
     border: 4px solid black;
     margin-left: auto;
 }
 #gameID{
     background-color: white;
-    margin: 2vh 2vw;
+    margin: 2dvh 2vw;
     width: 33vw;
-    height: 5vh;
+    height: 5dvh;
     border: 3px solid black;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 2dvh;
     text-align: center;
-    padding-top: 1vh;
+    padding-top: 1dvh;
 }
 
 
 #igraciDiv{
-    margin: 1vh auto 2vh auto;
+    margin: 1dvh auto 2dvh auto;
     width: 96vw;
-    height: 23vh;
+    height: 23dvh;
     background-color:rgb(0, 28, 104);
     border: 3px solid rgb(0, 0, 135);
     display: flex;
 }
 .poljaPojedinca{
-    height: 21vh;
+    height: 21dvh;
     width: 22vw;
-    margin: 1vh 1vw;
+    margin: 1dvh 1vw;
     background-color: rgb(0, 28, 104);
     display: block;
     text-align: center;   
 }
 .kucica{
     width: 18vw;
-    height: 13vh;
+    height: 13dvh;
     margin: 0 auto;
     border: 2px solid black;
     
@@ -129,14 +129,14 @@ html, body {
 .ime{
     color: white;
     text-transform: uppercase;
-    margin-top: 1vh;
-    font-size: 2vh;
+    margin-top: 1dvh;
+    font-size: 2dvh;
     text-align: center;
 }
 .id{
     color: rgb(176, 176, 176);
-    margin-top: 1vh;
-    font-size: 2vh;
+    margin-top: 1dvh;
+    font-size: 2dvh;
     text-transform: uppercase;
 }
 #poljeIgraca2,#poljeIgraca3,#poljeIgraca4{
@@ -145,22 +145,22 @@ html, body {
 
 
 .praznoPolje{
-    height: 21vh;
+    height: 21dvh;
     width: 22vw;
-    margin: 1vh 1vw;
+    margin: 1dvh 1vw;
     background-color: rgb(0, 28, 104);
     display: block;
     text-align: center;
 }
 .kucicaPrazna{
     width: 18vw;
-    height: 13vh;
+    height: 13dvh;
     margin: 0 auto;
     border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 11vh;
+    font-size: 11dvh;
     cursor: pointer;
     user-select: none;
 }
@@ -168,7 +168,7 @@ html, body {
 
 #postavkeDiv{
     width: 96vw;
-    height: 60vh;
+    height: 60dvh;
     margin: auto;
     position: relative;
     background-color: rgb(0, 28, 104);
@@ -195,8 +195,8 @@ html, body {
 }
 #odabirBoje{
     color: white;
-    font-size: 3vh;
-    margin: 1vh 0;
+    font-size: 3dvh;
+    margin: 1dvh 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,12 +204,12 @@ html, body {
 
 hr{
     width: 86vw;
-    margin: 1vh auto;
+    margin: 1dvh auto;
 }
 #tokeni{
     color: white;
-    font-size: 3vh;
-    margin: 1vh 0;
+    font-size: 3dvh;
+    margin: 1dvh 0;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
@@ -217,7 +217,7 @@ hr{
 
 #grafovi{
     width: 90vw;
-    height: 44vh;
+    height: 44dvh;
     background-color: rgb(31, 57, 87);
     margin: auto;
     border-radius: 8vw;
@@ -227,13 +227,13 @@ hr{
     align-items: center;
 }
 .graf{
-    height: 37vh;
+    height: 37dvh;
     margin: auto;
 }
 .grafNaslov{
     color: white;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 2dvh;
     user-select: none;
 }
 .plusMinus{
@@ -241,13 +241,13 @@ hr{
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 5vh;
+    font-size: 5dvh;
 }
 .plus{
     background-color: green;
-    height: 6vh;
+    height: 6dvh;
     width: 8vw;
-    margin: 1vh 1vw;
+    margin: 1dvh 1vw;
     border-radius: 1vw;
     border: 3px solid black;
     cursor: pointer;
@@ -256,9 +256,9 @@ hr{
 }
 .minus{
     background-color: red;
-    height: 6vh;
+    height: 6dvh;
     width: 8vw;
-    margin: 1vh 1vw;
+    margin: 1dvh 1vw;
     border-radius: 1vw;
     border: 3px solid black;
     cursor: pointer;
@@ -267,19 +267,19 @@ hr{
 .bodovi{
     color: white;
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 3dvh;
 }
 .basGraf{
-    max-height: 22vh;
+    max-height: 22dvh;
     border-radius: 5vw;
     width: 10vw;
-    margin: 1vh auto 0 auto;
+    margin: 1dvh auto 0 auto;
     border: 5px solid white;
     display: block;
 
 }
 .poljeGrafa,.poljeGrafaBike,.poljeGrafaTrcanje{
-    height: 2vh;
+    height: 2dvh;
     width: 10vw;
     border-bottom: 2px solid white;
 }
@@ -287,7 +287,7 @@ hr{
     border-radius:5vw 5vw 0 0 ;
 }
 #poljeGrafaTrcanje1,#poljeGrafaBike1,#poljeGrafa1{
-    height: 2vh;
+    height: 2dvh;
     width: 10vw;
     background-color: red;
     border-radius: 0 0 6vw 6vw;
@@ -296,7 +296,7 @@ hr{
 }
 
 #prijateljiTabla{
-    height: 70vh;
+    height: 70dvh;
     width: 70vw;
     background-color: rgb(170, 170, 170);
     z-index: 2;
@@ -309,22 +309,22 @@ hr{
 }
 #prijateljiBack{
     margin-right: 2vw;
-    margin-top: 2vh;
+    margin-top: 2dvh;
     margin-left: auto;
     background-color: rgb(255, 117, 117);
-    height: 7vh;
-    width: 7vh;
+    height: 7dvh;
+    width: 7dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 3.5vh;
+    border-radius: 3.5dvh;
     border: 4px solid red;
     cursor: pointer;
     user-select: none;
 }
 #tvojiPrijatelji{
     text-align: center;
-    margin: 4vh 0 0 0;
+    margin: 4dvh 0 0 0;
     font-weight: bold;
 }
 hr{
@@ -332,7 +332,7 @@ hr{
     background-color: black;
 }
 #dostupniPrijatelji{
-    max-height: 34.3vh;
+    max-height: 34.3dvh;
     text-align: center;
     overflow-y: scroll; 
     overflow-x: hidden;
@@ -343,8 +343,8 @@ hr{
 #dostupniPrijatelji p{
     background-color: rgb(170, 193, 206);
     width: 55vw;
-    margin: 1vh auto; 
-    padding: 1vh 0;
+    margin: 1dvh auto; 
+    padding: 1dvh 0;
     border-radius: 6px;
     border: 4px solid black;
     user-select: none;
@@ -363,7 +363,7 @@ hr{
 }
 .dodaj{
     width: 10vw;
-    margin: 1vh auto;
+    margin: 1dvh auto;
     background-color: rgb(52, 172, 0);
     padding: 3px;
     border-radius: 9px;
@@ -372,7 +372,7 @@ hr{
     cursor: pointer;
 }
 .JedanPrijatelj{
-    margin: 1vh 1vw;
+    margin: 1dvh 1vw;
     border-radius: 20px;
     border: 5px solid black;
     background-color: #555;
@@ -381,25 +381,25 @@ hr{
 .readyDiv{
     display: flex;
     justify-content: center;
-    font-size: 3.5vh;
+    font-size: 3.5dvh;
     text-transform: uppercase;
     font-weight:bold;
 
 }
 .readyIme{
-    margin: 3vh 3vh 0 0;
+    margin: 3dvh 3dvh 0 0;
     color: black;
 }
 
 .readyIg{
-    margin: 3vh 0 0 0;
+    margin: 3dvh 0 0 0;
     color: rgb(255, 255, 255);
     background-color: green;
 }
 
 #odabirB{
   width: 10vw;
-  height: 5vh;
+  height: 5dvh;
   margin-left: 4vw;
   background-color: white;
 }
@@ -412,7 +412,7 @@ hr{
   padding: 5px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
   z-index: 200;
-  top: 3vh;
+  top: 3dvh;
   left: 10vw;
 
 }
