@@ -1,0 +1,430 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Sprječava skrolanje */
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 3, 36);
+}
+#sve{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+}
+
+#loader {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleAndRotate 2s ease-in-out infinite;
+}
+
+/* Slika unutar loadera */
+#loader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Animacija povećanja, smanjenja i rotacije */
+@keyframes scaleAndRotate {
+  0% {
+      transform: scale(1);
+  }
+  25% {
+      transform: scale(2);
+  }
+  50% {
+      transform: scale(0.5);
+  }
+  75% {
+      transform: scale(1) rotate(0deg);
+  }
+  100% {
+      transform: scale(1) rotate(360deg);
+  }
+}
+
+
+#vrhDiv{
+    width: 100vw;
+    height: 12vh;
+    background-color: rgb(0, 28, 104);
+    display: flex;
+    border-bottom: 3px solid rgb(0, 0, 135);
+}
+#izadi{
+    background-color: rgb(255, 34, 34);
+    color: white;
+    padding: 2vh 3vw;
+    height: 5vh;
+    width: 27vw;
+    border-bottom-right-radius: 20px;
+    font-weight: bold;
+    font-size: 2vh;
+    border: 4px solid black;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+#ready{
+    background-color: rgb(117, 114, 114);
+    text-align: center;
+    color: white;
+    padding: 2vh 2vw;
+    height: 5vh;
+    width: 27vw;
+    border-bottom-left-radius: 20px;
+    font-weight: bold;
+    font-size: 2vh;
+    border: 4px solid black;
+    margin-left: auto;
+}
+#gameID{
+    background-color: white;
+    margin: 2vh 2vw;
+    width: 33vw;
+    height: 5vh;
+    border: 3px solid black;
+    font-weight: bold;
+    font-size: 2vh;
+    text-align: center;
+    padding-top: 1vh;
+}
+
+
+#igraciDiv{
+    margin: 1vh auto 2vh auto;
+    width: 96vw;
+    height: 23vh;
+    background-color:rgb(0, 28, 104);
+    border: 3px solid rgb(0, 0, 135);
+    display: flex;
+}
+.poljaPojedinca{
+    height: 21vh;
+    width: 22vw;
+    margin: 1vh 1vw;
+    background-color: rgb(0, 28, 104);
+    display: block;
+    text-align: center;   
+}
+.kucica{
+    width: 18vw;
+    height: 13vh;
+    margin: 0 auto;
+    border: 2px solid black;
+    
+}
+#kucicaMoja{
+    border: 3px solid gold;
+}
+.ime{
+    color: white;
+    text-transform: uppercase;
+    margin-top: 1vh;
+    font-size: 2vh;
+    text-align: center;
+}
+.id{
+    color: rgb(176, 176, 176);
+    margin-top: 1vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+#poljeIgraca2,#poljeIgraca3,#poljeIgraca4{
+    display: none;
+}
+
+
+.praznoPolje{
+    height: 21vh;
+    width: 22vw;
+    margin: 1vh 1vw;
+    background-color: rgb(0, 28, 104);
+    display: block;
+    text-align: center;
+}
+.kucicaPrazna{
+    width: 18vw;
+    height: 13vh;
+    margin: 0 auto;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11vh;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+#postavkeDiv{
+    width: 96vw;
+    height: 60vh;
+    margin: auto;
+    position: relative;
+    background-color: rgb(0, 28, 104);
+    border: 3px solid rgb(0, 0, 135);
+}
+.animated-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8bd1ba;
+    color: white;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.hidden {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+#odabirBoje{
+    color: white;
+    font-size: 3vh;
+    margin: 1vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    width: 86vw;
+    margin: 1vh auto;
+}
+#tokeni{
+    color: white;
+    font-size: 3vh;
+    margin: 1vh 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+#grafovi{
+    width: 90vw;
+    height: 44vh;
+    background-color: rgb(31, 57, 87);
+    margin: auto;
+    border-radius: 8vw;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.graf{
+    height: 37vh;
+    margin: auto;
+}
+.grafNaslov{
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+    user-select: none;
+}
+.plusMinus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5vh;
+}
+.plus{
+    background-color: green;
+    height: 6vh;
+    width: 8vw;
+    margin: 1vh 1vw;
+    border-radius: 1vw;
+    border: 3px solid black;
+    cursor: pointer;
+    user-select: none;
+
+}
+.minus{
+    background-color: red;
+    height: 6vh;
+    width: 8vw;
+    margin: 1vh 1vw;
+    border-radius: 1vw;
+    border: 3px solid black;
+    cursor: pointer;
+    user-select: none;
+}
+.bodovi{
+    color: white;
+    font-weight: bold;
+    font-size: 3vh;
+}
+.basGraf{
+    max-height: 22vh;
+    border-radius: 5vw;
+    width: 10vw;
+    margin: 1vh auto 0 auto;
+    border: 5px solid white;
+    display: block;
+
+}
+.poljeGrafa,.poljeGrafaBike,.poljeGrafaTrcanje{
+    height: 2vh;
+    width: 10vw;
+    border-bottom: 2px solid white;
+}
+#poljeGrafaTrcanje10,#poljeGrafaBike10,#poljeGrafa10{
+    border-radius:5vw 5vw 0 0 ;
+}
+#poljeGrafaTrcanje1,#poljeGrafaBike1,#poljeGrafa1{
+    height: 2vh;
+    width: 10vw;
+    background-color: red;
+    border-radius: 0 0 6vw 6vw;
+    margin: 0 auto;
+
+}
+
+#prijateljiTabla{
+    height: 70vh;
+    width: 70vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    display: none;
+    
+
+}
+#prijateljiBack{
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+    cursor: pointer;
+    user-select: none;
+}
+#tvojiPrijatelji{
+    text-align: center;
+    margin: 4vh 0 0 0;
+    font-weight: bold;
+}
+hr{
+    width: 60vw;
+    background-color: black;
+}
+#dostupniPrijatelji{
+    max-height: 34.3vh;
+    text-align: center;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    background-color: #d5d4d4;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;    
+}
+#dostupniPrijatelji p{
+    background-color: rgb(170, 193, 206);
+    width: 55vw;
+    margin: 1vh auto; 
+    padding: 1vh 0;
+    border-radius: 6px;
+    border: 4px solid black;
+    user-select: none;
+}
+#dostupniPrijatelji::-webkit-scrollbar {
+    width: 12px;
+    overflow: hidden;
+}
+
+#dostupniPrijatelji::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+#dostupniPrijatelji::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.dodaj{
+    width: 10vw;
+    margin: 1vh auto;
+    background-color: rgb(52, 172, 0);
+    padding: 3px;
+    border-radius: 9px;
+    border: 3px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.JedanPrijatelj{
+    margin: 1vh 1vw;
+    border-radius: 20px;
+    border: 5px solid black;
+    background-color: #555;
+}
+
+.readyDiv{
+    display: flex;
+    justify-content: center;
+    font-size: 3.5vh;
+    text-transform: uppercase;
+    font-weight:bold;
+
+}
+.readyIme{
+    margin: 3vh 3vh 0 0;
+    color: black;
+}
+
+.readyIg{
+    margin: 3vh 0 0 0;
+    color: rgb(255, 255, 255);
+    background-color: green;
+}
+
+#odabirB{
+  width: 10vw;
+  height: 5vh;
+  margin-left: 4vw;
+  background-color: white;
+}
+
+#paletaBoja {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid gray;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  z-index: 200;
+  top: 3vh;
+  left: 10vw;
+
+}
+.bojaOpcija {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+  
+
+

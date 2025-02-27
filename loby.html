@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loby</title>
+    <link rel="stylesheet" href="loby.css">
+
+
+</head>
+<body>
+  <div id="loader" >
+    <img src="logo.webp" alt="Učitavanje">
+  </div>
+    <div id="sve">
+        <div id="vrhDiv">
+            <div id="izadi">LEAVE</div>
+            <div id="gameID">ID: -----</div>
+            <div id="ready">READY</div>
+        </div>
+    
+        <div id="igraciDiv">
+            
+                <div id="mojePolje" class="poljaPojedinca">
+                    <div id="kucicaMoja" class="kucica"></div>
+                    <div id="imeMoje" class="ime"></div>
+                    <div id="idMoj" class="id"></div>
+    
+                </div>
+    
+                <div id="praznoPolje2" class="praznoPolje">
+                    <div id="kucicaPrazna2" class="kucicaPrazna">+</div>
+                </div>
+    
+                <div id="poljeIgraca2" class="poljaPojedinca">
+                    <div id="kucicaIgraca2" class="kucica"></div>
+                    <div id="imeIgraca2" class="ime"></div>
+                    <div id="idIgraca2" class="id"></div>
+    
+                </div>
+    
+                <div id="praznoPolje3" class="praznoPolje">
+                    <div id="kucicaPrazna3" class="kucicaPrazna">+</div>
+                </div>
+                
+                <div id="poljeIgraca3" class="poljaPojedinca">
+                    <div id="kucicaIgraca3" class="kucica"></div>
+                    <div id="imeIgraca3" class="ime"></div>
+                    <div id="idIgraca3" class="id"></div>
+    
+                </div>
+    
+                <div id="praznoPolje4" class="praznoPolje">
+                    <div id="kucicaPrazna4" class="kucicaPrazna">+</div>
+                </div>
+    
+                <div id="poljeIgraca4" class="poljaPojedinca">
+                    <div id="kucicaIgraca4" class="kucica"></div>
+                    <div id="imeIgraca4" class="ime"></div>
+                    <div id="idIgraca4" class="id"></div>
+    
+                </div>
+    
+            
+        </div>
+    
+        <div id="postavkeDiv">
+            <div id="animatedDiv" class="animated-div hidden">
+                <div class="readyDiv">
+                    <p class="readyIme">ti: <p class="readyIg">(ready)</p></p>
+                </div>
+                <div id="zaOstaleSpremne">
+
+                </div>
+            </div>
+            <div id="micanje">
+                <div id="podatciMoji">
+                    <div id="odabirBoje">
+                        <label for="boja">Izaberi svoju boju:</label>
+                        <div id="odabirB"></div>
+
+                    </div>
+
+                    <hr>
+                    <div id="tokeni">15 </div>
+                    <hr>
+                </div>
+        
+                <div id="grafovi">
+                    <div id="plivanjeGraf" class="graf">
+                        <div class="grafNaslov">PLIVANJE</div>
+                        <div class="plusMinus">
+                            <div id="plusSwim" class="plus">+</div>
+                            <div id="minusSwim" class="minus">-</div>
+                        </div>
+                        <div id="bodoviSwim" class="bodovi">1</div>
+                        <div id="basGrafWwim" class="basGraf">
+                            <div class="poljeGrafa" id="poljeGrafa10"></div>
+                            <div class="poljeGrafa" id="poljeGrafa9"></div>
+                            <div class="poljeGrafa" id="poljeGrafa8"></div>
+                            <div class="poljeGrafa" id="poljeGrafa7"></div>
+                            <div class="poljeGrafa" id="poljeGrafa6"></div>
+                            <div class="poljeGrafa" id="poljeGrafa5"></div>
+                            <div class="poljeGrafa" id="poljeGrafa4"></div>
+                            <div class="poljeGrafa" id="poljeGrafa3"></div>
+                            <div class="poljeGrafa" id="poljeGrafa2"></div>
+                            <div id="poljeGrafa1"></div>
+                        </div>
+                    </div>
+        
+                    <div id="bikeGraf" class="graf">
+                        <div class="grafNaslov">BICIKL</div>
+                        <div class="plusMinus">
+                            <div id="plusBike" class="plus">+</div>
+                            <div id="minusBike" class="minus">-</div>
+                        </div>
+                        <div id="bodoviBike" class="bodovi">1</div>
+                        <div id="basGrafBike" class="basGraf">
+                            <div class="poljeGrafaBike" id="poljeGrafaBike10"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike9"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike8"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike7"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike6"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike5"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike4"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike3"></div>
+                            <div class="poljeGrafaBike" id="poljeGrafaBike2"></div>
+                            <div id="poljeGrafaBike1"></div>
+                        </div>
+                    </div>
+        
+                    <div id="trcanjeGraf" class="graf">
+                        <div class="grafNaslov">TRČANJE</div>
+                        <div class="plusMinus">
+                            <div id="plusTrcanje" class="plus">+</div>
+                            <div id="minusTrcanje" class="minus">-</div>
+                        </div>
+                        <div id="bodoviTrcanje" class="bodovi">1</div>
+                        <div id="basGrafTrcanje" class="basGraf">
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje10"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje9"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje8"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje7"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje6"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje5"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje4"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje3"></div>
+                            <div class="poljeGrafaTrcanje" id="poljeGrafaTrcanje2"></div>
+                            <div id="poljeGrafaTrcanje1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="paletaBoja">
+                  <div class="bojaOpcija" style="background-color: darkblue;"></div>
+                  <div class="bojaOpcija" style="background-color: lightblue;"></div>
+                  <div class="bojaOpcija" style="background-color: red;"></div>
+                  <div class="bojaOpcija" style="background-color: yellow;"></div>
+                  <div class="bojaOpcija" style="background-color: green;"></div>
+                  <div class="bojaOpcija" style="background-color: purple;"></div>
+                  <div class="bojaOpcija" style="background-color: pink;"></div>
+                  <div class="bojaOpcija" style="background-color: orange;"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--prijateli div-->
+<div id="prijateljiTabla">
+    <div id="prijateljiBack">X</div>
+    <div id="tvojiPrijatelji">TVOJI PRIJATELJI</div>
+    <hr>
+    <div id="dostupniPrijatelji">
+        
+    </div>
+
+</div>
+
+    <script src="loby.js" type="module"></script>
+    <script src="postavke.js" type="module"></script>
+</body>
+</html>

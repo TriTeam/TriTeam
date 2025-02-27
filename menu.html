@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="dodatne_table.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TriTeam Race</title>
+</head>
+<body>
+  <div id="loader" >
+    <img src="logo.webp" alt="Učitavanje">
+  </div>
+    
+      <button id="login">LOG IN</button>   <!--div za ulogiravanje -->
+    <div id="okvir_pocetna" style="display: none;"> 
+        <div id="Triteam_prijatelji">
+            
+            <a href="https://triteam.site/" id="natrag_na_stranicu">TriTeam</a>
+            <div id="ranking">Ljestvica</div>
+            <div id="dodaj_prijatelja">PRIJATELJI</div>
+        </div>
+        <div id="info_igrac">
+            <div id="ime"></div>
+            <hr>
+            <div id="pobjede_div">
+                <div class="info_naslov">POBJEDE :</div>
+                <div id="pobjede">0</div>
+            </div>
+            <div id="gubitci_div">
+                <div class="info_naslov">UTRKE :</div>
+                <div id="gubitci">0</div>
+            </div>
+            <div id="vrijeme_div">
+              <div class="info_naslov">VRIJEME: </div>
+              <div id="timeBest">0</div>
+          </div>
+            <div id="rankSve">
+              <div style="display: flex;">
+                 <div id="rankLinija"><div id="rankPomicanje"></div></div>
+                 <div id="bodoviRanka"></div>
+              </div>
+                <div id="rank_div">
+                    <div class="info_naslov">RANK :</div>
+                  <div id="kako_rangirat">!</div>
+                  <div id="rank">Beginner</div> 
+                </div> 
+            </div>
+            
+           <div style="display: flex;">
+            <div id="noviZahtjev">
+                !
+            </div>
+            <div id="noviZahtjevIgra">
+                !
+            </div>
+            <div id="idUser_div">
+                <div id="idNaslov">TVOJ ID :</div>
+                <div id="idUser"></div>
+                
+            </div>
+            <div id="rules">!</div>
+           </div>
+           
+        </div>
+        <div id="verzija">TRITEAM RACE - V.DEMO</div>
+        <div id="kreiraj_igru">KREIRAJ IGRU</div>
+        <div id="udi_igru">UĐI U IGRU</div>
+    
+    </div>
+
+
+<!--div za info o rangiranju-->
+<div id="infoRank">
+    <div id="infoRankBack">X</div>
+  <div class="rnaks" id="rnak1"><div class="Beginner">Beginner</div>0-299</div>
+  <div class="rnaks" id="rnak2"><div class="Rookie">Rookie</div>300-699</div>
+  <div class="rnaks" id="rnak3"><div class="Competitor">Competitor</div>700-1199</div>
+  <div class="rnaks" id="rnak4"><div class="Veteran">Veteran</div>1200-1899</div>
+  <div class="rnaks" id="rnak5"><div class="Master">Master</div>1900+</div>
+
+</div>
+
+
+<div id="pravilaDiv">
+  <div id="pravilaBack">X</div>
+  <div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Bodovanje <span class="arrow">▼</span></div>
+    <div class="rule-content">Bodovi se dodjeljuju isključivo kada su svi natjecatelju u utrci završili, a bodovanje se izvršsava ovako:
+      <table>
+        <tr>
+            <th>Broj igrača</th>
+            <th>1. mjesto</th>
+            <th>2. mjesto</th>
+            <th>3. mjesto</th>
+            <th>4. mjesto</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>+50</td>
+            <td>-50</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>+80</td>
+            <td>32</td>
+            <td>-80</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>+100</td>
+            <td>40</td>
+            <td>-40</td>
+            <td>-100</td>
+        </tr>
+    </table>
+    Ovo se odnosi samo ako su svi natjecatelji istog ranka, ako pobjedite igrača večeg ranka dobit ćete više bodova, no ako izgubite od igrača manjeg ranka od vašeg izgubit ćete više bodova.
+    </div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+  <div class="rule-header">Jačina discipline<span class="arrow">▼</span></div>
+  <div class="rule-content">Jačine disciplina ćete prije utrke moći rasporediti po želji, imati ćete 15 tokena koje možete rasporediti po disciplinama pritiskom na plus ili minus iznad željene discipline:
+    <p><img style="width: 100%;" src="odabir.png" alt="">
+    </p>
+    Tu ćete morati i odabrati boju svojeg lika, boja se mora odabrati i necete moći izabrati boju koju je netko već izabrao
+  </div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Brzina u utrci <span class="arrow">▼</span></div>
+    <div class="rule-content">Brzina u utrci ovisi o izboru jačine discipline (1-10) i brzini u kojoj ste (1-5), izračunava se ovom formulom: <p> k*((disciplina/1.5)+(1.8**(brzina+2)))</p><p>disciplina=jacina discipline 1-10</p> <p>brzina= brzina u kojoj ste 1-5</p></div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Energija u utrci <span class="arrow">▼</span></div>
+    <div class="rule-content">Potrošnja energije u utrci izračunava se ovisno o brzini u kojoj ste 1-5 na kvadrat. kada se energija potroši do određene razine nećete moći ići najvišom brzinom. 
+    <table>
+      <th>Brzina:</th>
+            <th>Potrošnja:</th>
+            
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>+1</td>
+            
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0</td>
+            
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>-1</td>
+            
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>-2</td>
+          
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>-4</td>
+        
+    </tr>
+    </table>
+    </div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Zavjetrina<span class="arrow">▼</span></div>
+    <div class="rule-content">Zavjetrina u utrci je označena zelenim poljem iza protivnika, a ako je vrh vaše figure u zoni, energija će se manje trošiti ili nadodavati ovisno u kojoj ste brzini. Ako je protivnik iza vas i možete ga vidjeti, to znači da je on u vašoj zavjetrini, ukoligo je dovoljno daleko iza vas da ga ne vidite ili ispred vas, više nije u vašoj zavjetrini. ukoliko ste u više od jedne zelene zone NEĆETE stedjeti/ dobijati više energije nego kad ste u jednoj zoni! <p><img src="zavjetrina.png" alt=""></p></div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Tranzicije <span class="arrow">▼</span></div>
+    <div class="rule-content">U tranziciji ćete biti sve dok ne odlučite izači iz nje pritiskom na crveni gumb ,,leave T,,. Sve dok ste u tranziciji energija če se puniti. Puniti će se 4 puta više u usporedbi sa zavjetrinom ili 3 puta više u usporedbi sa zonom 1/brzinom 1.
+      <p><img src="leave.png" alt=""></p>
+    </div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+    <div class="rule-header">Prijatelji<span class="arrow">▼</span></div>
+    <div class="rule-content">Prijatelje prije ulaska u igru dodajte i prihvatite, kada napravite igru moći ćete dodati u igru samo već postojeće prijatelje.</div>
+</div>
+<div class="rule" onclick="toggleRule(this)">
+  <div class="rule-header">Izlaz iz igre<span class="arrow">▼</span></div>
+  <div class="rule-content">Kada su svi igrači završili izađite iz igre pritiskom na gumb ,,menu,, u gornjem lijevom kutu.
+  
+  </div>
+</div>
+</div>
+
+<!-- ulaz u drugu igru -->
+<div id="udiIgru">
+    <div id="udiIgruBack">X</div>
+    <input style="text-transform: uppercase;" placeholder="ID IGRE" id="brojIgre" type="text">
+    <button id="join">JOIN</button>
+
+</div>
+
+<!--prijateli div-->
+<div id="prijateljiTabla">
+    <div id="prijateljiBack">X</div>
+    <input style="text-transform: uppercase;" placeholder="ID PRIJATELJA" id="brojPrijatelj" type="text">
+    <button id="dodajPrijatelja">DODAJ</button>
+    <div id="tvojiPrijatelji">TVOJI PRIJATELJI</div>
+    <hr>
+    <div id="dostupniPrijatelji">
+        
+    </div>
+
+</div>
+
+
+<div id="prihvacanjeDiv">
+    <div id="prihvacanjeBack">X</div>
+    <div id="prihvacanjeNaslov">ZAHTJEVI ZA PRIJATELJA</div>
+    <hr>
+    <div id="zaZahtjeve"></div>
+</div>
+
+<div id="prihvacanjeDivIgra">
+    <div id="prihvacanjeBackIgra">X</div>
+    <div id="prihvacanjeNaslovIgra">POZIVAJU TE U IGRU</div>
+    <hr>
+    <div id="zaZahtjeveIgra"></div>
+</div>
+<!---->
+    <script src="kreiranjeIgre.js" type="module"></script>
+    <script src="za_ulogirat_igru.js" type="module"></script>
+    <script type="module" src="rangiranje_info.js"></script>
+    <script type="module" src="doavanjePrijatelja.js"></script>
+    <script type="module" src="prihvacanjePrijatelja.js"></script>
+    <script type="module" src="prihvacanjeOdbijanje.js"></script>
+    <script type="module" src="korisnici.js"></script>
+    <script>
+      function toggleRule(element) {
+      element.classList.toggle("expanded");
+      }
+    </script>
+   
+
+</body>
+</html>

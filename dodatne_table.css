@@ -1,0 +1,428 @@
+#loader {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleAndRotate 2s ease-in-out infinite;
+}
+
+/* Slika unutar loadera */
+#loader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Animacija povećanja, smanjenja i rotacije */
+@keyframes scaleAndRotate {
+  0% {
+      transform: scale(1);
+  }
+  25% {
+      transform: scale(2);
+  }
+  50% {
+      transform: scale(0.5);
+  }
+  75% {
+      transform: scale(1) rotate(0deg);
+  }
+  100% {
+      transform: scale(1) rotate(360deg);
+  }
+}
+
+
+#infoRank,#pravilaDiv{
+    height: 70vh;
+    width: 80vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 70px;
+    border: 5px solid rgb(91, 91, 91);
+    display: none;
+    padding: 5vh 5vw 0 5vw;
+    overflow: scroll;
+}
+#infoRankBack,#pravilaBack{
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+}
+#udiIgru{
+    height: 28vh;
+    width: 70vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    display: none;
+
+}
+#udiIgruBack{
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+    cursor: pointer;
+    user-select: none;
+}
+#brojIgre{
+    height: 6vh;
+    width: 60vw;
+    margin: 1vh 5vw 0 5vw;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+
+}
+#join{
+    height: 6vh;
+    margin: 2vh 15vw 0 15vw;
+    width: 40vw;
+    font-weight: bold;
+    background-color: rgb(64, 182, 64);
+    border-radius: 3vh;
+    border: 5px solid rgb(0, 87, 0);
+    cursor: pointer;
+    user-select: none;
+    font-size: 4vh;
+}
+#prijateljiTabla{
+    height: 70vh;
+    width: 70vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    display: none;
+
+}
+#prijateljiBack{
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+    cursor: pointer;
+    user-select: none;
+}
+#brojPrijatelj{
+    height: 6vh;
+    width: 60vw;
+    margin: 1vh 5vw 0 5vw;
+    text-align: center;
+    font-weight: bold;
+
+}
+#dodajPrijatelja{
+    height: 6vh;
+    margin: 2vh 15vw 0 15vw;
+    width: 40vw;
+    font-weight: bold;
+    background-color: rgb(64, 182, 64);
+    border-radius: 3vh;
+    border: 5px solid rgb(0, 87, 0);
+    cursor: pointer;
+    user-select: none;
+    font-size: 4vh;
+}
+#tvojiPrijatelji{
+    text-align: center;
+    margin: 4vh 0 0 0;
+    font-weight: bold;
+}
+hr{
+    width: 60vw;
+    background-color: black;
+}
+#dostupniPrijatelji{
+    max-height: 34.3vh;
+    text-align: center;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    background-color: #d5d4d4;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;    
+}
+#dostupniPrijatelji p{
+    background-color: rgb(170, 193, 206);
+    width: 55vw;
+    margin: 1vh auto; 
+    padding: 1vh 0;
+    border-radius: 6px;
+    border: 4px solid black;
+    user-select: none;
+}
+#dostupniPrijatelji::-webkit-scrollbar {
+    width: 12px;
+    overflow: hidden;
+}
+
+#dostupniPrijatelji::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+#dostupniPrijatelji::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.JedanPrijatelj{
+    margin: 1vh 1vw;
+    border-radius: 20px;
+    border: 5px solid black;
+    background-color: #555;
+}
+.makniPrijatelja{
+    width: 10vw;
+    margin: 1vh auto;
+    background-color: rgb(203, 67, 67);
+    padding: 3px;
+    border-radius: 9px;
+    border: 3px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#prihvacanjeDivIgra{
+    max-height: 70vh;
+    width: 70vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    display:none;
+}
+#prihvacanjeBackIgra{
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+    cursor: pointer;
+    user-select: none;
+}
+#prihvacanjeNaslovIgra{
+    text-align: center;
+    margin: 4vh 0 0 0;
+    font-weight: bold;
+}
+#zaZahtjeveIgra{
+    max-height: 45vh;
+    text-align: center;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    background-color:  rgb(170, 170, 170);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;    
+}
+
+
+
+#prihvacanjeDiv{
+    max-height: 70vh;
+    width: 70vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 2;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    display:none;
+}
+#prihvacanjeBack{
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-left: auto;
+    background-color: rgb(255, 117, 117);
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5vh;
+    border: 4px solid red;
+    cursor: pointer;
+    user-select: none;
+}
+#prihvacanjeNaslov{
+    text-align: center;
+    margin: 4vh 0 0 0;
+    font-weight: bold;
+}
+#zaZahtjeve{
+    max-height: 45vh;
+    text-align: center;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    background-color:  rgb(170, 170, 170);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;    
+}
+.prihvacanjeIme{
+    background-color: rgb(170, 193, 206);
+    width: 55vw;
+    margin: 2vh auto; 
+    padding: 1vh 0;
+    border-radius: 6px;
+    border: 4px solid black;
+    user-select: none;
+}
+#zaZahtjeve::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+#zaZahtjeve::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.prihvacanjePojedinac{
+    margin: 1vh 1vw;
+    border-radius: 20px;
+    border: 5px solid black;
+    background-color: #555;
+}
+#prihvacanjeOpcije{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+.prihvacanjePrihvati{
+    margin: 0 2vw 0 0;
+    width: 13vw;
+    background-color: rgb(64, 255, 64);
+    padding: 6px;
+    border-radius: 9px;
+    border: 4px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+.prihvacanjeOdbij{
+    width: 13vw;
+    margin: 0 0 0 2vw;
+    background-color: rgb(203, 67, 67);
+    padding: 6px;
+    border-radius: 9px;
+    border: 4px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+#noviZahtjev{
+    background-image: url('no-face.png');
+    height: 6vh;
+    width: 6vh;
+    background-size: cover;  /* Popunjava div */
+    background-position: center; /* Centriranje slike */
+    background-repeat: no-repeat;
+    margin-left: 2vw;
+    border-radius: 3.5vh;
+    border: 1vh solid red;
+    box-shadow: 4px 4px 6px rgb(245, 108, 108);
+    color: red;
+    font-size: 5vh;
+    display: none;
+}
+#noviZahtjevIgra{
+    background-image: url('no-face.png');
+    height: 6vh;
+    width: 6vh;
+    background-size: cover;  /* Popunjava div */
+    background-position: center; /* Centriranje slike */
+    background-repeat: no-repeat;
+    margin-left: 2vw;
+    border-radius: 3.5vh;
+    border: 1vh solid rgb(79, 249, 0);
+    box-shadow: 4px 4px 6px rgb(145, 245, 108);
+    color:  rgb(79, 249, 0);
+    font-size: 5vh;
+    display: none;
+}
+
+
+@media (max-width:5000px){
+    #brojIgre,#brojPrijatelj,#tvojiPrijatelji,#prihvacanjeNaslov, #prihvacanjeNaslovIgra{
+        font-size: 40px;
+    }
+    #dostupniPrijatelji p,.prihvacanjeIme{
+        font-size: 35px;
+    }
+    .prihvacanjePrihvati,.prihvacanjeOdbij{
+        font-size: 27px;
+    }
+}
+@media (max-width:1200px){
+    #brojIgre,#brojPrijatelj,#tvojiPrijatelji,#prihvacanjeNaslov, #prihvacanjeNaslovIgra{
+        font-size: 35px;
+    }
+    #dostupniPrijatelji p,.prihvacanjeIme{
+        font-size: 29px;
+    }
+    .prihvacanjePrihvati,.prihvacanjeOdbij{
+        font-size: 23px;
+    }
+}
+@media (max-width:800px){
+    #brojIgre,#brojPrijatelj,#tvojiPrijatelji,#prihvacanjeNaslov, #prihvacanjeNaslovIgra{
+        font-size: 30px;
+    }
+    #dostupniPrijatelji p,.prihvacanjeIme{
+        font-size: 22px;
+    }
+    .prihvacanjePrihvati,.prihvacanjeOdbij{
+        font-size:  13px;
+    }
+}
+@media (max-width:450px){
+    #brojIgre,#brojPrijatelj,#tvojiPrijatelji,#prihvacanjeNaslov, #prihvacanjeNaslovIgra{
+        font-size: 24px;
+    }
+    #dostupniPrijatelji p,.prihvacanjeIme{
+        font-size: 17px;
+    }
+    .prihvacanjePrihvati,.prihvacanjeOdbij{
+        font-size: 10px;
+    }
+}
+@media (max-width:340px){
+    #brojIgre,#brojPrijatelj,#tvojiPrijatelji,#prihvacanjeNaslov, #prihvacanjeNaslovIgra{
+        font-size: 18px;
+    }
+    #dostupniPrijatelji p,.prihvacanjeIme{
+        font-size: 12px;
+    }
+    .prihvacanjePrihvati,.prihvacanjeOdbij{
+        font-size: 8px;
+    }
+
+}

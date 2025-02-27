@@ -1,0 +1,584 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #bad7dd;
+  overflow: hidden;
+}
+
+/* Loader div */
+#loader {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleAndRotate 2s ease-in-out infinite;
+}
+#loader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@keyframes scaleAndRotate {
+  0% {
+      transform: scale(1);
+  }
+  25% {
+      transform: scale(2);
+  }
+  50% {
+      transform: scale(0.5);
+  }
+  75% {
+      transform: scale(1) rotate(0deg);
+  }
+  100% {
+      transform: scale(1) rotate(360deg);
+  }
+}
+#content {
+  display: none;
+  
+}
+
+
+#gornji{
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+#gas{
+  background-color: rgb(186, 186, 186);
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+#tvojGas{
+  text-align: center;
+  margin:8vh 0 3vh 0;
+  font-size: 3vh;
+  font-weight: bold;
+
+}
+#samoGas{
+  text-align: center;
+  width: 80%;
+  height: 60%;
+  margin: auto;
+}
+#plus{
+  width: 100%;
+  height: 15%;
+  border-radius: 20%;
+  border: 4px solid black;
+  font-size: 5vh;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: green;
+  user-select: none;
+}
+#jacina{
+  background-color: rgb(255, 252, 252);
+  height: 50%;
+  width: 100%;
+  margin: 20% 0;
+  border-radius: 3vh;
+  border: 6px solid black;
+}
+.jak{
+  width: 100%;
+  height: 20%;
+  border-bottom: 4px dotted black;
+}
+#jacina1{
+  background-color: red;
+  height: 20%;
+  width: 100%;
+  border-radius: 0 0 2vh 2vh;
+}
+#jacina5{
+  border-radius:2vh 2vh 0 0 ;
+}
+#minus{
+  width: 100%;
+  height: 15%;
+  border-radius: 20%;
+  border: 4px solid black;
+  font-size: 6vh;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: rgb(236, 1, 1);
+  user-select: none;
+}
+
+#utrka{
+  width: 72%;
+  height: 100%;
+
+  display: flex;
+}
+#polja{
+  height: 100%;
+  width: 93%;
+  overflow: hidden;
+
+}
+#startFin{
+  width: 100%;
+  height: 3%;
+  background-color: #ffffff;
+  display: flex;
+  font-weight: bold;
+  font-size: 2vh;
+  padding: 0 1vh;
+  user-select: none;
+}
+#finish{
+  margin-left: auto;
+}
+#skalaKraj{
+  width: 100%;
+  height: 3%;
+
+  display: flex;
+  border: 1px solid black;
+}
+#st{
+  height: 100%;
+  width: 5%;
+  background-color: red;
+}
+#traka{
+  
+  height: 100%;
+  width: 90%;
+  background-color: green;
+  position: relative;
+  z-index: 1;
+}
+#trakab{
+  margin-left: auto;
+  height: 100%;
+  width: 100%;
+  background-color: wheat;
+  position: relative;
+  z-index: 3;
+  transition: width 0.5s ease-in-out; 
+}
+#kr{
+  margin-left: auto;
+  height: 100%;
+  width: 5%;
+  display: flex;
+}
+#jred{
+  width: 50%;
+  height: 100%;
+}
+#dred{
+  width: 50%;
+  height: 100%;
+}
+.crni{
+  width: 100%;
+  display: flex;
+  height: 25%;
+  background-color: black;
+}
+.bjeli{
+  width: 100%;
+  display: flex;
+  height: 25%;
+  background-color: white;
+}
+#skala{
+  height: 100%;
+  width: 7%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 5.6vh;
+  
+}
+#pomicanjeS{
+  background-color: wheat;
+  position: absolute;
+  width: 100%;
+  height: 2000vh; /* Duža pozadina za scrolling efekt */
+  z-index: 1;
+  top: -1924.5vh;
+}
+#pomicanjeS p{
+  font-size: 2vh;
+  font-weight: bold;
+  margin-top: 15.3vh;
+  writing-mode: vertical-lr; /* Tekst ide vertikalno, s desna na levo */
+  text-orientation: upright;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+}
+
+#podatci{
+  width: 8%;
+  height: 100%;
+}
+
+#energija{
+  height: 10vh;
+  width: 98vw;
+  margin: auto;
+  border: 1vw solid black;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  background-color: white;
+}
+#energija1{
+  height: 100%;
+  border-right: 1vw dotted black;
+  width: 10%;
+  background-color: transparent;
+  position: relative; /* Osigurava da z-index djeluje na ove divove */
+    z-index: 2; 
+}
+#energija2{
+  height: 100%;
+  border-right: 1vw dotted black;
+  width: 13%;
+  background-color: transparent;
+  position: relative; /* Osigurava da z-index djeluje na ove divove */
+    z-index: 2; 
+}
+#energija3{
+  height: 100%;
+  border-right: 1vw dotted black;
+  width: 17%;
+  background-color: transparent;
+  position: relative; /* Osigurava da z-index djeluje na ove divove */
+    z-index: 2; 
+}
+#energija4{
+  height: 100%;
+  border-right: 1vw dotted;
+  width: 20%;
+  background-color: transparent;
+  position: relative; /* Osigurava da z-index djeluje na ove divove */
+    z-index: 2; 
+}
+#energija5{
+  height: 100%;
+  width: 40%;
+  background-color: transparent;
+  position: relative; /* Osigurava da z-index djeluje na ove divove */
+    z-index: 2; 
+  
+}
+#pozadina{
+    height: 100%;
+    width: 100%;
+    background-color: green; /* Početna boja */
+    position: absolute; /* Koristimo absolute positioning za precizno postavljanje */
+    z-index: 1;
+    transition: width 0.5s ease-in-out; 
+}
+
+#podatci{
+  writing-mode: vertical-lr; /* Tekst ide vertikalno, s desna na levo */
+  text-orientation: upright;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#podatci div{
+  height: 20%;
+  width: 80%;
+  border: 3px solid black;
+  margin-top: 5%;
+  border-radius: 2vh;
+  padding: 1vh 0;
+  font-weight: bold;
+  font-size: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#podatci div p{
+  font-size: 2.5vh;
+  font-weight: bold;
+  margin-top: auto;
+  color: red;
+  border-top:3px solid black ;
+  padding-top: 0.5vh;
+  
+}
+
+#countdown {
+  font-size: 100px;
+  font-weight: bold;
+  position: absolute;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: none;
+  z-index: 20;
+}
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 84%;
+  overflow: hidden;
+  z-index: 1;
+ 
+}
+#staze{
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 2000vh; /* Duža pozadina za scrolling efekt */
+  background-size: cover;
+  background-position: center; 
+  top: -1924.5vh;
+
+}
+.player {
+  position: absolute;
+  width: 4vh;
+  height: 4vh;
+  transform: translateX(-50%);
+  z-index: 6;
+  border-radius: 1vh;
+  transition: top 0.5s linear;
+}
+#player{
+  left: 12%;
+  top: 50vh;
+  position: relative;
+  z-index: 40;
+  
+}
+
+#kraj{
+  background-image: url('kraj.png');
+  background-size: cover;
+  background-position: center; 
+  height: 1%;
+  width: 100%;
+  display: flex;
+}
+#runStaze{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  background-color: rgb(2, 130, 40);
+
+}
+#runStaze div{
+  height: 100%;
+  width: 25%;
+  background-image: url('run.png');
+
+  background-position: center; 
+  background-repeat:repeat-y;
+
+}
+#bikeStaze{
+  height: 53%;
+  width: 100%;
+  display: flex;
+  background-color: gray;
+
+}
+#bikeStaze div{
+  height: 100%;
+  width: 25%;
+  background-image: url('boad2.png');
+  background-position: center; 
+
+  background-repeat:repeat-y;
+
+}
+
+#tranzicija2{
+  width: 100%;
+  display: flex;
+  height: 0.5%;
+  background-color: gray;
+}
+#tranzicija1{
+  width: 100%;
+  display: flex;
+  height: 0.5%;
+  background-color: gray;
+}
+#swimStaze{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  background-color: rgb(116, 199, 222);
+
+}
+#swimStaze div{
+  height: 100%;
+  width: 25%;
+  background-image: url('swim.png');
+ 
+  background-position: center; 
+  background-repeat:repeat-y;
+
+}
+
+#imena{
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  display: flex;
+}
+#imena div{
+  color: white;
+  height: 100%;
+  width: 25%;
+  
+  padding: 3% 1% ;
+  font-size: 1.7vh;
+  overflow: hidden;
+ 
+  border: 1px solid white;
+}
+#postoljediv{
+    height: 50vh;
+    width: 90vw;
+    background-color: rgb(170, 170, 170);
+    z-index: 50;
+    position: absolute;
+    border-radius: 40px;
+    border: 5px solid rgb(91, 91, 91);
+    top: 15vh;
+    left: 5vw;
+  display: none;
+  align-items:end;
+  justify-content: center;
+}
+#postoljediv div{
+  text-align: center;
+  width: 25%;
+  display: block;
+
+}
+#prvo,#drugo,#trece,#cetvrto{
+  min-width: 100%;
+  text-align: center;
+  border: 4px solid black;
+  padding-top: 1vh;
+  font-weight: bold;
+  font-size: 4vh;
+}
+#prvo{
+  height: 35vh;
+  background-color: gold;
+}
+#drugo{
+  height: 27vh;
+  background-color: rgb(126, 123, 123);
+}
+
+
+#trece{
+  height: 19vh;
+  background-color: rgb(181, 75, 14);
+}
+#cetvrto{
+  height: 11vh;
+  background-color: rgb(255, 0, 187);
+}
+#prvi,#drugi,#treci,#cetvrti{
+  font-size: 1.8vh;
+  min-width: 100%;
+  text-align: center;
+  margin-bottom: 1vh;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#leaveT{
+  text-align: center;
+  background-color: rgb(249, 66, 66);
+  font-size: 1.5vh;
+  font-weight: bold;
+  margin: 0 5%;
+  padding: 1.5vh 0;
+  height: 7vh;
+  border: 4px solid rgb(94, 0, 0);
+  border-radius: 3vh;
+  display: none;
+  user-select: none;
+  cursor: pointer;
+  
+}
+.draft{
+  height: 20vh;
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 30;
+  transition: top 0.5s linear;
+  background-color: green;
+}
+#izadi{
+  text-align: center;
+  background-color: rgb(249, 66, 66);
+  font-size: 1.5vh;
+  font-weight: bold;
+  margin: 2% 0 0 2%;
+  padding: 1.2vh 0;
+  height: 5vh;
+  border: 3px solid rgb(94, 0, 0);
+  border-radius: 2vh;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  width: 17vw;
+  position: relative;
+  z-index: 300;
+
+}
+#vrijeme{
+  text-align: center;
+  font-size: 2vh;
+  margin: 5vh 0 0 0;
+  font-weight: bold;
+}
+.Beginner { border: 4px solid #696969; }
+.Rookie {border: 4px solid #0056b3; }
+.Competitor {border: 4px solid #1e7e34; }
+.Veteran {border: 8px solid #b8860b; box-shadow: 0 0 10px #ffd700;color: black; }
+.Master { border: 8px solid #8b0000; box-shadow: 0 0 15px #4b1400; animation: pulse 1.5s infinite; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px #ff4500; }
+  50% { box-shadow: 0 0 30px #ff6347; }
+  100% { box-shadow: 0 0 15px #ff4500; }
+}
+#pozicija{
+  font-size: 3vh;
+}
