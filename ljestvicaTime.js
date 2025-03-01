@@ -24,8 +24,11 @@ onValue(vrijednosti, (snapshot) => {
     let rezultat = Object.values(snapshot.val());
     let sviIgraci=[];
     for(let i=0; i<rezultat.length;i++){
-      console.log(rezultat[i].bodoviRanka)
-      sviIgraci.push([rezultat[i].bodoviRanka,rezultat[i].ime,rezultat[i].rank])
+      console.log(rezultat[i].vrijemeBest)
+      if(rezultat[i].vrijemeBest!=undefined){
+        sviIgraci.push([timeToMilliseconds(rezultat[i].vrijemeBest),rezultat[i].ime])
+      }
+      
     }
     sviIgraci.sort((a, b) => b[0] - a[0]);
 
@@ -35,15 +38,15 @@ onValue(vrijednosti, (snapshot) => {
         
         let redak=document.createElement('div');
         let osoba=document.createElement('span');
-        let vrijednost=document.createElement('span');
+        
         let kojije=document.createElement('span')
-        kojije.className='kojije'
-        kojije.innerHTML=sviIgraci[i][0];
+        kojije.className='kojije2'
+        kojije.innerHTML=millisecondsToTime(sviIgraci[i][0]);
         redak.className='redak'
         osoba.className='osoba'
-        vrijednost.classList.add(sviIgraci[i][2]);
+    
         osoba.innerHTML=sviIgraci[i][1]
-        vrijednost.innerHTML=sviIgraci[i][2]
+        
         
         
         
@@ -51,9 +54,47 @@ onValue(vrijednosti, (snapshot) => {
         redak.append(kojije)
         redak.append(osoba)
         
-        redak.append(vrijednost)
+        
     
     }
     
 
 })
+
+
+function timeToMilliseconds(time) {
+  let parts = time.split(':');
+  if (parts.length !== 3) {
+    console.error('Neispravan format vremena:', time);
+    return 0;
+  }
+  
+  let minutes = parseInt(parts[0]);
+  let seconds = parseInt(parts[1]);
+  let tenths = parseInt(parts[2]);
+  
+  if (isNaN(minutes) || isNaN(seconds) || isNaN(tenths)) {
+    console.error('Neispravan format vremena:', time);
+    return 0;
+  }
+
+  return (minutes * 60 * 1000) + (seconds * 1000) + (tenths * 100);
+}
+
+
+function millisecondsToTime(ms) {
+  if (isNaN(ms) || ms < 0) {
+    console.error('Neispravan broj milisekundi:', ms);
+    return '00:00:0';
+  }
+  
+  let minutes = Math.floor(ms / (60 * 1000));
+  ms %= 60 * 1000;
+  let seconds = Math.floor(ms / 1000);
+  let tenths = Math.floor((ms % 1000) / 100);
+  
+  let formattedMinutes = String(minutes).padStart(2, '0');
+  let formattedSeconds = String(seconds).padStart(2, '0');
+  
+  return `${formattedMinutes}:${formattedSeconds}:${tenths}`;
+}

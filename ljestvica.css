@@ -1,0 +1,168 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Sprječava skrolanje */
+  width: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(3, 3, 36);
+}
+#container{
+  width: 100%;
+  flex-direction: column;
+  min-height: 100dvh;
+;
+}
+  #m-ž{
+    
+    display: flex;
+    height: 40px;
+    font-size: 27px;
+    font-weight: bold;
+    margin: 2px 0;}
+#m{
+    color: white;
+    flex: 1;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 42px;
+    background-color: #006aba;
+    text-decoration: underline;}
+#ž{
+  color: white;
+  line-height: 40px;
+  flex: 1;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #bd00a1;
+  text-decoration: underline;}
+.naslov{
+  text-align: center;
+  background-color: rgb(16, 34, 71);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 2px;
+  border-bottom: 1px solid rgb(108, 125, 154);
+  padding: 3px 0;}
+
+#poredak{
+  width: 90%;
+  margin: 0 auto;
+}
+.redak{
+  width: 100%;
+  display: flex;
+  background-color: #1b3e60;
+  color: white;
+  font-size: 2vh;
+  font-weight: bold;
+  margin: 4px 0;
+  padding: 6px 2px;}
+.vrijednost{
+  background-color: rgb(140, 34, 34);
+  float: right;
+  padding: 2px 4px;}
+.kojije,.kojije2{
+  font-size: 1.7vh;
+  display: flex;
+
+  min-height: 80%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  margin-right: 0.5vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vh;}
+.kojije{
+  width: 15%;
+}
+.kojije2{
+  width: 30%;
+}
+.osoba{
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#loader {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleAndRotate 2s ease-in-out infinite;
+}
+#loader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@keyframes scaleAndRotate {
+  0% {
+      transform: scale(1);
+  }
+  25% {
+      transform: scale(2);
+  }
+  50% {
+      transform: scale(0.5);
+  }
+  75% {
+      transform: scale(1) rotate(0deg);
+  }
+  100% {
+      transform: scale(1) rotate(360deg);
+  }
+}
+#container{
+  display: none;
+  
+}
+
+.Beginner {
+  text-align: center;      margin-left: auto;
+  font-weight: bold;
+  padding: 0.4dvh 1vw;
+  border-radius: 15px;
+  font-size: 1.8dvh; background-color: #808080; border: 8px solid #696969; }
+.Rookie {
+  text-align: center;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 0.5dvh 1vw;
+  border-radius: 15px;
+  font-size: 1.8dvh; background-color: #007BFF; border: 8px solid #0056b3; }
+.Competitor {
+  text-align: center
+  ;margin-left: auto;
+  font-weight: bold;
+  padding: 0.5dvh 1vw;
+  border-radius: 15px;
+  font-size: 1.8dvh; background-color: #28A745; border: 8px solid #1e7e34; }
+.Veteran {
+  text-align: center;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 0.5dvh 1vw;
+  border-radius: 15px;
+  font-size: 1.8dvh; background-color: #FFD700; border: 8px solid #b8860b; box-shadow: 0 0 20px #ffd700;color: black; }
+.Master {
+  text-align: center;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 0.5dvh 1vw;
+  border-radius: 15px;
+  font-size: 1.8dvh; background-color: #DC143C; border: 8px solid #8b0000; box-shadow: 0 0 15px #4b1400; animation: pulse 1.5s infinite; }
+
+@keyframes pulse {
+  0% {transform: scale(1); box-shadow: 0 0 15px #ff4500; }
+  50% {transform: scale(1.01); box-shadow: 0 0 40px #ff6347; }
+  100% {transform: scale(1); box-shadow: 0 0 15px #ff4500; }
+}
