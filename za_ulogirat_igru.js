@@ -38,6 +38,9 @@ let firstLoad2 = true; // Praćenje prvog učitavanja
 let sadOdPrije;
 let sadOdPrije2;
 let ucitavanje=true;
+const ljestvica=document.getElementById('ranking');
+ljestvica.addEventListener('click',function() {window.location.href='ljestvica.html'});
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
