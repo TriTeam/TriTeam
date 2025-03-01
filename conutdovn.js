@@ -242,7 +242,7 @@ function energija(){
     if(ggg==1 || ggg==-1){
       if(ggg==-1){
         if(postotak<=100){
-          postotak=postotak-(0.10*ggg);
+          postotak=postotak-(0.16*ggg);
 
         }
   
@@ -267,7 +267,7 @@ function energija(){
     }
   }else{
     if(postotak<=100){
-      postotak=postotak+0.4;
+      postotak=postotak+0.2;
     }
     
   }
@@ -388,6 +388,7 @@ let disciplina=0;
 
 async function upisVremena() {
   const timeRef = ref(db, 'IGRA/KORISNICI/' + mineid + '/vrijemeBest');
+  const timeRef2 = ref(db, 'IGRA/KORISNICI/' + mineid);
   const bestTimeRef = ref(db, 'IGRA/BEST');
   
   const [timeSnapshot, bestTimeSnapshot] = await Promise.all([get(timeRef), get(bestTimeRef)]);
@@ -398,7 +399,10 @@ async function upisVremena() {
   if (timeSnapshot.exists()) {
     const vrijemeMoje = timeToMilliseconds(timeSnapshot.val());
     if (vrijemeOvo < vrijemeMoje) {
-      await update(timeRef, vrijeme.innerHTML);  // Ažuriraj samo ako je novo vrijeme bolje
+      const newmy={
+        vrjemeBest:vrijeme.innerHTML
+      }
+      await update(timeRef2, newmy);  // Ažuriraj samo ako je novo vrijeme bolje
     }
   } else {
     await set(timeRef, vrijeme.innerHTML);  // Postavi vrijeme ako ne postoji
