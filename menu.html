@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="dodatne_table.css">
+    <link rel="stylesheet" href="prviPut.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -48,7 +49,7 @@
                 </div> 
             </div>
             
-           <div style="display: flex;">
+           <div style="display: flex; position: relative;">
             <div id="noviZahtjev">
                 !
             </div>
@@ -62,8 +63,9 @@
             </div>
             <div id="rules">!</div>
            </div>
-           
+           <div id="tutorial">TUTORIAL</div>
         </div>
+
         <div id="verzija">TRITEAM RACE - V.DEMO</div>
         <div id="kreiraj_igru">KREIRAJ IGRU</div>
         <div id="udi_igru">UĐI U IGRU</div>
@@ -226,12 +228,14 @@
     <hr>
     <div id="zaZahtjeveIgra"></div>
 </div>
+<div id="crnaMagla"
+></div>
 <!---->
     <script src="kreiranjeIgre.js" type="module"></script>
     <script src="za_ulogirat_igru.js" type="module"></script>
     <script type="module" src="rangiranje_info.js"></script>
     <script type="module" src="doavanjePrijatelja.js"></script>
-    <script type="module" src="prihvacanjePrijatelja.js"></script>
+
     <script type="module" src="prihvacanjeOdbijanje.js"></script>
     <script type="module" src="korisnici.js"></script>
     <script>
@@ -239,7 +243,7 @@
       element.classList.toggle("expanded");
       }
     </script>
-   
+   <script type="module" src="prviPutMenu.js"></script>
 
 </body>
 </html>
