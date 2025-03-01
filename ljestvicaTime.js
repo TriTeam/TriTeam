@@ -30,7 +30,7 @@ onValue(vrijednosti, (snapshot) => {
       }
       
     }
-    sviIgraci.sort((a, b) => b[0] - a[0]);
+    sviIgraci.sort((a, b) => b[0]+ a[0]);
 
     console.log(sviIgraci);
 
