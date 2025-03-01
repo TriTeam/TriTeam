@@ -21,6 +21,7 @@ const auth=getAuth();
 
 
 const izadi=document.getElementById('izadi');
+const staze=document.getElementById('staze');
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -35,20 +36,41 @@ onAuthStateChanged(auth, (user) => {
 
 async function brisanje(id) {
   const refi=ref(db, 'IGRA/KORISNICI/'+id+'/trenutnaIgra');
+  const put2=ref(db, 'IGRA/KORISNICI/'+id);
+  const snapshot3=await get(put2)
   const snapshot=await get(refi);
   const put=ref(db, 'IGRA/IGRE/'+snapshot.val())
   const snapshot2=await get(put)
   console.log(snapshot2.val())
-  if(snapshot2.exists()){
-    if(snapshot2.val().glavni==id){
-      remove(put)
-      remove(refi);
-    }else{
-      remove(refi);
+  const brIgr=snapshot2.val().brojIgraca-1;
+  const novalist= snapshot2.val().igraci.filter(item => item !== id)
+  if(snapshot3.val().bodoviRanka>100){
+    if(snapshot2.val().brojIgraca==2 || snapshot2.val().brojIgraca==3){
+      const rankBod=snapshot3.val().bodoviRanka-50;
+      const novo2={
+        bodoviRanka:rankBod
+      }
+      update(put2,novo2)
+    }else if(snapshot2.val().brojIgraca==4){
+      const rankBod=snapshot3.val().bodoviRanka-100;
+      const novo2={
+        bodoviRanka:rankBod
+      }
+      update(put2,novo2)
     }
-  }else{
-    remove(refi);
   }
+  if(snapshot2.val().brojIgraca>=2){
+    const novo={
+      brojIgraca:brIgr,
+      igraci:novalist
+    };
+    update(put,novo);
+  }else{
+    remove(put)
+  }
+    
+  remove(refi);
+  
   
   
 
