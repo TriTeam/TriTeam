@@ -14,7 +14,7 @@ html, body {
     height: 100dvh;
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
-    z-index: 1;
+
     position: absolute;
     display: none;
  
@@ -42,6 +42,7 @@ html, body {
     border: 5px solid green;
     background-color: rgb(7, 7, 57);
     margin: 1dvh auto;
+    position: relative;
     
 }
 #dodaj_prijatelja{
@@ -56,6 +57,7 @@ html, body {
     margin: 3dvh 5vw 0 5vw;
     border-radius: 30px;   
     text-align: center;
+    position: relative;
     
 }
 #ime{
@@ -220,6 +222,7 @@ hr{
   border-radius: 35px;
   border: 4px solid white;
   background-color: gray;
+  position: relative;
 }
 #kreiraj_igru, #udi_igru{
     color: white;
@@ -234,7 +237,7 @@ hr{
     margin: 2dvh 1vw 1dvh 10.5vw;
     cursor: pointer;
     user-select: none;
-    
+    position: relative;
     background-color: rgb(7, 7, 57);
 }
 #kreiraj_igru{
@@ -313,4 +316,14 @@ th {
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+#tutorial{
+  background-color: lightgreen;
+  width: 30vw;
+  padding: 0.5vh;
+  font-size: 2vh;
+  font-weight: bold;
+  margin: 2vh 0 0 2vw;
+  border-radius: 2vh;
 
+
+}
