@@ -38,37 +38,45 @@ async function brisanje(id) {
   const refi=ref(db, 'IGRA/KORISNICI/'+id+'/trenutnaIgra');
   const put2=ref(db, 'IGRA/KORISNICI/'+id);
   const snapshot3=await get(put2)
-  const snapshot=await get(refi);
-  const put=ref(db, 'IGRA/IGRE/'+snapshot.val())
-  const snapshot2=await get(put)
-  console.log(snapshot2.val())
-  const brIgr=snapshot2.val().brojIgraca-1;
-  const novalist= snapshot2.val().igraci.filter(item => item !== id)
-  if(snapshot3.val().bodoviRanka>100){
-    if(snapshot2.val().brojIgraca==2 || snapshot2.val().brojIgraca==3){
-      const rankBod=snapshot3.val().bodoviRanka-50;
-      const novo2={
-        bodoviRanka:rankBod
+  if(snapshot3.val().ucitavanja.tutorial==false && snapshot3.val().ucitavanja.igra>=2){
+    const snapshot=await get(refi);
+    const put=ref(db, 'IGRA/IGRE/'+snapshot.val())
+    const snapshot2=await get(put)
+    console.log(snapshot2.val())
+    const brIgr=snapshot2.val().brojIgraca-1;
+    const novalist= snapshot2.val().igraci.filter(item => item !== id)
+    if(snapshot3.val().bodoviRanka>100){
+      if(snapshot2.val().brojIgraca==2 || snapshot2.val().brojIgraca==3){
+        const rankBod=snapshot3.val().bodoviRanka-50;
+        const novo2={
+          bodoviRanka:rankBod
+        }
+        update(put2,novo2)
+      }else if(snapshot2.val().brojIgraca==4){
+        const rankBod=snapshot3.val().bodoviRanka-100;
+        const novo2={
+          bodoviRanka:rankBod
+        }
+        update(put2,novo2)
       }
-      update(put2,novo2)
-    }else if(snapshot2.val().brojIgraca==4){
-      const rankBod=snapshot3.val().bodoviRanka-100;
-      const novo2={
-        bodoviRanka:rankBod
-      }
-      update(put2,novo2)
     }
-  }
-  if(snapshot2.val().brojIgraca>=2){
-    const novo={
-      brojIgraca:brIgr,
-      igraci:novalist
-    };
-    update(put,novo);
-  }else{
-    remove(put)
-  }
-    
+    if(snapshot2.val().brojIgraca>=2){
+      const novo={
+        brojIgraca:brIgr,
+        igraci:novalist
+      };
+      update(put,novo);
+    }else{
+      remove(put)
+    }
+      
+    }else{
+      const ticput=ref(db,'IGRA/KORISNICI/'+id+'/ucitavanja')
+      const novv={
+        tutorial:false
+      }
+      update(ticput,novv)
+    }
   remove(refi);
   
   
