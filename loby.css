@@ -11,7 +11,6 @@ html, body {
 }
 #sve{
     display: none;
-    z-index: 1;
     position: absolute;
     text-align: center;
 }
@@ -163,6 +162,12 @@ html, body {
     font-size: 11dvh;
     cursor: pointer;
     user-select: none;
+    background-color: wheat;
+    opacity: 0.7;
+
+}
+#kucicaPrazna2{
+  position: relative;
 }
 
 
