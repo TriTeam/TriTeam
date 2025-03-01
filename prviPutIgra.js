@@ -56,7 +56,7 @@ async function provjeraPrviPut(id) {
   }else if(snapshot.val().tutorial==true){
     const novo={
       igra:menuUlogiranje,
-      tutorial:false
+
     }
     update(put, novo)
     setTimeout(()=>tutorial(),1500)
