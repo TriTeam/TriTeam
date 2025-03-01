@@ -21,6 +21,7 @@ setTimeout(function(){
 const vrijednosti = ref(database, 'IGRA/KORISNICI');
 
 onValue(vrijednosti, (snapshot) => {
+    poredak.innerHTML=''
     let rezultat = Object.values(snapshot.val());
     let sviIgraci=[];
     for(let i=0; i<rezultat.length;i++){
@@ -35,7 +36,25 @@ onValue(vrijednosti, (snapshot) => {
     console.log(sviIgraci);
 
     for(let i=0;i<sviIgraci.length;i++){
-        
+        if(i==0){
+          let redak=document.createElement('div');
+          let osoba=document.createElement('span');
+          
+          let kojije=document.createElement('span')
+          kojije.className='kojije2Z'
+          kojije.innerHTML=millisecondsToTime(sviIgraci[i][0]);
+          redak.className='redakZ'
+          osoba.className='osobaZ'
+      
+          osoba.innerHTML=sviIgraci[i][1]
+          
+          
+          
+          
+          poredak.append(redak)
+          redak.append(kojije)
+          redak.append(osoba)
+        }
         let redak=document.createElement('div');
         let osoba=document.createElement('span');
         
