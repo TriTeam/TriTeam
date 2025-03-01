@@ -79,6 +79,7 @@ body {
   width: 80%;
   height: 60%;
   margin: auto;
+  position: relative;
 }
 #plus{
   width: 100%;
@@ -241,6 +242,8 @@ body {
 #podatci{
   width: 8%;
   height: 100%;
+  position: relative;
+
 }
 
 #energija{
