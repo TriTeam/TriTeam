@@ -274,7 +274,16 @@ async function kreiranjeSpremnog(id, sN,ime) {
     }
 }
 
+async function tutoriala(mojid,idigre) {
+  const put =ref(db,'IGRA/KORISNICI/'+mojid+'/ucitavanja');
+  const snapshot=await get(put);
 
+  if(snapshot.val().igra==0 ||snapshot.val().tutorial==true){
+    const putigra=ref(db,'IGRA/IGRE/'+idigre)
+    remove(putigra);
+    window.location.href='igra.html'
+  }
+}
 
 async function dodavanjeNovogIgraca(dataIgre,mojid) {
     const brojIgraca=dataIgre.brojIgraca;
@@ -284,6 +293,8 @@ async function dodavanjeNovogIgraca(dataIgre,mojid) {
     if(brojIgraca>1){
         spreman.style.backgroundColor='green'
         spreman.addEventListener('click', () => ready());
+    }else{
+      spreman.addEventListener('click', () => tutoriala(mojid,idIgre));
     }
 
     if(brojIgraca==2){
