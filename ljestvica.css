@@ -83,6 +83,39 @@ html, body {
 .kojije2{
   width: 30%;
 }
+.redakZ{
+  width: 100%;
+  display: flex;
+  background-color: #2b5c8d;
+  color: gold;
+  font-size: 2vh;
+  font-weight: bold;
+  margin: 2.5vh 0;
+  padding: 6px 2px;
+  border: 3px solid gold;
+  border-radius: 1vh;
+  box-shadow: 0 0 15px gold;
+}
+.kojije2Z{
+  font-size: 1.7vh;
+  display: flex;
+  width: 30%;
+  min-height: 80%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  margin-right: 0.5vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vh;
+  border: 2px solid gold;
+}
+.osobaZ{
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .osoba{
   width: 55%;
   display: flex;
