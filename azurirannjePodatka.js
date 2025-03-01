@@ -22,7 +22,6 @@ let uppisano=true;
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-      console.log(prvih6Alfanumericki(user.uid))
       idutrke(prvih6Alfanumericki(user.uid))
   } else {
       console.log("error");
@@ -112,7 +111,7 @@ async function rangiranje(igrica, id) {
   }
 
   // Održavanje bodova na 0 ako je igrač izgubio
-  trenutniBodovi += Math.max(0, Math.round(points)); // Ako je rezultat negativan, ostaje 0
+  trenutniBodovi = Math.max(0, trenutniBodovi + Math.round(points)); // Ako je rezultat negativan, ostaje 0
   console.log("Konačni bodovi:", trenutniBodovi);
 
   // Ako je igrač pobijedio (1. mjesto), povećaj broj pobjeda
