@@ -1,7 +1,7 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Sprječava skrolanje */
   width: 100vw;
   min-height: 100dvh;
   display: flex;
@@ -9,42 +9,43 @@ html, body {
   align-items: center;
   background-color: rgb(3, 3, 36);
 }
-#container{
+#container {
   width: 100%;
   flex-direction: column;
   min-height: 100dvh;
-;
 }
-  #m-ž{
-    
-    height: 8vh;
-    display: flex;
-    font-size: 4vh;
-    font-weight: bold;
-    margin: 2px 0;}
-#m{
-    color: white;
-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    text-align: center;
-height: 100%;
-    background-color: #006aba;
-    text-decoration: underline;}
-#ž{
+#m-ž {
+  height: 8vh;
+  display: flex;
+  font-size: 4vh;
+  font-weight: bold;
+  margin: 2px 0;
+}
+#m {
+  color: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  text-align: center;
+  height: 100%;
+  background-color: #006aba;
+  text-decoration: underline;
+}
+#ž {
   width: 50%;
   color: white;
   height: 100%;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   text-align: center;
   background-color: #bd00a1;
-  text-decoration: underline;}
-.naslov{
+  text-decoration: underline;
+}
+.naslov {
   text-align: center;
   background-color: rgb(16, 34, 71);
   color: white;
@@ -52,13 +53,14 @@ height: 100%;
   font-weight: bold;
   margin-top: 2px;
   border-bottom: 1px solid rgb(108, 125, 154);
-  padding: 3px 0;}
+  padding: 3px 0;
+}
 
-#poredak{
+#poredak {
   width: 90%;
   margin: 0 auto;
 }
-.redak{
+.redak {
   width: 100%;
   display: flex;
   background-color: #1b3e60;
@@ -66,12 +68,15 @@ height: 100%;
   font-size: 2vh;
   font-weight: bold;
   margin: 4px 0;
-  padding: 6px 2px;}
-.vrijednost{
+  padding: 6px 2px;
+}
+.vrijednost {
   background-color: rgb(140, 34, 34);
   float: right;
-  padding: 2px 4px;}
-.kojije,.kojije2{
+  padding: 2px 4px;
+}
+.kojije,
+.kojije2 {
   font-size: 1.7vh;
   display: flex;
 
@@ -82,14 +87,15 @@ height: 100%;
   margin-right: 0.5vh;
   justify-content: center;
   align-items: center;
-  border-radius: 2vh;}
-.kojije{
+  border-radius: 2vh;
+}
+.kojije {
   width: 15%;
 }
-.kojije2{
+.kojije2 {
   width: 30%;
 }
-.redakZ{
+.redakZ {
   width: 100%;
   display: flex;
   background-color: #2b5c8d;
@@ -102,20 +108,19 @@ height: 100%;
   border-radius: 1vh;
   box-shadow: 0 0 15px gold;
 }
-#menu{
+#menu {
   font-size: 4vh;
   color: white;
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 
-    background-color: #006aba;
-    text-decoration: underline;
+  background-color: #006aba;
+  text-decoration: underline;
 }
-.kojije2Z{
+.kojije2Z {
   font-size: 1.7vh;
   display: flex;
   width: 30%;
@@ -129,18 +134,17 @@ height: 100%;
   border-radius: 2vh;
   border: 2px solid gold;
 }
-.osobaZ{
+.osobaZ {
   width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.osoba{
+.osoba {
   width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 #loader {
   width: 120px;
@@ -158,63 +162,91 @@ height: 100%;
 }
 @keyframes scaleAndRotate {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   25% {
-      transform: scale(2);
+    transform: scale(2);
   }
   50% {
-      transform: scale(0.5);
+    transform: scale(0.5);
   }
   75% {
-      transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   100% {
-      transform: scale(1) rotate(360deg);
+    transform: scale(1) rotate(360deg);
   }
 }
-#container{
+#container {
   display: none;
-  
 }
 
 .Beginner {
-  text-align: center;      margin-left: auto;
+  text-align: center;
+  margin-left: auto;
   font-weight: bold;
   padding: 0.4dvh 1vw;
   border-radius: 15px;
-  font-size: 1.8dvh; background-color: #808080; border: 8px solid #696969; }
+  font-size: 1.8dvh;
+  background-color: #808080;
+  border: 8px solid #696969;
+}
 .Rookie {
   text-align: center;
   margin-left: auto;
   font-weight: bold;
   padding: 0.5dvh 1vw;
   border-radius: 15px;
-  font-size: 1.8dvh; background-color: #007BFF; border: 8px solid #0056b3; }
+  font-size: 1.8dvh;
+  background-color: #007bff;
+  border: 8px solid #0056b3;
+}
 .Competitor {
-  text-align: center
-  ;margin-left: auto;
+  text-align: center;
+  margin-left: auto;
   font-weight: bold;
   padding: 0.5dvh 1vw;
   border-radius: 15px;
-  font-size: 1.8dvh; background-color: #28A745; border: 8px solid #1e7e34; }
+  font-size: 1.8dvh;
+  background-color: #28a745;
+  border: 8px solid #1e7e34;
+}
 .Veteran {
   text-align: center;
   margin-left: auto;
   font-weight: bold;
   padding: 0.5dvh 1vw;
   border-radius: 15px;
-  font-size: 1.8dvh; background-color: #FFD700; border: 8px solid #b8860b; box-shadow: 0 0 20px #ffd700;color: black; }
+  font-size: 1.8dvh;
+  background-color: #ffd700;
+  border: 8px solid #b8860b;
+  box-shadow: 0 0 20px #ffd700;
+  color: black;
+}
 .Master {
   text-align: center;
   margin-left: auto;
   font-weight: bold;
   padding: 0.5dvh 1vw;
   border-radius: 15px;
-  font-size: 1.8dvh; background-color: #DC143C; border: 8px solid #8b0000; box-shadow: 0 0 15px #4b1400; animation: pulse 1.5s infinite; }
+  font-size: 1.8dvh;
+  background-color: #dc143c;
+  border: 8px solid #8b0000;
+  box-shadow: 0 0 15px #4b1400;
+  animation: pulse 1.5s infinite;
+}
 
 @keyframes pulse {
-  0% {transform: scale(1); box-shadow: 0 0 15px #ff4500; }
-  50% {transform: scale(1.01); box-shadow: 0 0 40px #ff6347; }
-  100% {transform: scale(1); box-shadow: 0 0 15px #ff4500; }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px #ff4500;
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 0 40px #ff6347;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px #ff4500;
+  }
 }
