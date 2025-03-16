@@ -31,35 +31,33 @@ body {
 }
 @keyframes scaleAndRotate {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   25% {
-      transform: scale(2);
+    transform: scale(2);
   }
   50% {
-      transform: scale(0.5);
+    transform: scale(0.5);
   }
   75% {
-      transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   100% {
-      transform: scale(1) rotate(360deg);
+    transform: scale(1) rotate(360deg);
   }
 }
 #content {
   display: none;
-  
 }
 
-
-#gornji{
+#gornji {
   display: flex;
   height: 90dvh;
   width: 100vw;
   justify-content: center;
   align-items: center;
 }
-#gas{
+#gas {
   background-color: rgb(186, 186, 186);
   width: 20%;
   height: 100%;
@@ -67,21 +65,20 @@ body {
   align-items: center;
   display: block;
 }
-#tvojGas{
+#tvojGas {
   text-align: center;
-  margin:8dvh 0 3dvh 0;
+  margin: 8dvh 0 3dvh 0;
   font-size: 3dvh;
   font-weight: bold;
-
 }
-#samoGas{
+#samoGas {
   text-align: center;
   width: 80%;
   height: 60%;
   margin: auto;
   position: relative;
 }
-#plus{
+#plus {
   width: 100%;
   height: 15%;
   border-radius: 20%;
@@ -94,7 +91,7 @@ body {
   background-color: green;
   user-select: none;
 }
-#jacina{
+#jacina {
   background-color: rgb(255, 252, 252);
   height: 50%;
   width: 100%;
@@ -102,21 +99,21 @@ body {
   border-radius: 3dvh;
   border: 6px solid black;
 }
-.jak{
+.jak {
   width: 100%;
   height: 20%;
   border-bottom: 4px dotted black;
 }
-#jacina1{
+#jacina1 {
   background-color: red;
   height: 20%;
   width: 100%;
   border-radius: 0 0 2dvh 2dvh;
 }
-#jacina5{
-  border-radius:2dvh 2dvh 0 0 ;
+#jacina5 {
+  border-radius: 2dvh 2dvh 0 0;
 }
-#minus{
+#minus {
   width: 100%;
   height: 15%;
   border-radius: 20%;
@@ -130,19 +127,18 @@ body {
   user-select: none;
 }
 
-#utrka{
+#utrka {
   width: 72%;
   height: 100%;
 
   display: flex;
 }
-#polja{
+#polja {
   height: 100%;
   width: 93%;
   overflow: hidden;
-
 }
-#startFin{
+#startFin {
   width: 100%;
   height: 3%;
   background-color: #ffffff;
@@ -152,73 +148,71 @@ body {
   padding: 0 1dvh;
   user-select: none;
 }
-#finish{
+#finish {
   margin-left: auto;
 }
-#skalaKraj{
+#skalaKraj {
   width: 100%;
   height: 3%;
 
   display: flex;
   border: 1px solid black;
 }
-#st{
+#st {
   height: 100%;
   width: 5%;
   background-color: red;
 }
-#traka{
-  
+#traka {
   height: 100%;
   width: 90%;
   background-color: green;
   position: relative;
   z-index: 1;
 }
-#trakab{
+#trakab {
   margin-left: auto;
   height: 100%;
   width: 100%;
   background-color: wheat;
   position: relative;
   z-index: 3;
-  transition: width 0.5s ease-in-out; 
+  transition: width 0.5s ease-in-out;
 }
-#kr{
+#kr {
   margin-left: auto;
   height: 100%;
   width: 5%;
   display: flex;
 }
-#jred{
+#jred {
   width: 50%;
   height: 100%;
 }
-#dred{
+#dred {
   width: 50%;
   height: 100%;
 }
-.crni{
+.crni {
   width: 100%;
   display: flex;
   height: 25%;
   background-color: black;
 }
-.bjeli{
+.bjeli {
   width: 100%;
   display: flex;
   height: 25%;
   background-color: white;
 }
-#skala{
+#skala {
   height: 100%;
   width: 7%;
   overflow: hidden;
   position: relative;
   margin-top: 5.6dvh;
-  
 }
-#pomicanjeS{
+#pomicanjeS {
   background-color: wheat;
   position: absolute;
   width: 100%;
@@ -226,7 +220,7 @@ body {
   z-index: 1;
   top: -1924.5dvh;
 }
-#pomicanjeS p{
+#pomicanjeS p {
   font-size: 2dvh;
   font-weight: bold;
   margin-top: 15.3dvh;
@@ -236,17 +230,15 @@ body {
   justify-content: center;
   align-items: center;
   color: black;
-
 }
 
-#podatci{
+#podatci {
   width: 8%;
   height: 100%;
   position: relative;
-
 }
 
-#energija{
+#energija {
   height: 10dvh;
   width: 98vw;
   margin: auto;
@@ -256,63 +248,62 @@ body {
   z-index: 2;
   background-color: white;
 }
-#energija1{
+#energija1 {
   height: 100%;
   border-right: 1vw dotted black;
   width: 10%;
   background-color: transparent;
   position: relative; /* Osigurava da z-index djeluje na ove divove */
-    z-index: 2; 
+  z-index: 2;
 }
-#energija2{
+#energija2 {
   height: 100%;
   border-right: 1vw dotted black;
   width: 13%;
   background-color: transparent;
   position: relative; /* Osigurava da z-index djeluje na ove divove */
-    z-index: 2; 
+  z-index: 2;
 }
-#energija3{
+#energija3 {
   height: 100%;
   border-right: 1vw dotted black;
   width: 17%;
   background-color: transparent;
   position: relative; /* Osigurava da z-index djeluje na ove divove */
-    z-index: 2; 
+  z-index: 2;
 }
-#energija4{
+#energija4 {
   height: 100%;
   border-right: 1vw dotted;
   width: 20%;
   background-color: transparent;
   position: relative; /* Osigurava da z-index djeluje na ove divove */
-    z-index: 2; 
+  z-index: 2;
 }
-#energija5{
+#energija5 {
   height: 100%;
   width: 40%;
   background-color: transparent;
   position: relative; /* Osigurava da z-index djeluje na ove divove */
-    z-index: 2; 
-  
+  z-index: 2;
 }
-#pozadina{
-    height: 100%;
-    width: 100%;
-    background-color: green; /* Početna boja */
-    position: absolute; /* Koristimo absolute positioning za precizno postavljanje */
-    z-index: 1;
-    transition: width 0.5s ease-in-out; 
+#pozadina {
+  height: 100%;
+  width: 100%;
+  background-color: green; /* Početna boja */
+  position: absolute; /* Koristimo absolute positioning za precizno postavljanje */
+  z-index: 1;
+  transition: width 0.5s ease-in-out;
 }
 
-#podatci{
+#podatci {
   writing-mode: vertical-lr; /* Tekst ide vertikalno, s desna na levo */
   text-orientation: upright;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#podatci div{
+#podatci div {
   height: 20%;
   width: 80%;
   border: 3px solid black;
@@ -325,14 +316,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-#podatci div p{
+#podatci div p {
   font-size: 2.5dvh;
   font-weight: bold;
   margin-top: auto;
   color: red;
-  border-top:3px solid black ;
+  border-top: 3px solid black;
   padding-top: 0.5dvh;
-  
 }
 
 #countdown {
@@ -353,17 +343,15 @@ body {
   height: 84%;
   overflow: hidden;
   z-index: 1;
- 
 }
-#staze{
+#staze {
   z-index: 2;
   position: absolute;
   width: 100%;
   height: 2000dvh; /* Duža pozadina za scrolling efekt */
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   top: -1924.5dvh;
-
 }
 .player {
   position: absolute;
@@ -374,122 +362,117 @@ body {
   border-radius: 1dvh;
   transition: top 0.5s linear;
 }
-#player{
+#player {
   left: 12%;
   top: 50dvh;
   position: relative;
   z-index: 40;
-  
 }
 
-#kraj{
-  background-image: url('kraj.png');
+#kraj {
+  background-image: url("kraj.png");
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   height: 1%;
   width: 100%;
   display: flex;
 }
-#runStaze{
+#runStaze {
   height: 30%;
   width: 100%;
   display: flex;
   background-color: rgb(2, 130, 40);
-
 }
-#runStaze div{
+#runStaze div {
   height: 100%;
   width: 25%;
-  background-image: url('run.png');
+  background-image: url("run.png");
 
-  background-position: center; 
-  background-repeat:repeat-y;
-
+  background-position: center;
+  background-repeat: repeat-y;
 }
-#bikeStaze{
+#bikeStaze {
   height: 53%;
   width: 100%;
   display: flex;
   background-color: gray;
-
 }
-#bikeStaze div{
+#bikeStaze div {
   height: 100%;
   width: 25%;
-  background-image: url('boad2.png');
-  background-position: center; 
+  background-image: url("boad2.png");
+  background-position: center;
 
-  background-repeat:repeat-y;
-
+  background-repeat: repeat-y;
 }
 
-#tranzicija2{
+#tranzicija2 {
   width: 100%;
   display: flex;
   height: 0.5%;
   background-color: gray;
 }
-#tranzicija1{
+#tranzicija1 {
   width: 100%;
   display: flex;
   height: 0.5%;
   background-color: gray;
 }
-#swimStaze{
+#swimStaze {
   height: 15%;
   width: 100%;
   display: flex;
   background-color: rgb(116, 199, 222);
-
 }
-#swimStaze div{
+#swimStaze div {
   height: 100%;
   width: 25%;
-  background-image: url('swim.png');
- 
-  background-position: center; 
-  background-repeat:repeat-y;
+  background-image: url("swim.png");
 
+  background-position: center;
+  background-repeat: repeat-y;
 }
 
-#imena{
+#imena {
   width: 100%;
   height: 10%;
   background-color: black;
   display: flex;
 }
-#imena div{
+#imena div {
   color: white;
   height: 100%;
   width: 25%;
-  
-  padding: 3% 1% ;
+
+  padding: 3% 1%;
   font-size: 1.7dvh;
   overflow: hidden;
- 
+
   border: 1px solid white;
 }
-#postoljediv{
-    height: 50dvh;
-    width: 90vw;
-    background-color: rgb(170, 170, 170);
-    z-index: 50;
-    position: absolute;
-    border-radius: 40px;
-    border: 5px solid rgb(91, 91, 91);
-    top: 15dvh;
-    left: 5vw;
+#postoljediv {
+  height: 50dvh;
+  width: 90vw;
+  background-color: rgb(170, 170, 170);
+  z-index: 50;
+  position: absolute;
+  border-radius: 40px;
+  border: 5px solid rgb(91, 91, 91);
+  top: 15dvh;
+  left: 5vw;
   display: none;
-  align-items:end;
+  align-items: end;
   justify-content: center;
 }
-#postoljediv div{
+#postoljediv div {
   text-align: center;
   width: 25%;
   display: block;
-
 }
-#prvo,#drugo,#trece,#cetvrto{
+#prvo,
+#drugo,
+#trece,
+#cetvrto {
   min-width: 100%;
   text-align: center;
   border: 4px solid black;
@@ -497,25 +480,27 @@ body {
   font-weight: bold;
   font-size: 4dvh;
 }
-#prvo{
+#prvo {
   height: 35dvh;
   background-color: gold;
 }
-#drugo{
+#drugo {
   height: 27dvh;
   background-color: rgb(126, 123, 123);
 }
 
-
-#trece{
+#trece {
   height: 19dvh;
   background-color: rgb(181, 75, 14);
 }
-#cetvrto{
+#cetvrto {
   height: 11dvh;
   background-color: rgb(255, 0, 187);
 }
-#prvi,#drugi,#treci,#cetvrti{
+#prvi,
+#drugi,
+#treci,
+#cetvrti {
   font-size: 1.8dvh;
   min-width: 100%;
   text-align: center;
@@ -523,7 +508,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-#leaveT{
+#leaveT {
   text-align: center;
   background-color: rgb(249, 66, 66);
   font-size: 1.5dvh;
@@ -536,18 +521,27 @@ body {
   display: none;
   user-select: none;
   cursor: pointer;
-  
 }
-.draft{
+.draft {
   height: 20dvh;
   width: 100%;
-  opacity: 0.2;
+
   position: absolute;
   z-index: 30;
   transition: top 0.5s linear;
   background-color: green;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
-#izadi{
+#izadi {
   text-align: center;
   background-color: rgb(249, 66, 66);
   font-size: 1.5dvh;
@@ -563,25 +557,44 @@ body {
   width: 17vw;
   position: relative;
   z-index: 300;
-
 }
-#vrijeme{
+#vrijeme {
   text-align: center;
   font-size: 2dvh;
   margin: 5dvh 0 0 0;
   font-weight: bold;
 }
-.Beginner { border: 4px solid #696969; }
-.Rookie {border: 4px solid #0056b3; }
-.Competitor {border: 4px solid #1e7e34; }
-.Veteran {border: 8px solid #b8860b; box-shadow: 0 0 10px #ffd700;color: black; }
-.Master { border: 8px solid #8b0000; box-shadow: 0 0 15px #4b1400; animation: pulse 1.5s infinite; }
+.Beginner {
+  border: 4px solid #696969;
+}
+.Rookie {
+  border: 4px solid #0056b3;
+}
+.Competitor {
+  border: 4px solid #1e7e34;
+}
+.Veteran {
+  border: 8px solid #b8860b;
+  box-shadow: 0 0 10px #ffd700;
+  color: black;
+}
+.Master {
+  border: 8px solid #8b0000;
+  box-shadow: 0 0 15px #4b1400;
+  animation: pulse 1.5s infinite;
+}
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 15px #ff4500; }
-  50% { box-shadow: 0 0 30px #ff6347; }
-  100% { box-shadow: 0 0 15px #ff4500; }
+  0% {
+    box-shadow: 0 0 15px #ff4500;
+  }
+  50% {
+    box-shadow: 0 0 30px #ff6347;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff4500;
+  }
 }
-#pozicija{
+#pozicija {
   font-size: 3dvh;
 }
