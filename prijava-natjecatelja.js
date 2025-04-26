@@ -104,6 +104,7 @@ function novi(imme, trka, broj) {
       vrijednost: { sad: vrijednost, prije: vrijednost },
       klub: klub,
       spol: spol,
+      bodovi: 0,
     };
 
     set(ref(db, "FANTASY/natjecatelji/" + broj), utrkaData)
