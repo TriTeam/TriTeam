@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anketa Utrke</title>
+    <link rel="stylesheet" href="prijava-natjecatelja.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prijava Utrke</h1>
+      <form id="utrkaForm">
+        <label for="klub">klub</label>
+        <input type="text" id="klub" name="klub" required />
+
+        <label for="spol">spol M/Z</label>
+        <input type="text" id="spol" name="spol" required />
+
+        <label for="vrijednost">vrijednost</label>
+        <input type="text" id="vrijednost" name="vrijednost" required />
+
+        <button type="submit">Pošalji</button>
+      </form>
+
+      <form id="utrkaForm1">
+        <label for="ime">Ime natjeccatelja:</label>
+        <input type="text" id="ime" name="ime" required />
+
+        <div id="lokacijaDropdown" class="dropdown">
+          <div id="lokacijaLabel" class="dropdown-label">Odaberi lokaciju</div>
+          <div
+            id="lokacijaOpcije"
+            class="dropdown-options"
+            style="display: none"
+          ></div>
+        </div>
+
+        <!-- Hidden input za slanje odabrane lokacije -->
+        <input type="hidden" name="lokacija" id="lokacijaInput" />
+
+        <button type="submit">Pošalji</button>
+      </form>
+    </div>
+
+    <script type="module" src="prijava-natjecatelja.js"></script>
+  </body>
+</html>

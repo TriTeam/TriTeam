@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anketa Utrke</title>
+    <link rel="stylesheet" href="stvaranje-utrke.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prijava Utrke</h1>
+      <form id="utrkaForm">
+        <label for="ime">Ime utrke:</label>
+        <input type="text" id="ime" name="ime" required />
+
+        <label for="mjesto">Mjesto utrke:</label>
+        <input type="text" id="mjesto" name="mjesto" required />
+
+        <label for="tip">Tip utrke:</label>
+        <input type="text" id="tip" name="tip" required />
+
+        <label for="distanca">Distanca utrke (km):</label>
+        <input type="text" id="distanca" name="distanca" required />
+
+        <label for="datum">Datum utrke:</label>
+        <input type="date" id="datum" name="datum" required />
+
+        <label for="organizator">Organizator utrke:</label>
+        <input type="text" id="organizator" name="organizator" required />
+
+        <button type="submit">Pošalji</button>
+      </form>
+    </div>
+
+    <script type="module" src="stvaranje-utrke.js"></script>
+  </body>
+</html>
