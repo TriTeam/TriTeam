@@ -157,57 +157,11 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
 
     const podatciNatjecatelja = document.createElement("div");
     podatciNatjecatelja.className = "podatciNatjecatelja";
-    podatciNatjecatelja.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.pageX - podatciNatjecatelja.offsetLeft;
-      scrollLeft = podatciNatjecatelja.scrollLeft;
-      podatciNatjecatelja.style.cursor = "grabbing";
-    });
-
-    podatciNatjecatelja.addEventListener("mouseleave", () => {
-      isDragging = false;
-      podatciNatjecatelja.style.cursor = "grab";
-    });
-
-    podatciNatjecatelja.addEventListener("mouseup", () => {
-      isDragging = false;
-      podatciNatjecatelja.style.cursor = "grab";
-    });
-
-    podatciNatjecatelja.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - podatciNatjecatelja.offsetLeft;
-      const walk = x - startX; // Pomicanje 3 puta brže
-      podatciNatjecatelja.scrollLeft = scrollLeft - walk;
-    });
+    dodajDragScroll(podatciNatjecatelja);
 
     const podatciNatjecateljaW = document.createElement("div");
     podatciNatjecateljaW.className = "podatciNatjecatelja";
-    podatciNatjecateljaW.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.pageX - podatciNatjecateljaW.offsetLeft;
-      scrollLeft = podatciNatjecateljaW.scrollLeft;
-      podatciNatjecateljaW.style.cursor = "grabbing";
-    });
-
-    podatciNatjecateljaW.addEventListener("mouseleave", () => {
-      isDragging = false;
-      podatciNatjecateljaW.style.cursor = "grab";
-    });
-
-    podatciNatjecateljaW.addEventListener("mouseup", () => {
-      isDragging = false;
-      podatciNatjecateljaW.style.cursor = "grab";
-    });
-
-    podatciNatjecateljaW.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - podatciNatjecateljaW.offsetLeft;
-      const walk = x - startX; // Pomicanje 3 puta brže
-      podatciNatjecateljaW.scrollLeft = scrollLeft - walk;
-    });
+    dodajDragScroll(podatciNatjecateljaW);
 
     const dodaj = document.createElement("div");
     dodaj.className = "dodaj";
@@ -842,4 +796,59 @@ async function spremanjeUBazu(lista, trka, spol) {
         console.error("Greška pri updateu:", error);
       });
   }
+}
+
+function dodajDragScroll(div) {
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse events
+  div.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX - div.offsetLeft;
+    scrollLeft = div.scrollLeft;
+    div.style.cursor = "grabbing";
+  });
+
+  div.addEventListener("mouseleave", () => {
+    isDragging = false;
+    div.style.cursor = "grab";
+  });
+
+  div.addEventListener("mouseup", () => {
+    isDragging = false;
+    div.style.cursor = "grab";
+  });
+
+  div.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - div.offsetLeft;
+    const walk = x - startX;
+    div.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch events
+  div.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - div.offsetLeft;
+    scrollLeft = div.scrollLeft;
+  });
+
+  div.addEventListener("touchend", () => {
+    isDragging = false;
+  });
+
+  div.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - div.offsetLeft;
+      const walk = x - startX;
+      div.scrollLeft = scrollLeft - walk;
+    },
+    { passive: false }
+  );
 }
