@@ -1,0 +1,177 @@
+* {
+  user-select: none;
+}
+#prijavljeniNatecatelji {
+  display: flex;
+}
+#prijavljeniNatecateljiW {
+  display: flex;
+}
+.slikeKlubovaDiv {
+  width: 23%;
+}
+.slikaKluba {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.svi {
+  margin-bottom: 0.4dvh;
+  height: 9dvh;
+}
+.svi2 {
+  height: 5dvh;
+}
+.fixni {
+  width: 65%;
+}
+.podatciNatjecatelja {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.linijaPodataka {
+  background-color: rgb(63, 63, 63);
+  padding: 0 0 0 2dvw;
+  display: flex;
+  width: 170dvw;
+}
+.imeIklub {
+  height: 100%;
+  width: 20%;
+  white-space: nowrap;
+  overflow: visible;
+  padding-top: 0.3dvh;
+}
+.dodaj {
+  width: 13%;
+}
+.plus {
+  color: white;
+  font-weight: bold;
+  font-size: 2.5dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgb(125, 125, 125);
+  border-left: 2px solid black;
+}
+.plus:hover {
+  background-color: rgb(65, 64, 64);
+}
+.vrijednost {
+  color: white;
+  font-weight: bold;
+  font-size: 2.4dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1dvh;
+  min-width: 10%;
+}
+.totalPoints {
+  color: rgb(0, 215, 0);
+  font-weight: bold;
+  font-size: 2.4dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1dvh 0 0 0;
+  min-width: 13%;
+}
+.tPoints {
+  color: gray;
+  font-size: 1.8dvh;
+  display: flex;
+  align-items: center;
+  min-width: 13%;
+  justify-content: center;
+  line-height: 1.5dvh;
+  text-align: center;
+}
+.pointsTR {
+  color: gray;
+  font-size: 1.8dvh;
+  display: flex;
+  align-items: center;
+  min-width: 13%;
+  justify-content: center;
+  line-height: 1.5dvh;
+  text-align: center;
+}
+
+.lastTR {
+  color: gray;
+  font-size: 1.8dvh;
+  display: flex;
+  align-items: center;
+  min-width: 20%;
+  justify-content: center;
+  line-height: 1.6dvh;
+  text-align: center;
+}
+
+/*
+.divNatjecatelja {
+  width: 100%;
+  height: 9dvh;
+  display: flex;
+  margin-top: 0.5dvh;
+  border: 0.5px solid rgb(96, 96, 96);
+}
+*/
+.naslovPodatka {
+  color: rgb(193, 193, 193);
+  font-size: 2dvh;
+  margin: 4dvh 3dvw;
+}
+
+#natj {
+  margin-left: 27dvw;
+}
+.imeN {
+  color: white;
+  font-size: 2.2dvh;
+  font-weight: bold;
+}
+
+.price {
+  color: gray;
+  font-size: 1.8dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10%;
+}
+.imeIklubF {
+  color: gray;
+  font-size: 1.8dvh;
+  display: flex;
+  align-items: center;
+  min-width: 20%;
+}
+.klubN {
+  color: white;
+}
+
+#naslovi {
+  background-color: black;
+}
+
+.divZadnjeTri {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+}
+.prijasnjeTrke {
+  height: 3dvh;
+  width: 3dvh;
+  margin: 0 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana;
+}

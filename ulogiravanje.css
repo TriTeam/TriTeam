@@ -1,0 +1,60 @@
+.naslov2 {
+  font-weight: bold;
+  display: flex;
+  margin: 4dvh auto;
+  font-size: 13dvw;
+  text-align: center;
+}
+.Tri2 {
+  color: white;
+}
+.Team2 {
+  color: red;
+  font-style: italic;
+}
+#poruka {
+  color: white;
+  margin: 2dvh auto;
+  width: 60%;
+  text-align: center;
+  font-size: 2.1dvh;
+  letter-spacing: 0.2px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#login {
+  width: 60%;
+  height: 5dvh;
+  padding: 1dvh 0;
+  margin: 4dvh auto;
+  border-radius: 1dvh;
+  background-color: rgb(224, 8, 91);
+  color: white;
+  font-size: 2.3dvh;
+}
+#howtp {
+  color: white;
+  margin: 5dvh auto;
+  font-size: 6dvh;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.brojevi {
+  margin: 0 auto;
+  background-color: rgb(224, 8, 91);
+  font-size: 5dvh;
+  color: white;
+  width: 7dvh;
+  height: 7dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3.5dvh;
+}
+.upute {
+  color: white;
+  margin: 2dvh auto 5dvh auto;
+  font-size: 3dvh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  max-width: 70%;
+}

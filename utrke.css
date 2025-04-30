@@ -1,0 +1,80 @@
+* {
+  user-select: none;
+}
+#up-fin {
+  background-color: white;
+  display: flex;
+  width: 65%;
+  height: 4.6dvh;
+  margin: 2dvh 5dvw;
+  font-size: 1.7dvh;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.3dvh;
+  padding-left: 1dvw;
+  padding-right: 1dvw;
+}
+#up-fin div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#upcoming {
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  height: 85%;
+  width: 50%;
+  border-radius: 3dvh;
+}
+#finished {
+  height: 85%;
+  width: 50%;
+  color: black;
+  text-align: center;
+  border-radius: 3dvh;
+}
+.divUtrke {
+  width: 95%;
+  margin: 0 auto;
+  height: 15dvh;
+  margin-bottom: 2dvh;
+  border-radius: 0.7dvh;
+  padding-top: 0.5dvh;
+  padding-right: 1dvw;
+}
+.datum {
+  color: white;
+  font-size: 2dvh;
+  margin: 0 2dvw;
+}
+.datumITip {
+  display: flex;
+}
+.tip {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 3dvh;
+  color: rgb(255, 255, 255);
+  background-color: rgb(62, 63, 59);
+  padding: 0.3dvh 0.5dvh;
+  border-radius: 1dvh;
+}
+.imeUtrke {
+  color: white;
+  font-weight: bold;
+  font-size: 3.2dvh;
+  margin-left: 2dvw;
+  line-height: 3dvh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mjestoUtrke {
+  color: white;
+  margin: 1dvh 4dvw 0 4dvw;
+  font-size: 2dvh;
+}
+#finishedRaces {
+  color: white;
+  text-align: center;
+  display: none;
+}
