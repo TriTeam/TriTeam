@@ -493,7 +493,7 @@ function nadiSliku(klub) {
       return ["url(pula.jpg)"];  
     
     case "tk sisak":
-      return ["url(sisak copy.jpg)"];
+      return ["url(sisak.jpg)"];
       /*
     case vrednost3:
       return ["url()"];
