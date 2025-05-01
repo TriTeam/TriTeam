@@ -109,8 +109,8 @@ export async function stvaranjeListe(utrka) {
 function countdownToEvent(dateString) {
   const now = new Date();
   const eventDate = new Date(dateString);
+  eventDate.setHours(8, 0, 0, 0); // dodaj 8h
 
-  // Resetujemo vrijeme za dan upoređivanje
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const eventDay = new Date(
     eventDate.getFullYear(),
@@ -118,25 +118,19 @@ function countdownToEvent(dateString) {
     eventDate.getDate()
   );
 
-  if (eventDay.getTime() === today.getTime()) {
-    return "Today";
+  if (eventDay.getTime() === today.getTime() && now >= eventDate) {
+    return "Today"; // LOCKOUT ISTEKAO
   }
 
   const msDiff = eventDate - now;
-
   if (msDiff > 0) {
-    // Budućnost
     const totalSeconds = Math.floor(msDiff / 1000);
     const days = Math.floor(totalSeconds / (3600 * 24));
     const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
-
     return `LOCKOUT IN: ${days}D ${hours}H ${minutes}M`;
   } else {
-    // Prošlost
-    const pastDiff = now - eventDate;
-    const daysAgo = Math.floor(pastDiff / (1000 * 60 * 60 * 24));
-    return `${daysAgo} days ago`;
+    return "Today"; // ako je prošlo 08:00
   }
 }
 
@@ -348,10 +342,15 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
               utrkaOva
             );
           });
+
           if (oNatjecatelju.spol == "M") {
-            dodaj.append(plus);
+            if (document.getElementById("lockout").innerHTML !== "Today") {
+              dodaj.append(plus);
+            }
           } else if (oNatjecatelju.spol == "Z") {
-            dodajW.append(plus);
+            if (document.getElementById("lockout").innerHTML !== "Today") {
+              dodajW.append(plus);
+            }
           }
 
           // DODANO: Pamti natjecatelja u grupe
@@ -490,11 +489,11 @@ function nadiSliku(klub) {
       return ["url(rudolf.jpg)"];
 
     case "tk pula":
-      return ["url(pula.jpg)"];  
-    
+      return ["url(pula.jpg)"];
+
     case "tk sisak":
       return ["url(sisak.jpg)"];
-      /*
+    /*
     case vrednost3:
       return ["url()"];
 */
