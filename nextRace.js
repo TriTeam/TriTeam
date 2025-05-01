@@ -21,6 +21,34 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const race = document.getElementById("race");
 const konceptUtrke = document.getElementById("konceptUtrke");
+function dodajTooltip(div, tekst) {
+  const tooltip = document.createElement("div");
+  tooltip.className = "tooltip";
+  tooltip.textContent = tekst;
+  tooltip.style.position = "absolute";
+  tooltip.style.background = "white";
+  tooltip.style.padding = "5px 10px";
+  tooltip.style.border = "1px solid black";
+  tooltip.style.borderRadius = "5px";
+  tooltip.style.zIndex = "1000";
+  tooltip.style.display = "none";
+
+  document.body.appendChild(tooltip);
+
+  div.addEventListener("click", (e) => {
+    tooltip.style.left = `${e.pageX}px`;
+    tooltip.style.top = `${e.pageY - 40}px`;
+    tooltip.style.display = "block";
+
+    const zatvori = (event) => {
+      if (!tooltip.contains(event.target) && event.target !== div) {
+        tooltip.style.display = "none";
+        document.removeEventListener("click", zatvori);
+      }
+    };
+    setTimeout(() => document.addEventListener("click", zatvori), 0);
+  });
+}
 const tekstRef = ref(db, "FANTASY/utrke");
 try {
   const snapshot = await get(tekstRef);
@@ -167,7 +195,10 @@ function stvaranjeSvega(utrka) {
   goldInfo.id = "goldInfo";
   goldInfo.className = "info";
   goldInfo.textContent = "!";
-
+  dodajTooltip(
+    goldInfo,
+    "Gold competitors receive 100% of points after the race."
+  );
   goldSil.appendChild(gCol);
   goldSil.appendChild(goldTitle);
   goldSil.appendChild(goldInfo);
@@ -219,7 +250,10 @@ function stvaranjeSvega(utrka) {
   silverInfo.id = "silverInfo";
   silverInfo.className = "info";
   silverInfo.textContent = "!";
-
+  dodajTooltip(
+    silverInfo,
+    "Silver competitors receive 50% of points after the race."
+  );
   silverSil.appendChild(sCol);
   silverSil.appendChild(silverTitle);
   silverSil.appendChild(silverInfo);
@@ -339,6 +373,10 @@ function stvaranjeSvega(utrka) {
   goldInfoW.id = "goldInfoW";
   goldInfoW.className = "info";
   goldInfoW.textContent = "!";
+  dodajTooltip(
+    goldInfoW,
+    "Gold competitors receive 100% of points after the race."
+  );
 
   goldSilW.appendChild(gColW);
   goldSilW.appendChild(goldTitleW);
@@ -391,7 +429,10 @@ function stvaranjeSvega(utrka) {
   silverInfoW.id = "silverInfo";
   silverInfoW.className = "info";
   silverInfoW.textContent = "!";
-
+  dodajTooltip(
+    silverInfoW,
+    "Silver competitors receive 50% of points after the race."
+  );
   silverSilW.appendChild(sColW);
   silverSilW.appendChild(silverTitleW);
   silverSilW.appendChild(silverInfoW);
