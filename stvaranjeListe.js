@@ -490,11 +490,11 @@ function nadiSliku(klub) {
       return ["url(rudolf.jpg)"];
 
     case "tk pula":
-      return ["url(pula.jpg)"];
-    /*
-    case vrednost3:
-      return ["url()"];
-
+      return ["url(pula.jpg)"];  
+    
+    case "tk sisak":
+      return ["url(sisak copy.jpg)"];
+      /*
     case vrednost3:
       return ["url()"];
 */
