@@ -9,8 +9,8 @@ body {
 .divSljedeceTrke {
   background-color: rgb(212, 0, 67);
   max-width: 100%;
-  height: 16dvh;
-  margin-top: 2dvh;
+  height: 16vh;
+  margin-top: 2vh;
   display: flex;
   align-items: center;
 }
@@ -24,7 +24,7 @@ body {
   color: white;
   background-color: black;
   opacity: 0.2;
-  font-size: 4dvh;
+  font-size: 4vh;
   cursor: pointer;
 }
 .napred {
@@ -39,12 +39,12 @@ body {
   color: white;
   background-color: black;
   opacity: 0.2;
-  font-size: 4dvh;
+  font-size: 4vh;
 }
 .mjesto {
   color: white;
-  margin: 2dvh 0 auto 7dvw;
-  font-size: 2dvh;
+  margin: 2vh 0 auto 7dvw;
+  font-size: 2vh;
 }
 .podatci {
   height: 100%;
@@ -53,31 +53,31 @@ body {
 .imeUtrke {
   color: white;
   font-weight: bold;
-  font-size: 4dvh;
+  font-size: 4vh;
   margin-left: 3dvw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .datum {
   color: white;
-  font-size: 2dvh;
-  margin: 1dvh 0 0 4dvw;
+  font-size: 2vh;
+  margin: 1vh 0 0 4dvw;
 }
 #lockout {
   color: white;
   background-color: rgb(84, 84, 84);
   opacity: 0.8;
-  font-size: 2.2dvh;
+  font-size: 2.2vh;
   width: 85%;
-  margin: 1dvh auto;
-  padding: 0.7dvh 0;
+  margin: 1vh auto;
+  padding: 0.7vh 0;
   text-align: center;
-  border-radius: 1dvh;
+  border-radius: 1vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #startlist {
   color: white;
-  font-size: 2dvh;
-  margin: 4dvh auto;
+  font-size: 2vh;
+  margin: 4vh auto;
 
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -87,12 +87,12 @@ body {
   display: none;
   width: 100%;
   background-color: black;
-  height: 10dvh;
+  height: 10vh;
   margin: 0;
 }
 .padatak {
   text-align: center;
-  line-height: 2dvh;
+  line-height: 2vh;
   height: 90%;
   margin-top: auto;
   font-weight: bold;
@@ -102,12 +102,12 @@ body {
 }
 .imePodatka {
   color: gray;
-  font-size: 1.9dvh;
+  font-size: 1.9vh;
 }
 .vrijedostPodatka {
   color: white;
-  margin-top: 1dvh;
-  font-size: 2dvh;
+  margin-top: 1vh;
+  font-size: 2vh;
 }
 #tPoints,
 #rPoints,
@@ -118,22 +118,22 @@ body {
 #poljeSaPoljima,
 #poljeSaPoljimaW {
   display: none;
-  margin-top: 3dvh;
+  margin-top: 3vh;
   width: 100%;
-  height: 85dvh;
+  height: 85vh;
   background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(94, 94, 94));
 }
 #goldR,
 #silverR {
   display: flex;
-  margin-bottom: 4dvh;
+  margin-bottom: 4vh;
 }
 .card {
   border: 2px solid #555;
   border-radius: 12px;
   width: 37%;
   margin: auto;
-  height: 23dvh;
+  height: 23vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -158,20 +158,20 @@ body {
   width: 100%;
   min-height: 30%;
   text-align: center;
-  padding: 0.6dvh 0;
+  padding: 0.6vh 0;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1.7dvh;
-  line-height: 2dvh;
+  font-size: 1.7vh;
+  line-height: 2vh;
 }
 .clear {
   color: white;
-  font-size: 2dvh;
+  font-size: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0dvh auto;
+  margin: 0vh auto;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -179,9 +179,9 @@ body {
   color: white;
   font-weight: bold;
   background-color: rgb(255, 62, 62);
-  height: 7dvh;
-  width: 7dvh;
-  border-radius: 3dvh;
+  height: 7vh;
+  width: 7vh;
+  border-radius: 3vh;
   border: 5px solid rgb(158, 0, 0);
   display: none;
   justify-content: center;
@@ -195,20 +195,20 @@ body {
   text-align: center;
   background-color: gray;
   color: white;
-  font-size: 2.3dvh;
-  height: 7dvh;
+  font-size: 2.3vh;
+  height: 7vh;
   width: 40dvw;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px solid rgb(56, 56, 56);
-  margin: 1dvh auto;
-  border-radius: 1dvh;
+  margin: 1vh auto;
+  border-radius: 1vh;
   box-shadow: 3px 3px 10px rgb(50, 50, 50);
   cursor: pointer;
 }
 .spremi:hover {
-  height: 7.2dvh;
+  height: 7.2vh;
   width: 40.5dvw;
 }
 
@@ -217,22 +217,22 @@ body {
 }
 .gold-sil {
   width: 100%;
-  height: 5dvh;
+  height: 5vh;
   background: none;
   color: white;
   align-items: center;
   padding-left: 1dvw;
   display: flex;
-  margin-bottom: 1dvh;
+  margin-bottom: 1vh;
 }
 #gCol {
-  height: 2dvh;
+  height: 2vh;
   width: 10dvw;
   background: linear-gradient(to right, rgb(0, 0, 0), gold);
   margin-right: 2dvw;
 }
 #sCol {
-  height: 2dvh;
+  height: 2vh;
   width: 10dvw;
   background: linear-gradient(to right, rgb(0, 0, 0), silver);
   margin-right: 2dvw;
@@ -241,14 +241,14 @@ body {
 .gold-silT {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
-  font-size: 2.2dvh;
+  font-size: 2.2vh;
 }
 .info {
   margin-left: 5dvw;
-  font-size: 2dvh;
-  height: 2.8dvh;
-  width: 2.8dvh;
-  border-radius: 1.4dvh;
+  font-size: 2vh;
+  height: 2.8vh;
+  width: 2.8vh;
+  border-radius: 1.4vh;
   border: 2px solid white;
   display: flex;
   align-items: center;
@@ -258,12 +258,12 @@ body {
   background-color: white;
   display: flex;
   width: 55%;
-  height: 4.6dvh;
-  margin: 2dvh auto 0 auto;
+  height: 4.6vh;
+  margin: 2vh auto 0 auto;
 
   align-items: center;
   justify-content: center;
-  border-radius: 2.3dvh;
+  border-radius: 2.3vh;
   padding-left: 1dvw;
   padding-right: 1dvw;
 }
@@ -278,14 +278,14 @@ body {
   background-color: black;
   height: 85%;
   width: 50%;
-  border-radius: 3dvh;
+  border-radius: 3vh;
 }
 #finished {
   height: 85%;
   width: 50%;
   color: black;
   text-align: center;
-  border-radius: 3dvh;
+  border-radius: 3vh;
 }
 #woman {
   display: none;
@@ -293,7 +293,7 @@ body {
 #poruka2025 {
   color: white;
   text-align: center;
-  font-size: 1.5dvh;
+  font-size: 1.5vh;
   margin-top: auto;
 }
 #loader {
