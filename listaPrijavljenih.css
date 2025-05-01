@@ -16,11 +16,11 @@
   background-repeat: no-repeat;
 }
 .svi {
-  margin-bottom: 0.4dvh;
-  height: 9dvh;
+  margin-bottom: 0.4vh;
+  height: 9vh;
 }
 .svi2 {
-  height: 5dvh;
+  height: 5vh;
 }
 .fixni {
   width: 65%;
@@ -41,7 +41,7 @@
   width: 20%;
   white-space: nowrap;
   overflow: visible;
-  padding-top: 0.3dvh;
+  padding-top: 0.3vh;
 }
 .dodaj {
   width: 13%;
@@ -49,7 +49,7 @@
 .plus {
   color: white;
   font-weight: bold;
-  font-size: 2.5dvh;
+  font-size: 2.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,68 +63,68 @@
 .vrijednost {
   color: white;
   font-weight: bold;
-  font-size: 2.4dvh;
+  font-size: 2.4vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1dvh;
+  margin-top: 1vh;
   min-width: 10%;
 }
 .totalPoints {
   color: rgb(0, 215, 0);
   font-weight: bold;
-  font-size: 2.4dvh;
+  font-size: 2.4vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1dvh 0 0 0;
+  margin: 1vh 0 0 0;
   min-width: 13%;
 }
 .tPoints {
   color: gray;
-  font-size: 1.8dvh;
+  font-size: 1.8vh;
   display: flex;
   align-items: center;
   min-width: 13%;
   justify-content: center;
-  line-height: 1.5dvh;
+  line-height: 1.5vh;
   text-align: center;
 }
 .pointsTR {
   color: gray;
-  font-size: 1.8dvh;
+  font-size: 1.8vh;
   display: flex;
   align-items: center;
   min-width: 13%;
   justify-content: center;
-  line-height: 1.5dvh;
+  line-height: 1.5vh;
   text-align: center;
 }
 
 .lastTR {
   color: gray;
-  font-size: 1.8dvh;
+  font-size: 1.8vh;
   display: flex;
   align-items: center;
   min-width: 20%;
   justify-content: center;
-  line-height: 1.6dvh;
+  line-height: 1.6vh;
   text-align: center;
 }
 
 /*
 .divNatjecatelja {
   width: 100%;
-  height: 9dvh;
+  height: 9vh;
   display: flex;
-  margin-top: 0.5dvh;
+  margin-top: 0.5vh;
   border: 0.5px solid rgb(96, 96, 96);
 }
 */
 .naslovPodatka {
   color: rgb(193, 193, 193);
-  font-size: 2dvh;
-  margin: 4dvh 3dvw;
+  font-size: 2vh;
+  margin: 4vh 3dvw;
 }
 
 #natj {
@@ -132,13 +132,13 @@
 }
 .imeN {
   color: white;
-  font-size: 2.2dvh;
+  font-size: 2.2vh;
   font-weight: bold;
 }
 
 .price {
   color: gray;
-  font-size: 1.8dvh;
+  font-size: 1.8vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +146,7 @@
 }
 .imeIklubF {
   color: gray;
-  font-size: 1.8dvh;
+  font-size: 1.8vh;
   display: flex;
   align-items: center;
   min-width: 20%;
@@ -166,8 +166,8 @@
   justify-content: center;
 }
 .prijasnjeTrke {
-  height: 3dvh;
-  width: 3dvh;
+  height: 3vh;
+  width: 3vh;
   margin: 0 1%;
   display: flex;
   align-items: center;
