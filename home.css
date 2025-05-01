@@ -335,3 +335,8 @@ body {
   height: 100%;
   flex-direction: column;
 }
+.tooltip {
+  font-size: 14px;
+  max-width: 200px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
