@@ -109,29 +109,46 @@ export async function stvaranjeListe(utrka) {
 function countdownToEvent(dateString) {
   const now = new Date();
   const eventDate = new Date(dateString);
-  eventDate.setHours(8, 0, 0, 0); // dodaj 8h
-
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const eventDay = new Date(
     eventDate.getFullYear(),
     eventDate.getMonth(),
     eventDate.getDate()
   );
 
-  if (eventDay.getTime() === today.getTime() && now >= eventDate) {
-    return "Today"; // LOCKOUT ISTEKAO
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const daysDiff = Math.floor((today - eventDay) / msPerDay);
+
+  // Ako je dan utrke
+  if (daysDiff === 0) {
+    const startTime = new Date(eventDate);
+    startTime.setHours(8, 0, 0, 0);
+    const endTime = new Date(eventDate);
+    endTime.setHours(24, 0, 0, 0); // do ponoći
+
+    if (now >= startTime && now < endTime) {
+      return "Today";
+    } else if (now >= endTime) {
+      return "LOCKOUT EXPIRED: today";
+    }
   }
 
-  const msDiff = eventDate - now;
-  if (msDiff > 0) {
-    const totalSeconds = Math.floor(msDiff / 1000);
-    const days = Math.floor(totalSeconds / (3600 * 24));
-    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    return `LOCKOUT IN: ${days}D ${hours}H ${minutes}M`;
-  } else {
-    return "Today"; // ako je prošlo 08:00
+  // Ako je dan u prošlosti
+  if (daysDiff > 0) {
+    return `${daysDiff} days ago`;
   }
+
+  // Ako je u budućnosti (ili prije 8h na dan utrke)
+  const futureCutoff = new Date(eventDate);
+  futureCutoff.setHours(8, 0, 0, 0); // budući "lockout moment"
+
+  const msDiff = futureCutoff - now;
+  const totalSeconds = Math.floor(msDiff / 1000);
+  const days = Math.floor(totalSeconds / (3600 * 24));
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+  return `LOCKOUT IN: ${days}D ${hours}H ${minutes}M`;
 }
 
 async function listaPrivavljenih(prijavljeni, utrkaOva) {
@@ -393,10 +410,22 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
 
     prijavljeniNatecatelji.append(slikeKlubovaDiv);
     prijavljeniNatecatelji.append(fixni);
-    prijavljeniNatecatelji.append(dodaj);
 
     prijavljeniNatecateljiW.append(slikeKlubovaDivW);
     prijavljeniNatecateljiW.append(fixniW);
+
+    const lockoutTekst = document.getElementById("lockout").innerHTML;
+
+    if (lockoutTekst === "Today" || lockoutTekst.includes("EXPIRED")) {
+      dodaj.style.display = "none";
+      dodajW.style.display = "none";
+      document.getElementById("clear").style.display = "none";
+      document.getElementById("spremi").style.display = "none";
+      document.getElementById("clearW").style.display = "none";
+      document.getElementById("spremiW").style.display = "none";
+    }
+
+    prijavljeniNatecatelji.append(dodaj);
     prijavljeniNatecateljiW.append(dodajW);
 
     //----------------------------------------------
