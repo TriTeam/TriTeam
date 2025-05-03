@@ -76,7 +76,7 @@ try {
   // Pronalazak prve utrke u budućnosti
   for (let i = 0; i < sortirana.length; i++) {
     const datumUtrke = normalizujDatum(sortirana[i][1].datum);
-    if (datumUtrke > danasStr) {
+    if (datumUtrke >= danasStr) {
       sljedecaTrka(sortirana, i);
       break;
     }
