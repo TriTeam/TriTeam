@@ -18,16 +18,40 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const upcomingField = document.getElementById("upcomingRaces");
+const finishedField = document.getElementById("finishedRaces");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("sve");
+
+  setTimeout(() => {
+    if (loader) {
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+        if (content) {
+          content.style.display = "flex";
+          setTimeout(() => {
+            content.style.opacity = "1";
+          }, 50);
+        }
+      }, 300);
+    }
+  }, 800);
+});
 
 const tekstRef = ref(db, "FANTASY/utrke");
+
+function normalizujDatum(datum) {
+  const [g, m, d] = datum.split("-");
+  return `${g.padStart(4, "0")}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
+}
+
 try {
   const snapshot = await get(tekstRef);
-  function normalizujDatum(datum) {
-    const [g, m, d] = datum.split("-");
-    return `${g.padStart(4, "0")}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
-  }
+
   const listaUtrka = Object.entries(snapshot.val());
-  // Sortiranje liste
+
   const sortirana = listaUtrka.sort((a, b) => {
     const datumA = normalizujDatum(a[1].datum);
     const datumB = normalizujDatum(b[1].datum);
@@ -43,17 +67,16 @@ try {
 
 function stvaranjeUtrke(utrka) {
   let podatciUtrke = utrka[1];
-  console.log(podatciUtrke);
   const divUtrke = document.createElement("div");
   divUtrke.className = "divUtrke";
 
-  if (podatciUtrke.tip == "HTL") {
+  if (podatciUtrke.tip === "HTL")
     divUtrke.style.backgroundColor = "rgb(102, 102, 255)";
-  } else if (podatciUtrke.tip == "PH") {
+  else if (podatciUtrke.tip === "PH")
     divUtrke.style.backgroundColor = "rgb(212, 57, 106)";
-  } else if (podatciUtrke.tip == "MIXED RELAY") {
+  else if (podatciUtrke.tip === "MIXED RELAY")
     divUtrke.style.backgroundColor = "rgb(88, 165, 0)";
-  }
+
   const datumITip = document.createElement("div");
   datumITip.className = "datumITip";
 
@@ -65,9 +88,7 @@ function stvaranjeUtrke(utrka) {
   tip.innerHTML = podatciUtrke.tip;
   tip.className = "tip";
 
-  datumITip.append(datum);
-  datumITip.append(tip);
-
+  datumITip.append(datum, tip);
   divUtrke.append(datumITip);
 
   const imeUtrke = document.createElement("div");
@@ -81,6 +102,13 @@ function stvaranjeUtrke(utrka) {
   imeMjesto.className = "mjestoUtrke";
 
   divUtrke.append(imeMjesto);
-  console.log(podatciUtrke.tip);
-  upcomingField.append(divUtrke);
+
+  const datumUtrke = new Date(normalizujDatum(podatciUtrke.datum));
+  const danas = new Date();
+
+  if (datumUtrke < danas) {
+    finishedField.append(divUtrke);
+  } else {
+    upcomingField.append(divUtrke);
+  }
 }
