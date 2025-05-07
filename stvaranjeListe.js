@@ -310,15 +310,14 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
           const ThisRace = document.createElement("div");
           if (oNatjecatelju.utrke !== undefined) {
             const listaImenaUtrka = oNatjecatelju.utrke.map(
-              (utrka) => Object.keys(utrka)[0]
+              (utrka) => utrka.ime
             );
-            console.log(listaImenaUtrka.includes(utrkaOva));
+
             const index = listaImenaUtrka.indexOf(utrkaOva);
+            console.log(oNatjecatelju.utrke[index].bodovi);
             if (index !== -1) {
               ThisRace.className = "totalPoints";
-              ThisRace.innerHTML = racunanjeBodova(
-                Object.values(oNatjecatelju.utrke[index])[0]
-              );
+              ThisRace.innerHTML = oNatjecatelju.utrke[index].bodovi;
             } else {
               ThisRace.className = "totalPoints";
               ThisRace.innerHTML = "-";
@@ -416,7 +415,7 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
 
     const lockoutTekst = document.getElementById("lockout").innerHTML;
 
-    if (lockoutTekst === "Today" || lockoutTekst.includes("EXPIRED")) {
+    if (lockoutTekst === "Today" || lockoutTekst.includes("ago")) {
       dodaj.style.display = "none";
       dodajW.style.display = "none";
       document.getElementById("clear").style.display = "none";
@@ -531,67 +530,69 @@ function nadiSliku(klub) {
   }
 }
 
-function racunanjeBodova(mjesto) {
-  switch (mjesto) {
-    case 1:
-      return 160;
-    case 2:
-      return 140;
-    case 3:
-      return 120;
-    case 4:
-      return 100;
-    case 5:
-      return 90;
-    case 6:
-      return 80;
-    case 7:
-      return 70;
-    case 8:
-      return 65;
-    case 9:
-      return 60;
-    case 10:
-      return 55;
-    case 11:
-      return 50;
-    case 12:
-      return 45;
-    case 13:
-      return 40;
-    case 14:
-      return 35;
-    case 15:
-      return 30;
-    case 16:
-      return 25;
-    case 17:
-      return 20;
-    case 18:
-      return 15;
-    case 19:
-      return 10;
-    case 20:
+function racunanjeMjesta(bodovi) {
+  switch (bodovi) {
+    case 160:
+      return 1;
+    case 140:
+      return 2;
+    case 120:
+      return 3;
+    case 100:
+      return 4;
+    case 90:
       return 5;
+    case 80:
+      return 6;
+    case 70:
+      return 7;
+    case 65:
+      return 8;
+    case 60:
+      return 9;
+    case 55:
+      return 10;
+    case 50:
+      return 11;
+    case 45:
+      return 12;
+    case 40:
+      return 13;
+    case 35:
+      return 14;
+    case 30:
+      return 15;
+    case 25:
+      return 16;
+    case 20:
+      return 17;
+    case 15:
+      return 18;
+    case 10:
+      return 19;
+    case 5:
+      return 20;
     default:
-      return 0;
+      return null; // ili -1 ako želiš označiti nepoznatu vrijednost
   }
 }
 
-function izracunPostolja(staro) {
-  if (staro == undefined) {
+function izracunPostolja(bla) {
+  if (bla == undefined) {
     return 0; // ili return []; zavisi šta očekuješ
   }
-  console.log(staro);
+
   let podaci = [];
-  for (let i = 0; i < staro.length; i++) {
-    podaci.push(Object.values(staro[i])[0]);
+  for (let i = 1; i < bla.length; i++) {
+    console.log(bla[i].bodovi);
+
+    podaci.push(racunanjeMjesta(bla[i].bodovi));
   }
   const vrijednosti = Object.values(podaci);
   let postolja = vrijednosti.filter(
     (broj) => broj === 1 || broj === 2 || broj === 3
   ).length;
-  console.log(postolja);
+
   return postolja;
   // Onda dalje radiš šta treba
 }
@@ -604,31 +605,18 @@ function lastTRace(staro) {
     const prije = document.createElement("div");
     prije.className = "prijasnjeTrke";
 
-    if (!staro) {
+    if (!staro || i - staro.length <= 0) {
       prije.innerHTML = "--";
       prije.style.backgroundColor = "white";
       prije.style.color = "black";
     } else {
-      let pozicije = [];
-      for (let i = 0; i < staro.length; i++) {
-        pozicije.push(Object.values(staro[i])[0]);
-      }
-      const kojaPozicija = Object.values(pozicije);
-      const index = kojaPozicija.length - (3 - i + 1); // računanje 3.odozada, 2.odozada, zadnji
-
-      if (index >= 0) {
-        const vrijednost = kojaPozicija[index];
-        prije.innerHTML = vrijednost;
-
-        if (vrijednost == 1 || vrijednost == 2 || vrijednost == 3) {
-          prije.style.backgroundColor = "red";
-          prije.style.color = "white";
-        } else {
-          prije.style.backgroundColor = "white";
-          prije.style.color = "black";
-        }
+      console.log(racunanjeMjesta(staro[i - staro.length].bodovi), i);
+      const kojaPozicija = racunanjeMjesta(staro[i - staro.length].bodovi);
+      prije.innerHTML = kojaPozicija;
+      if (kojaPozicija == 1 || kojaPozicija == 2 || kojaPozicija == 3) {
+        prije.style.backgroundColor = "red";
+        prije.style.color = "white";
       } else {
-        prije.innerHTML = "--";
         prije.style.backgroundColor = "white";
         prije.style.color = "black";
       }
