@@ -5,68 +5,757 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="basic.css" />
     <link rel="stylesheet" href="help.css" />
-    <title>Team</title>
+    <title>TriTeam Fantasy - Help & Rules</title>
+
+    <meta
+      name="description"
+      content="Learn how to play TriTeam Fantasy - the ultimate triathlon fantasy game"
+    />
+    <link rel="icon" href="logo.webp" type="image/webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="header">
-      <div id="menu">
-        <span>------</span><span>------</span><span>------</span>
-      </div>
-      <div onclick="home()" class="naslov">
-        <div class="Tri">Tri</div>
-        <div class="Team">Team</div>
-      </div>
-      <div onclick="htl()" class="htl">HTL</div>
-      <div onclick="profile()" id="profile"></div>
-    </div>
-
-    <div id="content" class="content">
-      <div class="nePostoji">
-        The game is still in development, this option unfortunately does not
-        exist yet. Please check again soon.
-      </div>
-    </div>
-
-    <div id="root" class="root">
-      <div id="ig">
-        Follow us on instagram -
-        <a href="https://www.instagram.com/triteam_fantasy/" target="_blank">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-            alt="Instagram"
-            width="30"
-            height="30"
-            style="vertical-align: middle"
-          />
-        </a>
-      </div>
-      <div>
-        <a
-          href="https://wa.me/?text=https://triteam.site"
-          target="_blank"
-          style="color: white; margin-bottom: 2dvh"
-        >
-          Share on WhatsApp
-        </a>
-        <div style="display: flex; justify-content: center">
-          <div onclick="htl()" class="htl">HTL</div>
-          <div onclick="home()" class="naslov">
-            <div class="Tri">Tri</div>
-            <div class="Team">Team</div>
-          </div>
+    <div id="loader">
+      <div class="loader-content">
+        <img src="logo.webp" alt="Loading" />
+        <div class="loader-text">LOADING FANTASY</div>
+        <div class="loader-progress">
+          <div class="progress-bar"></div>
         </div>
       </div>
     </div>
-    <div id="menubar">
-      <div><a href="index.html">Team</a></div>
 
-      <div><a href="utrke.html">Races</a></div>
-      <div><a href="natjecatelji.html">Stats Center</a></div>
-      <div><a href="rank.html">Rank</a></div>
-      <div><a href="help.html">Help</a></div>
-      <hr />
+    <div id="sve">
+      <div class="header">
+        <div id="menu">
+          <span>------</span><span>------</span><span>------</span>
+        </div>
+        <div onclick="home()" class="naslov">
+          <div class="Tri">Tri</div>
+          <div class="Team">Team</div>
+        </div>
+        <div onclick="htl()" class="htl">HTL</div>
+        <div onclick="profile()" id="profile"></div>
+      </div>
+
+      <div id="content" class="content">
+        <div class="help-hero">
+          <h1>How to Play <span>TriTeam Fantasy</span></h1>
+          <p>Your complete guide to becoming a triathlon fantasy champion</p>
+        </div>
+
+        <div class="help-nav">
+          <a href="#game-basics" class="help-nav-item">Game Basics</a>
+          <a href="#team-building" class="help-nav-item">Team Building</a>
+          <a href="#scoring" class="help-nav-item">Scoring</a>
+          <a href="#strategy" class="help-nav-item">Strategy</a>
+          <a href="#faq" class="help-nav-item">FAQ</a>
+        </div>
+
+        <div class="help-container">
+          <section id="game-basics" class="help-section">
+            <div class="section-header">
+              <div class="section-icon">🏊‍♂️</div>
+              <h2>Game Basics</h2>
+            </div>
+
+            <div class="help-card">
+              <h3>What is TriTeam Fantasy?</h3>
+              <p>
+                TriTeam Fantasy is a fantasy sports game where you build your
+                dream team of triathletes for upcoming races. Each competitor
+                has a value, and you have a budget to build your team. Your team
+                earns points based on the real-life performance of your selected
+                competitors in races.
+              </p>
+
+              <div class="help-steps">
+                <div class="help-step">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                    <h4>Select a Race</h4>
+                    <p>Choose from upcoming triathlon races in the calendar.</p>
+                  </div>
+                </div>
+
+                <div class="help-step">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                    <h4>Build Your Team</h4>
+                    <p>
+                      Select 4 male and 4 female competitors within your $100
+                      budget for each category.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="help-step">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                    <h4>Earn Points</h4>
+                    <p>
+                      Your team earns points based on the real race results.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="help-step">
+                  <div class="step-number">4</div>
+                  <div class="step-content">
+                    <h4>Compete</h4>
+                    <p>
+                      Compare your score with friends and other players on the
+                      leaderboard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Game Timeline</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-point"></div>
+                  <div class="timeline-content">
+                    <h4>Race Announcement</h4>
+                    <p>
+                      New races are added to the calendar with competitor lists.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-point"></div>
+                  <div class="timeline-content">
+                    <h4>Team Selection Period</h4>
+                    <p>Build and modify your team until the lockout time.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-point"></div>
+                  <div class="timeline-content">
+                    <h4>Lockout (8:00 AM Race Day)</h4>
+                    <p>
+                      Team selections are locked, and no further changes can be
+                      made.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-point"></div>
+                  <div class="timeline-content">
+                    <h4>Race Day</h4>
+                    <p>Real-world race takes place.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-point"></div>
+                  <div class="timeline-content">
+                    <h4>Results & Points</h4>
+                    <p>
+                      Race results are processed, and points are awarded to
+                      teams.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="team-building" class="help-section">
+            <div class="section-header">
+              <div class="section-icon">🏆</div>
+              <h2>Team Building</h2>
+            </div>
+
+            <div class="help-card">
+              <h3>Team Structure</h3>
+              <p>For each race, you must build two separate teams:</p>
+
+              <div class="team-structure">
+                <div class="team-category">
+                  <h4>Men's Team</h4>
+                  <ul>
+                    <li>2 Gold competitors (100% points)</li>
+                    <li>2 Silver competitors (50% points)</li>
+                    <li>$100 total budget</li>
+                  </ul>
+                </div>
+
+                <div class="team-category">
+                  <h4>Women's Team</h4>
+                  <ul>
+                    <li>2 Gold competitors (100% points)</li>
+                    <li>2 Silver competitors (50% points)</li>
+                    <li>$100 total budget</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="help-note">
+                <div class="note-icon">💡</div>
+                <p>
+                  Choose your Gold competitors wisely! They earn 100% of
+                  available points, while Silver competitors only earn 50% of
+                  their points.
+                </p>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Competitor Values</h3>
+              <p>
+                Each competitor has a value based on their past performance,
+                skill level, and expected results. Values can range from $10 to
+                $50.
+              </p>
+
+              <div class="value-examples">
+                <div class="value-example">
+                  <div class="example-header">Top Competitor</div>
+                  <div class="example-value">$40-50</div>
+                  <div class="example-desc">
+                    Elite athletes with multiple podium finishes
+                  </div>
+                </div>
+
+                <div class="value-example">
+                  <div class="example-header">Strong Competitor</div>
+                  <div class="example-value">$30-40</div>
+                  <div class="example-desc">Consistent top 10 finishers</div>
+                </div>
+
+                <div class="value-example">
+                  <div class="example-header">Mid-tier Competitor</div>
+                  <div class="example-value">$20-30</div>
+                  <div class="example-desc">Occasional top 15 finishers</div>
+                </div>
+
+                <div class="value-example">
+                  <div class="example-header">Budget Competitor</div>
+                  <div class="example-value">$10-20</div>
+                  <div class="example-desc">
+                    Less experienced or lower-ranked athletes
+                  </div>
+                </div>
+              </div>
+
+              <div class="help-note">
+                <div class="note-icon">💡</div>
+                <p>
+                  Competitor values may change throughout the season based on
+                  their performance.
+                </p>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Budget Management</h3>
+              <p>
+                You have $100 to spend on each team (men's and women's). You
+                must balance selecting top performers with finding value picks
+                to maximize your potential points.
+              </p>
+
+              <div class="budget-examples">
+                <div class="budget-example">
+                  <h4>Balanced Approach</h4>
+                  <div class="budget-breakdown">
+                    <div class="budget-item"><span>Gold 1:</span> $35</div>
+                    <div class="budget-item"><span>Gold 2:</span> $30</div>
+                    <div class="budget-item"><span>Silver 1:</span> $20</div>
+                    <div class="budget-item"><span>Silver 2:</span> $15</div>
+                    <div class="budget-total"><span>Total:</span> $100</div>
+                  </div>
+                </div>
+
+                <div class="budget-example">
+                  <h4>Top-Heavy Approach</h4>
+                  <div class="budget-breakdown">
+                    <div class="budget-item"><span>Gold 1:</span> $45</div>
+                    <div class="budget-item"><span>Gold 2:</span> $35</div>
+                    <div class="budget-item"><span>Silver 1:</span> $12</div>
+                    <div class="budget-item"><span>Silver 2:</span> $8</div>
+                    <div class="budget-total"><span>Total:</span> $100</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="scoring" class="help-section">
+            <div class="section-header">
+              <div class="section-icon">📊</div>
+              <h2>Scoring System</h2>
+            </div>
+
+            <div class="help-card">
+              <h3>Points Allocation</h3>
+              <p>
+                Points are awarded based on the competitor's finishing position
+                in the race:
+              </p>
+
+              <div class="points-table">
+                <div class="table-header">
+                  <div>Position</div>
+                  <div>Points</div>
+                </div>
+                <div class="table-row">
+                  <div>1st</div>
+                  <div>160</div>
+                </div>
+                <div class="table-row">
+                  <div>2nd</div>
+                  <div>140</div>
+                </div>
+                <div class="table-row">
+                  <div>3rd</div>
+                  <div>120</div>
+                </div>
+                <div class="table-row">
+                  <div>4th</div>
+                  <div>100</div>
+                </div>
+                <div class="table-row">
+                  <div>5th</div>
+                  <div>90</div>
+                </div>
+                <div class="table-row">
+                  <div>6th</div>
+                  <div>80</div>
+                </div>
+                <div class="table-row">
+                  <div>7th</div>
+                  <div>70</div>
+                </div>
+                <div class="table-row">
+                  <div>8th</div>
+                  <div>65</div>
+                </div>
+                <div class="table-row">
+                  <div>9th</div>
+                  <div>60</div>
+                </div>
+                <div class="table-row">
+                  <div>10th</div>
+                  <div>55</div>
+                </div>
+                <div class="table-row">
+                  <div>11th-15th</div>
+                  <div>30-50</div>
+                </div>
+                <div class="table-row">
+                  <div>16th-20th</div>
+                  <div>5-25</div>
+                </div>
+                <div class="table-row">
+                  <div>21st+</div>
+                  <div>0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Gold vs. Silver Competitors</h3>
+              <p>
+                The points earned by your competitors are modified based on
+                their designation:
+              </p>
+
+              <div class="competitor-types">
+                <div class="competitor-type gold">
+                  <h4>Gold Competitors</h4>
+                  <div class="type-value">100% of earned points</div>
+                  <p>
+                    Example: If your Gold competitor finishes 1st (160 points),
+                    you receive 160 points.
+                  </p>
+                </div>
+
+                <div class="competitor-type silver">
+                  <h4>Silver Competitors</h4>
+                  <div class="type-value">50% of earned points</div>
+                  <p>
+                    Example: If your Silver competitor finishes 1st (160
+                    points), you receive 80 points.
+                  </p>
+                </div>
+              </div>
+
+              <div class="scoring-example">
+                <h4>Example Team Score Calculation</h4>
+                <div class="example-calculation">
+                  <div class="calculation-row">
+                    <span>Gold Competitor 1 (1st place):</span> 160 points ×
+                    100% = 160 points
+                  </div>
+                  <div class="calculation-row">
+                    <span>Gold Competitor 2 (5th place):</span> 90 points × 100%
+                    = 90 points
+                  </div>
+                  <div class="calculation-row">
+                    <span>Silver Competitor 1 (3rd place):</span> 120 points ×
+                    50% = 60 points
+                  </div>
+                  <div class="calculation-row">
+                    <span>Silver Competitor 2 (10th place):</span> 55 points ×
+                    50% = 27.5 points
+                  </div>
+                  <div class="calculation-total">
+                    <span>Total Team Score:</span> 337.5 points
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Season Rankings</h3>
+              <p>
+                Your overall ranking in the TriTeam Fantasy league is determined
+                by your cumulative points across all races in the season.
+              </p>
+
+              <div class="help-note">
+                <div class="note-icon">🏅</div>
+                <p>
+                  Consistency is key! Participating in more races gives you more
+                  opportunities to earn points and climb the leaderboard.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="strategy" class="help-section">
+            <div class="section-header">
+              <div class="section-icon">🧠</div>
+              <h2>Strategy Tips</h2>
+            </div>
+
+            <div class="help-card">
+              <h3>Winning Strategies</h3>
+              <div class="strategy-tips">
+                <div class="strategy-tip">
+                  <div class="tip-icon">📈</div>
+                  <div class="tip-content">
+                    <h4>Research Competitors</h4>
+                    <p>
+                      Look at past performances, especially on similar courses
+                      or in similar conditions. Check the Stats Center for
+                      detailed competitor information.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="strategy-tip">
+                  <div class="tip-icon">💰</div>
+                  <div class="tip-content">
+                    <h4>Find Value Picks</h4>
+                    <p>
+                      Look for undervalued competitors who have been performing
+                      well recently but haven't seen their value increase yet.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="strategy-tip">
+                  <div class="tip-icon">⚖️</div>
+                  <div class="tip-content">
+                    <h4>Balance Your Team</h4>
+                    <p>
+                      Don't spend all your budget on one or two competitors. A
+                      balanced team often performs better than a top-heavy one.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="strategy-tip">
+                  <div class="tip-icon">🥇</div>
+                  <div class="tip-content">
+                    <h4>Choose Gold Wisely</h4>
+                    <p>
+                      Your Gold competitors should be your most reliable
+                      point-scorers. Consider putting your highest-valued
+                      competitors in Gold positions.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="strategy-tip">
+                  <div class="tip-icon">🌡️</div>
+                  <div class="tip-content">
+                    <h4>Consider Race Conditions</h4>
+                    <p>
+                      Some competitors perform better in certain conditions
+                      (heat, hills, etc.). Check the race details and adjust
+                      your team accordingly.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="strategy-tip">
+                  <div class="tip-icon">🔄</div>
+                  <div class="tip-content">
+                    <h4>Adapt Throughout the Season</h4>
+                    <p>
+                      Competitor values will change based on performance. Stay
+                      active and adjust your strategy as the season progresses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-card">
+              <h3>Common Mistakes to Avoid</h3>
+              <ul class="mistakes-list">
+                <li>
+                  <strong>Waiting until the last minute:</strong> Build your
+                  team early and make adjustments as needed before the lockout.
+                </li>
+                <li>
+                  <strong>Ignoring Silver competitors:</strong> While they earn
+                  fewer points, the right Silver picks can significantly boost
+                  your total score.
+                </li>
+                <li>
+                  <strong>Not using your full budget:</strong> Always aim to use
+                  your entire $100 budget to maximize potential points.
+                </li>
+                <li>
+                  <strong>Picking based on name recognition only:</strong> Focus
+                  on current form and race-specific factors rather than just
+                  selecting well-known competitors.
+                </li>
+                <li>
+                  <strong>Forgetting to save your team:</strong> Always click
+                  "Save Team" after making your selections to ensure your team
+                  is registered for the race.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="faq" class="help-section">
+            <div class="section-header">
+              <div class="section-icon">❓</div>
+              <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="help-card">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>
+                    What happens if a competitor I selected doesn't start or
+                    finish the race?
+                  </h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    If a competitor doesn't start or doesn't finish (DNS/DNF),
+                    they will receive 0 points for that race.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>Can I change my team after the lockout time?</h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    No, once the lockout time (8:00 AM on race day) has passed,
+                    no changes can be made to your team for that race.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>How do I invite friends to play?</h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    Use the "Share on WhatsApp" button at the bottom of the page
+                    to invite friends to join TriTeam Fantasy.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>How often are competitor values updated?</h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    Competitor values are typically updated after each race
+                    based on their performance and results.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>Do I need to create a team for every race?</h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    Yes, you need to create a new team for each race. Your
+                    selections don't carry over automatically.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>What if there's a tie in points on the leaderboard?</h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    In case of a tie, the player who has participated in more
+                    races will be ranked higher. If that's also tied, the player
+                    with the highest single-race score will be ranked higher.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <div class="question-icon">Q</div>
+                  <h3>
+                    I found a bug or have a suggestion for the game. How can I
+                    report it?
+                  </h3>
+                </div>
+                <div class="faq-answer">
+                  <div class="answer-icon">A</div>
+                  <p>
+                    Please contact us at
+                    <a href="mailto:support@triteam.site"
+                      >support@triteam.site</a
+                    >
+                    with any bugs, issues, or suggestions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="help-contact">
+            <h3>Still Have Questions?</h3>
+            <p>
+              Contact us at
+              <a href="mailto:triteam98@gmail.com">triteam98@gmail.com</a>
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/triteam_fantasy/"
+                target="_blank"
+                class="social-link"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                  alt="Instagram"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="root" class="root">
+        <div id="ig">
+          Follow us on Instagram
+          <a href="https://www.instagram.com/triteam_fantasy/" target="_blank">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+              alt="Instagram"
+              width="30"
+              height="30"
+              style="vertical-align: middle"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://wa.me/?text=Join me in TriTeam Fantasy - the ultimate triathlon fantasy game! https://triteam.site"
+            target="_blank"
+            style="
+              color: white;
+              margin-bottom: 2dvh;
+              display: inline-block;
+              padding: 8px 16px;
+              background-color: #25d366;
+              border-radius: 20px;
+              text-decoration: none;
+              margin-top: 10px;
+            "
+          >
+            Share on WhatsApp
+          </a>
+          <div style="display: flex; justify-content: center; margin-top: 15px">
+            <div onclick="htl()" class="htl">HTL</div>
+            <div onclick="home()" class="naslov">
+              <div class="Tri">Tri</div>
+              <div class="Team">Team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="menubar">
+        <div><a href="index.html">Team</a></div>
+        <div><a href="utrke.html">Races</a></div>
+        <div><a href="natjecatelji.html">Stats Center</a></div>
+        <div><a href="rank.html">Rank</a></div>
+        <div><a href="help.html">Help</a></div>
+        <hr />
+      </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
     <script type="module" src="ulogiravanje.js"></script>
+    <script>
+      // Enhanced loader
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        const content = document.getElementById("sve");
+
+        // Simulate loading progress
+        setTimeout(() => {
+          if (loader) {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+              if (content) {
+                content.style.display = "flex";
+                setTimeout(() => {
+                  content.style.opacity = "1";
+                }, 50);
+              }
+            }, 500);
+          }
+        }, 1500);
+      });
+    </script>
   </body>
 </html>
