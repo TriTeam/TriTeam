@@ -23,6 +23,25 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth();
 
+const menu = document.getElementById("menu");
+const menubar = document.getElementById("menubar");
+const content = document.getElementById("content");
+const root = document.getElementById("root");
+let switchmenu = true;
+
+menu.addEventListener("click", function () {
+  if (switchmenu) {
+    menubar.style.display = "flex";
+    content.style.display = "none";
+    root.style.display = "none";
+    switchmenu = false;
+  } else {
+    menubar.style.display = "none";
+    content.style.display = "block";
+    root.style.display = "block";
+    switchmenu = true;
+  }
+});
 // Show loader
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
@@ -54,8 +73,6 @@ let leaderboardData = [];
 let allCompetitors = {}; // Declare allCompetitors
 
 // DOM elements
-const raceSelect = document.getElementById("raceSelect");
-const genderSelect = document.getElementById("genderSelect");
 const leaderboardBody = document.getElementById("leaderboardBody");
 const noPlayers = document.getElementById("noPlayers");
 const playerDetail = document.getElementById("playerDetail");
@@ -84,8 +101,6 @@ const racePerformance = document.getElementById("racePerformance");
 const teamHistory = document.getElementById("teamHistory");
 
 // Event listeners
-raceSelect.addEventListener("change", filterAndDisplayLeaderboard);
-genderSelect.addEventListener("change", filterAndDisplayLeaderboard);
 closePlayerDetail.addEventListener("click", () => {
   playerDetail.style.display = "none";
 });
@@ -117,9 +132,6 @@ async function fetchData() {
         const dateB = new Date(b.datum.split("-").reverse().join("-"));
         return dateA - dateB;
       });
-
-      // Populate race select
-      populateRaceSelect();
     }
 
     // Fetch users
@@ -166,65 +178,11 @@ async function fetchData() {
     calculatePoints();
 
     // Display leaderboard
-    filterAndDisplayLeaderboard();
+    displayLeaderboard();
   } catch (error) {
     console.error("Error fetching data:", error);
     showError("Failed to load data. Please try again later.");
   }
-}
-
-// Create mock users for demonstration
-function createMockUsers() {
-  const mockUsers = {
-    user1: {
-      displayName: "John Doe",
-      email: "john@example.com",
-      photoURL: "https://randomuser.me/api/portraits/men/1.jpg",
-    },
-    user2: {
-      displayName: "Jane Smith",
-      email: "jane@example.com",
-      photoURL: "https://randomuser.me/api/portraits/women/1.jpg",
-    },
-    user3: {
-      displayName: "Mike Johnson",
-      email: "mike@example.com",
-      photoURL: "https://randomuser.me/api/portraits/men/2.jpg",
-    },
-    user4: {
-      displayName: "Sarah Williams",
-      email: "sarah@example.com",
-      photoURL: "https://randomuser.me/api/portraits/women/2.jpg",
-    },
-    user5: {
-      displayName: "David Brown",
-      email: "david@example.com",
-      photoURL: "https://randomuser.me/api/portraits/men/3.jpg",
-    },
-    [currentUserId]: {
-      displayName: "You (Current User)",
-      email: "you@example.com",
-      photoURL: "https://randomuser.me/api/portraits/lego/1.jpg",
-    },
-  };
-
-  return mockUsers;
-}
-
-// Populate race select dropdown
-function populateRaceSelect() {
-  // Clear existing options except "All Races"
-  while (raceSelect.options.length > 1) {
-    raceSelect.remove(1);
-  }
-
-  // Add race options
-  allRaces.forEach((race) => {
-    const option = document.createElement("option");
-    option.value = race.id;
-    option.textContent = `${race.id} (${formatDate(race.datum)})`;
-    raceSelect.appendChild(option);
-  });
 }
 
 // Calculate points for all users
@@ -319,233 +277,10 @@ function calculateTeamPoints(team, raceId, gender) {
   return totalPoints;
 }
 
-// Mock function to get a competitor's position in a race
-function getMockRacePosition(competitorId, raceId) {
-  // This function is no longer needed as we're using actual results
-  // But we'll keep it for compatibility with existing code
-  return 0;
-}
-
-// Calculate points based on position
-function calculatePointsForPosition(position) {
-  switch (position) {
-    case 1:
-      return 160;
-    case 2:
-      return 140;
-    case 3:
-      return 120;
-    case 4:
-      return 100;
-    case 5:
-      return 90;
-    case 6:
-      return 80;
-    case 7:
-      return 70;
-    case 8:
-      return 65;
-    case 9:
-      return 60;
-    case 10:
-      return 55;
-    case 11:
-      return 50;
-    case 12:
-      return 45;
-    case 13:
-      return 40;
-    case 14:
-      return 35;
-    case 15:
-      return 30;
-    case 16:
-      return 25;
-    case 17:
-      return 20;
-    case 18:
-      return 15;
-    case 19:
-      return 10;
-    case 20:
-      return 5;
-    default:
-      return 0;
-  }
-}
-
-// Filter and display leaderboard
-function filterAndDisplayLeaderboard() {
-  const selectedRace = raceSelect.value;
-  const selectedGender = genderSelect.value;
-
-  // Filter leaderboard data
-  let filtered = [...leaderboardData];
-
-  // Filter by race
-  if (selectedRace !== "all") {
-    filtered = filtered.filter((user) => {
-      return user.races[selectedRace] !== undefined;
-    });
-
-    // Sort by race points
-    filtered.sort((a, b) => {
-      return (
-        (b.races[selectedRace]?.points || 0) -
-        (a.races[selectedRace]?.points || 0)
-      );
-    });
-
-    // Reassign ranks
-    filtered.forEach((user, index) => {
-      user.rank = index + 1;
-    });
-  }
-
-  // Filter by gender
-  if (selectedGender !== "all") {
-    filtered = filtered.filter((user) => {
-      if (selectedRace === "all") {
-        // Check if user has any team of the selected gender in any race
-        return Object.keys(user.races).some((raceId) => {
-          return (
-            user.races[raceId][
-              selectedGender === "M" ? "maleTeam" : "femaleTeam"
-            ] !== null
-          );
-        });
-      } else {
-        // Check if user has a team of the selected gender in the selected race
-        return (
-          user.races[selectedRace]?.[
-            selectedGender === "M" ? "maleTeam" : "femaleTeam"
-          ] !== null
-        );
-      }
-    });
-
-    // Sort by gender-specific points
-    if (selectedRace !== "all") {
-      filtered.sort((a, b) => {
-        const aTeam =
-          a.races[selectedRace]?.[
-            selectedGender === "M" ? "maleTeam" : "femaleTeam"
-          ];
-        const bTeam =
-          b.races[selectedRace]?.[
-            selectedGender === "M" ? "maleTeam" : "femaleTeam"
-          ];
-
-        const aPoints = aTeam
-          ? calculateTeamPoints(aTeam, selectedRace, selectedGender)
-          : 0;
-        const bPoints = bTeam
-          ? calculateTeamPoints(bTeam, selectedRace, selectedGender)
-          : 0;
-
-        return bPoints - aPoints;
-      });
-
-      // Reassign ranks
-      filtered.forEach((user, index) => {
-        user.rank = index + 1;
-      });
-    }
-  }
-
-  // Update summary stats
-  updateSummaryStats(filtered);
-
-  // Update podium
-  updatePodium(filtered);
-
-  // Display leaderboard
-  displayLeaderboard(filtered);
-}
-
-// Update summary statistics
-function updateSummaryStats(users) {
-  // Total players
-  totalPlayers.textContent = users.length;
-
-  // Average score
-  const totalScore = users.reduce((sum, user) => {
-    if (raceSelect.value === "all") {
-      return sum + user.totalPoints;
-    } else {
-      return sum + (user.races[raceSelect.value]?.points || 0);
-    }
-  }, 0);
-
-  const average = users.length > 0 ? Math.round(totalScore / users.length) : 0;
-  avgScore.textContent = average;
-
-  // Top score
-  const maxScore =
-    users.length > 0
-      ? raceSelect.value === "all"
-        ? users[0].totalPoints
-        : users[0].races[raceSelect.value]?.points || 0
-      : 0;
-
-  topScore.textContent = maxScore;
-
-  // Your rank
-  const currentUser = users.find((user) => user.id === currentUserId);
-  yourRank.textContent = currentUser
-    ? `${currentUser.rank}/${users.length}`
-    : "-";
-}
-
-// Update podium
-function updatePodium(users) {
-  // First place
-  if (users.length > 0) {
-    const first = users[0];
-
-    firstPlace.querySelector(".podium-name").textContent = first.name;
-    firstPlace.querySelector(".podium-score").textContent =
-      raceSelect.value === "all"
-        ? `${first.totalPoints} pts`
-        : `${first.races[raceSelect.value]?.points || 0} pts`;
-  } else {
-
-    firstPlace.querySelector(".podium-name").textContent = "-";
-    firstPlace.querySelector(".podium-score").textContent = "0 pts";
-  }
-
-  // Second place
-  if (users.length > 1) {
-    const second = users[1];
-    secondPlace.querySelector(".podium-name").textContent = second.name;
-    secondPlace.querySelector(".podium-score").textContent =
-      raceSelect.value === "all"
-        ? `${second.totalPoints} pts`
-        : `${second.races[raceSelect.value]?.points || 0} pts`;
-  } else {
-
-    secondPlace.querySelector(".podium-name").textContent = "-";
-    secondPlace.querySelector(".podium-score").textContent = "0 pts";
-  }
-
-  // Third place
-  if (users.length > 2) {
-    const third = users[2];
-
-    thirdPlace.querySelector(".podium-name").textContent = third.name;
-    thirdPlace.querySelector(".podium-score").textContent =
-      raceSelect.value === "all"
-        ? `${third.totalPoints} pts`
-        : `${third.races[raceSelect.value]?.points || 0} pts`;
-  } else {
-
-    thirdPlace.querySelector(".podium-name").textContent = "-";
-    thirdPlace.querySelector(".podium-score").textContent = "0 pts";
-  }
-}
-
 // Display leaderboard
-function displayLeaderboard(users) {
+function displayLeaderboard() {
+  const users = [...leaderboardData];
+
   // Clear table
   leaderboardBody.innerHTML = "";
 
@@ -557,6 +292,12 @@ function displayLeaderboard(users) {
     noPlayers.style.display = "none";
   }
 
+  // Update summary stats
+  updateSummaryStats(users);
+
+  // Update podium
+  updatePodium(users);
+
   // Add users to table
   users.forEach((user) => {
     const row = document.createElement("tr");
@@ -567,23 +308,9 @@ function displayLeaderboard(users) {
       row.classList.add("current-user");
     }
 
-    // Get points based on selected race
-    const points =
-      raceSelect.value === "all"
-        ? user.totalPoints
-        : user.races[raceSelect.value]?.points || 0;
-
-    // Get race count based on selected gender
-    let raceCount = Object.keys(user.races).length;
-    if (genderSelect.value !== "all") {
-      raceCount = Object.keys(user.races).filter((raceId) => {
-        return (
-          user.races[raceId][
-            genderSelect.value === "M" ? "maleTeam" : "femaleTeam"
-          ] !== null
-        );
-      }).length;
-    }
+    // Get points and race count
+    const points = user.totalPoints;
+    const raceCount = Object.keys(user.races).length;
 
     // Create rank display with medal for top 3
     let rankDisplay = `<div class="rank-number">${user.rank}</div>`;
@@ -621,28 +348,88 @@ function displayLeaderboard(users) {
   });
 }
 
+// Update summary statistics
+function updateSummaryStats(users) {
+  // Total players
+  totalPlayers.textContent = users.length;
+
+  // Average score
+  const totalScore = users.reduce((sum, user) => sum + user.totalPoints, 0);
+  const average = users.length > 0 ? Math.round(totalScore / users.length) : 0;
+  avgScore.textContent = average;
+
+  // Top score
+  const maxScore = users.length > 0 ? users[0].totalPoints : 0;
+  topScore.textContent = maxScore;
+
+  // Your rank
+  const currentUser = users.find((user) => user.id === currentUserId);
+  yourRank.textContent = currentUser
+    ? `${currentUser.rank}/${users.length}`
+    : "-";
+}
+
+// Update podium
+function updatePodium(users) {
+  // First place
+  if (users.length > 0) {
+    const first = users[0];
+
+    firstPlace.querySelector(".podium-name").textContent = first.name;
+    firstPlace.querySelector(
+      ".podium-score"
+    ).textContent = `${first.totalPoints} pts`;
+  } else {
+    firstPlace.querySelector(".podium-name").textContent = "-";
+    firstPlace.querySelector(".podium-score").textContent = "0 pts";
+  }
+
+  // Second place
+  if (users.length > 1) {
+    const second = users[1];
+
+    secondPlace.querySelector(".podium-name").textContent = second.name;
+    secondPlace.querySelector(
+      ".podium-score"
+    ).textContent = `${second.totalPoints} pts`;
+  } else {
+    secondPlace.querySelector(".podium-name").textContent = "-";
+    secondPlace.querySelector(".podium-score").textContent = "0 pts";
+  }
+
+  // Third place
+  if (users.length > 2) {
+    const third = users[2];
+
+    thirdPlace.querySelector(".podium-name").textContent = third.name;
+    thirdPlace.querySelector(
+      ".podium-score"
+    ).textContent = `${third.totalPoints} pts`;
+  } else {
+    thirdPlace.querySelector(".podium-name").textContent = "-";
+    thirdPlace.querySelector(".podium-score").textContent = "0 pts";
+  }
+}
+
 // Show player detail
 function showPlayerDetail(user) {
+  // Set basic info
+  detailAvatar.src = user.photoURL || "noprofile.jpg";
+  detailAvatar.onerror = function () {
+    this.src = "noprofile.jpg";
+  };
   detailPlayerName.textContent = user.name;
   detailRank.textContent = `${user.rank}/${leaderboardData.length}`;
 
-  // Set stats based on selected race/gender
-  if (raceSelect.value === "all") {
-    detailTotalPoints.textContent = user.totalPoints;
-    detailRaces.textContent = Object.keys(user.races).length;
-    detailAvgPoints.textContent =
-      Object.keys(user.races).length > 0
-        ? Math.round(user.totalPoints / Object.keys(user.races).length)
-        : 0;
-    detailBestRace.textContent =
-      user.bestRace.points > 0 ? user.bestRace.points : "-";
-  } else {
-    const racePoints = user.races[raceSelect.value]?.points || 0;
-    detailTotalPoints.textContent = racePoints;
-    detailRaces.textContent = user.races[raceSelect.value] ? "1" : "0";
-    detailAvgPoints.textContent = racePoints;
-    detailBestRace.textContent = "-";
-  }
+  // Set stats
+  detailTotalPoints.textContent = user.totalPoints;
+  detailRaces.textContent = Object.keys(user.races).length;
+  detailAvgPoints.textContent =
+    Object.keys(user.races).length > 0
+      ? Math.round(user.totalPoints / Object.keys(user.races).length)
+      : 0;
+  detailBestRace.textContent =
+    user.bestRace.points > 0 ? user.bestRace.points : "-";
 
   // Create race performance chart
   createPerformanceChart(user);
@@ -666,33 +453,21 @@ function createPerformanceChart(user) {
   // Get race data
   const raceData = [];
 
-  // If all races selected, show all races
-  if (raceSelect.value === "all") {
-    // Get all races where user participated
-    Object.keys(user.races).forEach((raceId) => {
-      raceData.push({
-        id: raceId,
-        points: user.races[raceId].points,
-        date: user.races[raceId].date,
-      });
+  // Get all races where user participated
+  Object.keys(user.races).forEach((raceId) => {
+    raceData.push({
+      id: raceId,
+      points: user.races[raceId].points,
+      date: user.races[raceId].date,
     });
+  });
 
-    // Sort by date
-    raceData.sort((a, b) => {
-      const dateA = new Date(a.date.split("-").reverse().join("-"));
-      const dateB = new Date(b.date.split("-").reverse().join("-"));
-      return dateA - dateB;
-    });
-  } else {
-    // Show only selected race
-    if (user.races[raceSelect.value]) {
-      raceData.push({
-        id: raceSelect.value,
-        points: user.races[raceSelect.value].points,
-        date: user.races[raceSelect.value].date,
-      });
-    }
-  }
+  // Sort by date
+  raceData.sort((a, b) => {
+    const dateA = new Date(a.date.split("-").reverse().join("-"));
+    const dateB = new Date(b.date.split("-").reverse().join("-"));
+    return dateA - dateB;
+  });
 
   // If no race data, show message
   if (raceData.length === 0) {
@@ -748,45 +523,20 @@ function createTeamHistory(user) {
   // Get race data
   const raceData = [];
 
-  // If all races selected, show all races
-  if (raceSelect.value === "all") {
-    // Get all races where user participated
-    Object.keys(user.races).forEach((raceId) => {
-      // Filter by gender if needed
-      if (
-        genderSelect.value === "all" ||
-        (genderSelect.value === "M" && user.races[raceId].maleTeam) ||
-        (genderSelect.value === "Z" && user.races[raceId].femaleTeam)
-      ) {
-        raceData.push({
-          id: raceId,
-          ...user.races[raceId],
-        });
-      }
+  // Get all races where user participated
+  Object.keys(user.races).forEach((raceId) => {
+    raceData.push({
+      id: raceId,
+      ...user.races[raceId],
     });
+  });
 
-    // Sort by date
-    raceData.sort((a, b) => {
-      const dateA = new Date(a.date.split("-").reverse().join("-"));
-      const dateB = new Date(b.date.split("-").reverse().join("-"));
-      return dateB - dateA; // Most recent first
-    });
-  } else {
-    // Show only selected race
-    if (user.races[raceSelect.value]) {
-      // Filter by gender if needed
-      if (
-        genderSelect.value === "all" ||
-        (genderSelect.value === "M" && user.races[raceSelect.value].maleTeam) ||
-        (genderSelect.value === "Z" && user.races[raceSelect.value].femaleTeam)
-      ) {
-        raceData.push({
-          id: raceSelect.value,
-          ...user.races[raceSelect.value],
-        });
-      }
-    }
-  }
+  // Sort by date
+  raceData.sort((a, b) => {
+    const dateA = new Date(a.date.split("-").reverse().join("-"));
+    const dateB = new Date(b.date.split("-").reverse().join("-"));
+    return dateB - dateA; // Most recent first
+  });
 
   // If no race data, show message
   if (raceData.length === 0) {
@@ -827,11 +577,8 @@ function createTeamHistory(user) {
     const membersContainer = document.createElement("div");
     membersContainer.className = "team-members";
 
-    // Add male team members if available and not filtered out
-    if (
-      race.maleTeam &&
-      (genderSelect.value === "all" || genderSelect.value === "M")
-    ) {
+    // Add male team members if available
+    if (race.maleTeam) {
       race.maleTeam.forEach((member) => {
         const competitorId = Object.keys(member)[0];
         const competitorName = Object.values(member)[0];
@@ -861,11 +608,8 @@ function createTeamHistory(user) {
       });
     }
 
-    // Add female team members if available and not filtered out
-    if (
-      race.femaleTeam &&
-      (genderSelect.value === "all" || genderSelect.value === "Z")
-    ) {
+    // Add female team members if available
+    if (race.femaleTeam) {
       race.femaleTeam.forEach((member) => {
         const competitorId = Object.keys(member)[0];
         const competitorName = Object.values(member)[0];
