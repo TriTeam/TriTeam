@@ -4,6 +4,13 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getDatabase,
+  ref,
+  get,
+  set,
+  update,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAeTpzrQ-V21EwUF-26DNLGY6n_ZiZ7weg",
@@ -18,11 +25,39 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const db = getDatabase(app);
+
+const put = ref(db, "FANTASY/users");
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    provjeri(user);
     console.log(user);
   } else {
     window.location.href = "login.html";
   }
 });
+async function provjeri(user) {
+  const put = ref(db, "FANTASY/users/" + user.uid);
+  const snapshot = await get(put);
+
+  if (!snapshot.exists()) {
+    // Ako korisnik ne postoji
+    const korisnik = {
+      ime: user.displayName,
+      email: user.email,
+    };
+    await set(put, korisnik);
+  } else {
+    // Ako korisnik već postoji
+    const korisnikData = snapshot.val();
+
+    if (!korisnikData.ime) {
+      // Ako nema ime, dodaj ime i email
+      await update(put, {
+        ime: user.displayName,
+        email: user.email,
+      });
+    }
+  }
+}
