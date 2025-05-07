@@ -507,8 +507,7 @@ function updatePodium(users) {
         ? `${first.totalPoints} pts`
         : `${first.races[raceSelect.value]?.points || 0} pts`;
   } else {
-    firstPlace.querySelector(".podium-avatar img").src =
-      "/placeholder.svg?height=80&width=80";
+
     firstPlace.querySelector(".podium-name").textContent = "-";
     firstPlace.querySelector(".podium-score").textContent = "0 pts";
   }
@@ -522,8 +521,7 @@ function updatePodium(users) {
         ? `${second.totalPoints} pts`
         : `${second.races[raceSelect.value]?.points || 0} pts`;
   } else {
-    secondPlace.querySelector(".podium-avatar img").src =
-      "/placeholder.svg?height=60&width=60";
+
     secondPlace.querySelector(".podium-name").textContent = "-";
     secondPlace.querySelector(".podium-score").textContent = "0 pts";
   }
@@ -538,8 +536,7 @@ function updatePodium(users) {
         ? `${third.totalPoints} pts`
         : `${third.races[raceSelect.value]?.points || 0} pts`;
   } else {
-    thirdPlace.querySelector(".podium-avatar img").src =
-      "/placeholder.svg?height=60&width=60";
+
     thirdPlace.querySelector(".podium-name").textContent = "-";
     thirdPlace.querySelector(".podium-score").textContent = "0 pts";
   }
