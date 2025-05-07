@@ -413,11 +413,7 @@ function updatePodium(users) {
 
 // Show player detail
 function showPlayerDetail(user) {
-  // Set basic info
-  detailAvatar.src = user.photoURL || "noprofile.jpg";
-  detailAvatar.onerror = function () {
-    this.src = "noprofile.jpg";
-  };
+
   detailPlayerName.textContent = user.name;
   detailRank.textContent = `${user.rank}/${leaderboardData.length}`;
 
