@@ -413,6 +413,7 @@ function updatePodium(users) {
 
 // Show player detail
 function showPlayerDetail(user) {
+  // Set basic info
 
   detailPlayerName.textContent = user.name;
   detailRank.textContent = `${user.rank}/${leaderboardData.length}`;
