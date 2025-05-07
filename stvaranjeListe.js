@@ -314,7 +314,7 @@ async function listaPrivavljenih(prijavljeni, utrkaOva) {
             );
 
             const index = listaImenaUtrka.indexOf(utrkaOva);
-            console.log(oNatjecatelju.utrke[index].bodovi);
+            console.log(oNatjecatelju.utrke[index]);
             if (index !== -1) {
               ThisRace.className = "totalPoints";
               ThisRace.innerHTML = oNatjecatelju.utrke[index].bodovi;
