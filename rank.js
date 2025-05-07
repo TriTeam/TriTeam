@@ -276,7 +276,9 @@ function calculatePoints() {
     }
 
     // Add user to leaderboard data
-    leaderboardData.push(userData);
+    if (userData.totalPoints > 0) {
+      leaderboardData.push(userData);
+    }
   });
 
   // Sort leaderboard by total points
