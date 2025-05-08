@@ -155,9 +155,9 @@
   width: 95%;
   margin: 0 auto 20px;
   height: auto;
-  min-height: 15dvh;
+  max-height: 30vh;
   border-radius: 12px;
-  padding: 20px;
+  padding: 2px 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -201,7 +201,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 2px;
 }
 
 .tip {
@@ -220,7 +220,7 @@
   color: var(--light-text);
   font-weight: bold;
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   line-height: 1.2;
   font-family: "Montserrat", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -228,7 +228,7 @@
 
 .mjestoUtrke {
   color: var(--light-text);
-  margin: 10px 0 0;
+  margin: 2px 0 0;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -245,57 +245,95 @@
 
 /* Race type specific styling */
 .divUtrke[data-type="HTL"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("novi-fntasy/trimax.jpg");
-  background-size: cover;
-  background-position: center;
   border-left: 5px solid rgb(102, 102, 255);
 }
 
 .divUtrke[data-type="PH"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("novi-fntasy/pula.jpg");
-  background-size: cover;
-  background-position: center;
   border-left: 5px solid rgb(212, 57, 106);
 }
 
 .divUtrke[data-type="MIXED RELAY"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("novi-fntasy/zadar.png");
-  background-size: cover;
-  background-position: center;
   border-left: 5px solid rgb(88, 165, 0);
 }
-
-/* Race status indicator */
-.race-status {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  z-index: 3;
+[id="X terra triathlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("Mali-Losinj-Cikat-Bay.jpg");
+  background-size: cover;
+  background-position: center;
+}
+[id="X terra triathlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("Mali-Losinj-Cikat-Bay.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.status-upcoming {
-  background-color: var(--secondary-color);
-  color: var(--dark-bg);
+[id="Polojski ss duatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("poloj_cesta.jpg");
+  background-size: cover;
+  background-position: center;
+}
+[id="Polojski duatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("poloj_cesta.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.status-finished {
-  background-color: var(--gray-text);
-  color: var(--dark-bg);
+[id="Rab triatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("RAB.jpg");
+  background-size: cover;
+  background-position: center;
 }
-
+[id="Zagorski triatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("gornjastubica.jpg");
+  background-size: cover;
+  background-position: center;
+}
+[id="ZAGREB3ATHLON"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("jarun_zagreb_iz_zraka__moj_kvart_363951246.jpg");
+  background-size: cover;
+  background-position: center;
+}
+[id="Ferivi Biljski triatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("images.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+[id="Kostrenski triatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("Kostrenabeachrijeka.png");
+  background-size: cover;
+  background-position: center;
+}
+[id="Miješane Štafete"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("Kostrenabeachrijeka.png");
+  background-size: cover;
+  background-position: center;
+}
+[id="ZADARHALF"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("zadar_thumb_48fe64a291.jpg");
+  background-size: cover;
+  background-position: center;
+}
+[id="Marjanski đir"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("split-marjan.jpg");
+  background-size: cover;
+  background-position: center;
+}
 /* Race details */
 .race-details {
   display: flex;
   gap: 15px;
-  margin-top: 15px;
+  margin-top: 2px;
 }
 
 .detail-item {
