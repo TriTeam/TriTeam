@@ -334,7 +334,7 @@
 
 /* Leaderboard table */
 .leaderboard-container {
-  width: 90%;
+  width: 96%;
   max-width: 1200px;
   margin: 20px auto;
   animation: fadeIn 0.9s ease;
