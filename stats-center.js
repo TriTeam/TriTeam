@@ -234,7 +234,7 @@ function countPodiums(competitor) {
   if (!competitor.utrke) return 0;
 
   return competitor.utrke.filter((race) => {
-    const position = Object.values(race)[0];
+    const position = calculatePoints(Object.values(race)[0]);
     return position <= 3;
   }).length;
 }
@@ -293,11 +293,13 @@ function displayCompetitors(competitors) {
 
 // Get last three race results
 function getLastThreeRaces(competitor) {
-  if (!competitor.utrke || competitor.utrke.length === 0) {
+  if (!competitor.utrke || competitor.utrke.length <= 1) {
     return [0, 0, 0];
   }
 
-  const results = competitor.utrke.map((race) => Object.values(race)[0]);
+  const results = competitor.utrke
+    .slice(1)
+    .map((race) => calculatePoints(Object.values(race)[0]));
 
   // Pad with zeros if less than 3 races
   while (results.length < 3) {
@@ -322,23 +324,25 @@ function showCompetitorDetail(competitor) {
   detailPodiums.textContent = podiums;
 
   // Count races
-  const raceCount = competitor.utrke ? competitor.utrke.length : 0;
+  const raceCount = competitor.utrke ? competitor.utrke.length - 1 : 0;
   detailRaces.textContent = raceCount;
 
   // Clear race history
   raceHistory.innerHTML = "";
 
   // Add race history
-  if (competitor.utrke && competitor.utrke.length > 0) {
+  if (competitor.utrke && competitor.utrke.length > 1) {
     // Sort races by date if possible
-    const competitorRaces = [...competitor.utrke];
+    const competitorRaces = [...competitor.utrke.slice(1)]; // Preskoči nulti element
     competitorRaces.reverse(); // Show most recent first
+    console.log(competitorRaces);
 
     competitorRaces.forEach((raceEntry) => {
-      const raceName = Object.keys(raceEntry)[0];
-      const position = Object.values(raceEntry)[0];
-      const points = calculatePoints(position);
-      const isPodium = position <= 3;
+      const raceName = raceEntry.ime;
+      const position = calculatePoints(Object.values(raceEntry)[0]);
+      const points = Object.values(raceEntry)[0];
+
+      const isPodium = calculatePoints(position) <= 3;
 
       // Find race details
       const raceDetails = allRaces.find((race) => race.id === raceName);
@@ -347,17 +351,15 @@ function showCompetitorDetail(competitor) {
       const raceItem = document.createElement("div");
       raceItem.className = "race-item";
       raceItem.innerHTML = `
-        <div>
-          <div class="race-name">${raceName}</div>
-          <div class="race-date">${raceDate}</div>
-        </div>
-        <div class="race-position">
-          <div class="position-number ${
-            isPodium ? "podium" : ""
-          }">${position}</div>
-          <div class="position-points">${points} pts</div>
-        </div>
-      `;
+    <div>
+      <div class="race-name">${raceName}</div>
+      <div class="race-date">${raceDate}</div>
+    </div>
+    <div class="race-position">
+      <div class="position-number ${isPodium ? "podium" : ""}">${position}</div>
+      <div class="position-points">${points} pts</div>
+    </div>
+  `;
 
       raceHistory.appendChild(raceItem);
     });
@@ -378,48 +380,48 @@ function showCompetitorDetail(competitor) {
 // Calculate points based on position
 function calculatePoints(position) {
   switch (position) {
-    case 1:
-      return 160;
-    case 2:
-      return 140;
-    case 3:
-      return 120;
-    case 4:
-      return 100;
-    case 5:
-      return 90;
-    case 6:
-      return 80;
-    case 7:
-      return 70;
-    case 8:
-      return 65;
-    case 9:
-      return 60;
-    case 10:
-      return 55;
-    case 11:
-      return 50;
-    case 12:
-      return 45;
-    case 13:
-      return 40;
-    case 14:
-      return 35;
-    case 15:
-      return 30;
-    case 16:
-      return 25;
-    case 17:
-      return 20;
-    case 18:
-      return 15;
-    case 19:
-      return 10;
-    case 20:
+    case 160:
+      return 1;
+    case 140:
+      return 2;
+    case 120:
+      return 3;
+    case 100:
+      return 4;
+    case 90:
       return 5;
+    case 80:
+      return 6;
+    case 70:
+      return 7;
+    case 65:
+      return 8;
+    case 60:
+      return 9;
+    case 55:
+      return 10;
+    case 50:
+      return 11;
+    case 45:
+      return 12;
+    case 40:
+      return 13;
+    case 35:
+      return 14;
+    case 30:
+      return 15;
+    case 25:
+      return 16;
+    case 20:
+      return 17;
+    case 15:
+      return 18;
+    case 10:
+      return 19;
+    case 5:
+      return 20;
     default:
-      return 0;
+      return null; // ili -1 ako želiš označiti nepoznatu vrijednost
   }
 }
 
