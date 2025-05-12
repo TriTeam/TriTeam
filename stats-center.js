@@ -281,7 +281,8 @@ function displayCompetitors(competitors) {
       </td>
       <td>${competitor.klub || ""}</td>
       <td>${competitor.spol || ""}</td>
-      <td>$${competitor.vrijednost?.sad || 0}</td>
+      <td>${getValueWithChangeIndicator(competitor.vrijednost)}</td>
+
       <td class="points-value">${competitor.bodovi || 0}</td>
       <td>${podiums}</td>
       <td>${raceResultsHtml}</td>
@@ -515,3 +516,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Funkcija za prikaz vrijednosti sa strelicom
+// Funkcija za prikaz vrijednosti sa strelicom
+function getValueWithChangeIndicator(vrijednost) {
+  if (!vrijednost) return "$0 <span class='arrow neutral'>↔ 0</span>";
+
+  const currentValue = parseFloat(vrijednost.sad) || 0;
+  const previousValue = parseFloat(vrijednost.prije) || 0;
+  const difference = currentValue - previousValue;
+
+  let arrowClass = "neutral";
+  let arrowSymbol = "↔";
+  let differenceText = "0";
+
+  if (difference > 0) {
+    arrowClass = "positive";
+    arrowSymbol = "↑";
+    differenceText = `+${difference.toFixed(2)}`;
+  } else if (difference < 0) {
+    arrowClass = "negative";
+    arrowSymbol = "↓";
+    differenceText = `${difference.toFixed(2)}`;
+  }
+
+  return `$${currentValue.toFixed(
+    2
+  )} <span class='arrow ${arrowClass}'>${arrowSymbol} ${differenceText}</span>`;
+}
