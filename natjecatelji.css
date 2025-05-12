@@ -213,6 +213,23 @@
   }
 }
 
+.arrow {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.arrow.positive {
+  color: green;
+}
+
+.arrow.negative {
+  color: red;
+}
+
+.arrow.neutral {
+  color: gray;
+}
+
 @keyframes progress {
   0% {
     width: 0;
