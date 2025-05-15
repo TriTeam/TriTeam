@@ -521,6 +521,13 @@ function nadiSliku(klub) {
 
     case "tk sisak":
       return ["url(sisak.jpg)"];
+
+    case "tk tri-tim":
+      return ["url(tritim.jpg)"];
+    
+    case "tk split":
+      return ["url(split.png)"];
+    /*
     /*
     case vrednost3:
       return ["url()"];
