@@ -524,10 +524,9 @@ function nadiSliku(klub) {
 
     case "tk tri-tim":
       return ["url(tritim.jpg)"];
-    
+
     case "tk split":
       return ["url(split.png)"];
-    /*
     /*
     case vrednost3:
       return ["url()"];
@@ -591,11 +590,11 @@ function izracunPostolja(bla) {
 
   let podaci = [];
   for (let i = 1; i < bla.length; i++) {
-    console.log(bla[i].bodovi);
+    console.log(racunanjeMjesta(bla[i].bodovi));
 
     podaci.push(racunanjeMjesta(bla[i].bodovi));
   }
-  const vrijednosti = Object.values(podaci);
+  const vrijednosti = podaci;
   let postolja = vrijednosti.filter(
     (broj) => broj === 1 || broj === 2 || broj === 3
   ).length;
@@ -604,29 +603,42 @@ function izracunPostolja(bla) {
   // Onda dalje radiš šta treba
 }
 
-function lastTRace(staro) {
+function lastTRace(utrke) {
   const div = document.createElement("div");
   div.className = "divZadnjeTri";
 
-  for (let i = 1; i <= 3; i++) {
-    const prije = document.createElement("div");
-    prije.className = "prijasnjeTrke";
-
-    if (!staro || i - staro.length <= 0) {
+  if (!utrke || utrke.length === 0) {
+    for (let i = 0; i < 3; i++) {
+      const prije = document.createElement("div");
+      prije.className = "prijasnjeTrke";
       prije.innerHTML = "--";
       prije.style.backgroundColor = "white";
       prije.style.color = "black";
-    } else {
-      console.log(racunanjeMjesta(staro[i - staro.length].bodovi), i);
-      const kojaPozicija = racunanjeMjesta(staro[i - staro.length].bodovi);
+      div.appendChild(prije);
+    }
+    return div;
+  }
+
+  const results = utrke.slice(-3).map((race) => racunanjeMjesta(race.bodovi));
+  console.log(results);
+  for (let i = 1; i < 4; i++) {
+    const prije = document.createElement("div");
+    prije.className = "prijasnjeTrke";
+
+    if (results[i] !== undefined) {
+      const kojaPozicija = results[i];
       prije.innerHTML = kojaPozicija;
-      if (kojaPozicija == 1 || kojaPozicija == 2 || kojaPozicija == 3) {
+      if (kojaPozicija === 1 || kojaPozicija === 2 || kojaPozicija === 3) {
         prije.style.backgroundColor = "red";
         prije.style.color = "white";
       } else {
         prije.style.backgroundColor = "white";
         prije.style.color = "black";
       }
+    } else {
+      prije.innerHTML = "--";
+      prije.style.backgroundColor = "white";
+      prije.style.color = "black";
     }
 
     div.appendChild(prije);
