@@ -422,7 +422,7 @@ function calculatePoints(position) {
     case 5:
       return 20;
     default:
-      return null; // ili -1 ako želiš označiti nepoznatu vrijednost
+      return 21; // ili -1 ako želiš označiti nepoznatu vrijednost
   }
 }
 
