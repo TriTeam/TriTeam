@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="basic.css" />
     <link rel="stylesheet" href="utrke.css" />
+    <link rel="stylesheet" href="natjecatelji.css" />
     <title>Team</title>
   </head>
   <body>
@@ -38,6 +39,14 @@
         </div>
         <div id="upcomingRaces"></div>
         <div id="finishedRaces"></div>
+        <div id="competitorDetail" class="competitor-detail">
+          <div class="detail-header">
+            <button class="close-button" id="closeDetail">×</button>
+            <h2 id="detailName">Competitor Name</h2>
+          </div>
+
+          <div class="detail-stat" id="detail-stats"></div>
+        </div>
       </div>
 
       <div id="root" class="root">
@@ -86,5 +95,6 @@
     <script src="up-fin.js"></script>
     <script src="utrke-fatch.js" type="module"></script>
     <script type="module" src="ulogiravanje.js"></script>
+    <script type="module" src="prikazPodatkaUtrke.js"></script>
   </body>
 </html>
