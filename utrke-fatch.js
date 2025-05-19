@@ -4,6 +4,7 @@ import {
   ref,
   get,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { showRaceDetail } from "./prikazPodatkaUtrke.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAeTpzrQ-V21EwUF-26DNLGY6n_ZiZ7weg",
@@ -113,7 +114,6 @@ try {
 }
 
 function stvaranjeUtrke(utrka, container, isFinished = false) {
-  console.log(utrka);
   const podatciUtrke = utrka[1];
   const divUtrke = document.createElement("div");
   divUtrke.className = "divUtrke";
@@ -191,6 +191,12 @@ function stvaranjeUtrke(utrka, container, isFinished = false) {
 
   divUtrke.appendChild(raceDetails);
 
+  if (container.id == "finishedRaces") {
+    divUtrke.addEventListener("click", function () {
+      showRaceDetail(utrka);
+      console.log("lal");
+    });
+  }
   container.append(divUtrke);
 }
 
