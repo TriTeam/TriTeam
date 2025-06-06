@@ -122,7 +122,7 @@ function countdownToEvent(dateString) {
   // Ako je dan utrke
   if (daysDiff === 0) {
     const startTime = new Date(eventDate);
-    startTime.setHours(8, 0, 0, 0);
+    startTime.setHours(10, 0, 0, 0);
     const endTime = new Date(eventDate);
     endTime.setHours(24, 0, 0, 0); // do ponoći
 
@@ -140,7 +140,7 @@ function countdownToEvent(dateString) {
 
   // Ako je u budućnosti (ili prije 8h na dan utrke)
   const futureCutoff = new Date(eventDate);
-  futureCutoff.setHours(8, 0, 0, 0); // budući "lockout moment"
+  futureCutoff.setHours(10, 0, 0, 0); // budući "lockout moment"
 
   const msDiff = futureCutoff - now;
   const totalSeconds = Math.floor(msDiff / 1000);
