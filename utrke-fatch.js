@@ -164,7 +164,7 @@ function stvaranjeUtrke(utrka, container, isFinished = false) {
 
     const distanceValue = document.createElement("div");
     distanceValue.className = "detail-value";
-    distanceValue.textContent = `${podatciUtrke.distanca} km`;
+    distanceValue.textContent = `${podatciUtrke.distanca}`;
 
     distanceDetail.appendChild(distanceLabel);
     distanceDetail.appendChild(distanceValue);
