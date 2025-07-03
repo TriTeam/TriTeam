@@ -281,6 +281,13 @@
   background-position: center;
 }
 
+[id="Polojski triatlon"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url("poloj_cesta.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 [id="Rab triatlon"] {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
     url("RAB.jpg");
